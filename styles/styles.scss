@@ -1,0 +1,74 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #052D70;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.logo_req_wrapper{
+  display: flex;
+flex-direction: column;
+}
+.top-section {
+  text-align: center;
+}
+
+.top-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.top-section{
+  .tw_logo{
+    width: 110px;
+  }
+}
+
+.top-section h2 {
+  margin-top: 20px;
+}
+
+.left-section, .right-section {
+  width: 50%;
+}
+
+form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.lets_get_started_btn{
+  background-color: #8DC63F;
+  color: #fff;
+}
+/* Add media query for mobile layout */
+@media (max-width: 998px) {
+  .top-section {
+    position: relative;
+  }
+
+  .top-section img {
+    position: absolute;
+    top: 0;
+  }
+
+  .top-section h2 {
+    margin-top: 70px; /* Adjust the margin as needed */
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+  }
+}
