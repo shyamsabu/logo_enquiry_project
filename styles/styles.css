@@ -14,6 +14,11 @@ body {
   margin-left: auto;
 }
 
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -55,63 +60,159 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 100vh;
   flex-direction: column;
-  margin-right: 24px;
+  margin-bottom: 95px;
+}
+@media (min-width: 1200px) {
+  .banner .banner_content {
+    margin-right: 24px;
+    height: 100vh;
+    margin-bottom: 0;
+  }
 }
 .banner .banner_content h1 {
-  font-size: 42px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+@media (min-width: 1867px) {
+  .banner .banner_content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
 }
 .banner .banner_content p {
-  font-size: 17px;
-  margin-bottom: 20px;
+  font-size: 10px;
+  margin-bottom: 10px;
   color: rgb(255, 255, 255);
 }
+@media (min-width: 1867px) {
+  .banner .banner_content p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+}
 .banner .banner_content form {
-  width: 70%;
+  width: 100%;
+}
+@media (min-width: 1867px) {
+  .banner .banner_content form {
+    width: 70%;
+  }
 }
 .banner .banner_content form .form-label {
   color: rgb(195, 210, 214);
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 13px !important;
+  margin-bottom: 7px;
+}
+@media (min-width: 1867px) {
+  .banner .banner_content form .form-label {
+    font-size: 16px !important;
+    margin-bottom: 15px;
+  }
 }
 .banner .banner_content form .mb-3 {
-  margin-bottom: 20px !important;
+  margin-bottom: 10px !important;
+}
+@media (min-width: 1867px) {
+  .banner .banner_content form .mb-3 {
+    margin-bottom: 20px !important;
+  }
 }
 .banner .banner_content form input {
   border-radius: 4px;
-  height: 67px;
+  height: 35px;
   border: 1px solid rgb(213, 216, 222);
 }
+@media (min-width: 1867px) {
+  .banner .banner_content form input {
+    height: 67px;
+  }
+}
 .banner .banner_content form .lets_get_started_btn {
-  height: 100px;
+  height: 60px;
   width: 100%;
-  font-size: 28px;
+  font-size: 18px;
   background: rgb(141, 198, 63);
   margin-top: 20px;
   border-radius: 4px;
 }
 .banner .banner_content form .lets_get_started_btn i {
-  margin-left: 10px;
+  margin-left: 0px;
 }
-.banner .banner_image {
+.banner .banner_content form .lets_get_started_btn i svg {
+  height: 13px;
+}
+@media (min-width: 1867px) {
+  .banner .banner_content form .lets_get_started_btn {
+    height: 100px;
+    font-size: 28px;
+  }
+  .banner .banner_content form .lets_get_started_btn i {
+    margin-left: 10px;
+  }
+}
+.banner .desktop {
+  display: none !important;
+}
+.banner .desktop .banner_image {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
-.banner .banner_image .tw_logo {
-  margin-bottom: 50px;
-  width: 27%;
+@media (min-width: 1200px) {
+  .banner .desktop {
+    display: block !important;
+  }
 }
-.banner .banner_image .banner_img {
-  max-width: 95%;
+@media (min-width: 1867px) {
+  .banner .desktop {
+    height: 100vh;
+  }
+  .banner .desktop .tw_logo {
+    margin-bottom: 50px;
+    width: 27%;
+  }
+  .banner .desktop .banner_img {
+    max-width: 95%;
+  }
 }
 .banner .bnr_fxd_svg {
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  position: absolute;
+  bottom: -61%;
+  right: -169px;
+}
+.banner .bnr_fxd_svg svg {
+  height: 80px;
+}
+@media (min-width: 1200px) {
+  .banner .bnr_fxd_svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+.banner .mobile {
+  display: block !important;
+}
+.banner .mobile .banner_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.banner .mobile .banner_image .tw_logo {
+  margin-bottom: 30px;
+  width: 35%;
+}
+.banner .mobile .banner_image .banner_img {
+  max-width: 95%;
+}
+@media (min-width: 1200px) {
+  .banner .mobile {
+    display: none !important;
+  }
 }/*# sourceMappingURL=styles.css.map */
