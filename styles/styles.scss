@@ -107,28 +107,31 @@ body {
 
 
 .banner{
+  height: 100vh;
+  position: relative;
   .banner_content{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    height: 100%;
+    height: 100vh;
     flex-direction: column;
     margin-right: 24px;
     h1{
       font-size: 42px;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     p{
       font-size: 17px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       color:  rgba(255, 255, 255, 1);
     }
     form{
       width:70%;
       .form-label{
         color: rgba(195, 210, 214, 1);
-  
+        font-size: 20px;
+        margin-bottom: 15px;
       }
       .mb-3{
         margin-bottom: 20px!important;
@@ -138,6 +141,36 @@ body {
         height:67px;
         border: 1px solid rgba(213, 216, 222, 1);
       }
+      .lets_get_started_btn{
+        height: 100px;
+        width: 100%;
+        font-size: 28px;
+        background: rgba(141, 198, 63, 1);
+        margin-top: 20px;
+        border-radius: 4px;
+        i{
+          margin-left:10px;
+        }
+      }
     }
+  }
+  .banner_image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .tw_logo {
+      margin-bottom: 50px;
+      width: 27%;
+    }
+    .banner_img {
+      max-width: 95%;
+    }
+  }
+  .bnr_fxd_svg{
+    position: fixed;
+    bottom: 0;
+    right: 0;
   }
 }
