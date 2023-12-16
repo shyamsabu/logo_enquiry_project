@@ -269,6 +269,25 @@ body {
   background: rgb(141, 198, 63);
   margin-top: 20px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.banner .banner_content form .lets_get_started_btn:before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  transition: all 2s ease;
+}
+.banner .banner_content form .lets_get_started_btn:hover:before {
+  background: rgba(33, 33, 33, 0.09);
+  width: 100%;
 }
 .banner .banner_content form .lets_get_started_btn i {
   margin-left: 0px;
@@ -316,6 +335,9 @@ body {
   }
   .banner .banner_content form .lets_get_started_btn i {
     margin-left: 10px;
+  }
+  .banner .banner_content form .lets_get_started_btn i svg {
+    height: 20px;
   }
 }
 .banner .desktop {
