@@ -14,7 +14,7 @@ body {
 :root {
   --gray-blue: #2c3e50;
   --dark-blue: #2980b9;
-  --green: #27ae60;
+  --green: rgba(144, 198, 60, 1);
   --dark-green: #1f8b4c;
   --light-gray-1: #f1f4f5;
   --light-gray-2: #ecf0f1;
@@ -73,58 +73,6 @@ body {
   margin-left: auto;
 }
 // container style//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .logo_req_wrapper{
-//   display: flex;
-// flex-direction: column;
-// }
-// .top-section {
-//   text-align: center;
-// }
-
-// .top-section img {
-//   max-width: 100%;
-//   height: auto;
-// }
-
-// .top-section{
-//   .tw_logo{
-//     width: 110px;
-//   }
-// }
-
-// .top-section h2 {
-//   margin-top: 20px;
-// }
-
-// .left-section, .right-section {
-//   width: 50%;
-// }
-
-// form {
-//   max-width: 300px;
-//   margin: 0 auto;
-// }
-
-// .lets_get_started_btn{
-//   background-color: #8DC63F;
-//   color: #fff;
-// }
-// /* Add media query for mobile layout */
 
 
 .slider {
@@ -323,6 +271,7 @@ body {
         @media (min-width: 992px) {
           height:55px;
           font-size: 18px;
+          margin-top: 20px;
           i{
             margin-left: 2px;
             svg{
@@ -333,6 +282,7 @@ body {
         @media (min-width: 1600px) {
           height:80px;
           font-size: 24px;
+          margin-top: 30px;
           i{
             margin-left: 2px;
             svg{
@@ -343,6 +293,7 @@ body {
         @media (min-width: 1867px) {
           height:100px;
           font-size: 28px;
+          margin-top: 40px;
           i{
             margin-left: 10px;
             svg{
@@ -467,81 +418,151 @@ body {
   }
 }
 
-
-
-// stepper style //
-
-
-
-
-
-// stepper //
-
-.step_header{
-  padding: 15px;
-  background: rgba(5, 45, 112, 1)!important;
+// template //
+.header{
+  position: relative;
+  .step_header{
+    padding: 15px;
+    background: rgba(5, 45, 112, 1)!important;
+    height: 93px;
+    .wrap_d-flex{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo_wrap{
+        width: fit-content;
+      }
+      .stepper_wrap{
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        .progress-bar{
+          position: absolute;
+          left: 2px;
+          height: 3px;
+          background: var(--silver);
+          width: 99%;
+          span{
+            width: 35%;
+            height: 3px;
+            background: var(--green);
+          }
+        }
+        .form-steps__button{
+          width: 25px;
+          height: 25px;
+          border-radius: 50px;
+          background-color: var(--silver);
+          position: relative;
+          padding: 2px 0 0 0;
+          z-index: 1;  
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.7s ease;
+          &.active{
+            width: 28px;
+            height: 28px;
+            background: rgba(5, 45, 112, 1)!important;
+            border:2px solid var(--green);
+            svg{
+              display: block;
+            }
+          }  
+          svg{
+            display: none;
+          }  
+        }
+      }
+    }
+  }
+  .step_content{
+    height: 89vh;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    .bnr_fxd_svg{
+      position: absolute;
+      right: 0;
+        bottom: -5%;
+      svg{
+        height: 80px;
+      }
+      @media (min-width: 992px) {
+        bottom: -5%;
+        right: -6%;
+        display: block!important;
+        svg{
+          height: 200px;
+        }
+      }
+      @media (min-width: 1367px) {
+        right: -5%;
+        
+      }
+      @media (min-width: 1600px) {
+        right: -4%;
+        bottom: -2%;
+        
+      }
+       @media (min-width: 1867px) {
+        right: 0%;
+        bottom: -3%;
+        svg{
+          height: 267px;
+        }
+      }
+    }
+    @media (min-width: 992px) {
+      .banner_img {
+        max-width: 100%;
+      }
+    }
+    @media (min-width: 1200px) {
+      .banner_img {
+        max-width: 75%;
+      }
+    }
+    @media (min-width: 1600px) {
+      height: 87vh;
+      .banner_img {
+        max-width: 80%;
+      }
+    }
+    @media (min-width: 1867px) {
+      .banner_img {
+        max-width: 95%;
+      }
+    }
+  }
 }
-.form-container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 700px;
-}
+// template //
 
-.form-steps {
-  display: flex;
-  justify-content: space-around;
+// thank you //
+.thank_u_wrap{
+  height: 100vh;
+  background: rgba(213, 235, 255, 1);
+  display: flex!important;
   align-items: center;
-
-  background-color: var(--light-gray-1);
-}
-
-.form-steps__button {
-  position: relative;
-  z-index: 10;
-  width: 40px;
-  height: 40px;
-
-  color: whitesmoke;
-  background: var(--dark-blue);
-  border: none;
-  border-radius: 50%;
-
-  cursor: pointer;
-}
-
-.form-steps {
-  position: relative;
-}
-
-.progress-bar {
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  height: 6px;
-  width: 70%;
-
-  overflow-x: hidden;
-  transform: translateY(-50%);
-}
-
-.progress-bar__fill {
-  width: 100%;
-  height: 100%;
-  background-color: var(--silver);
-
-  transition: all var(--form-transition-time) ease-out;
-  transform: translateX(calc(-100% + calc(100% / 3 * var(--translate-multiplier))));
-}
-
-.stepper-form {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.form-section-container {
-  width: calc(400% + (4 * 4rem));
-  display: flex;
-
-  transition: transform var(--form-transition-time);
-  transform: translateX(calc(((-100% / 4)) * var(--translate-multiplier)));
+  flex-direction: column;
+  justify-content: center;
+  .tw_thank_you{
+    margin-bottom: 20px;
+    max-width: 70%;
+  }
+  h2{
+    font-size: 65px;
+    text-align: center;
+    color:rgba(5, 45, 112, 1);
+    font-weight: 600;
+  }
+  p{
+    font-size: 30px;
+    text-align: center;
+    line-height: 37px;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+  }
 }
