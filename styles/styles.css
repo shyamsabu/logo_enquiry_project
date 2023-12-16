@@ -1,10 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #052D70 !important;
   color: #fff;
   box-sizing: border-box;
+  background: #fff;
+}
+
+:root {
+  --gray-blue: #2c3e50;
+  --dark-blue: #2980b9;
+  --green: #27ae60;
+  --dark-green: #1f8b4c;
+  --light-gray-1: #f1f4f5;
+  --light-gray-2: #ecf0f1;
+  --silver: #bdc3c7;
+  --form-transition-time: 500ms;
+  --translate-multiplier: 0;
 }
 
 .container {
@@ -53,9 +71,15 @@ body {
   margin-left: auto;
 }
 
+.slider .slick-prev,
+.slider .slick-next {
+  display: none;
+}
+
 .banner {
   height: 100vh;
   position: relative;
+  background-color: #052D70 !important;
 }
 .banner .banner_content {
   display: flex;
@@ -405,7 +429,6 @@ body {
 }
 @media (min-width: 992px) {
   .banner .desktop .bnr_fxd_svg {
-    position: fixed;
     bottom: 0;
     right: -6%;
     display: block !important;
@@ -466,4 +489,68 @@ body {
   .banner .mobile {
     display: none !important;
   }
+}
+
+.step_header {
+  padding: 15px;
+  background: rgb(5, 45, 112) !important;
+}
+
+.form-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+.form-steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--light-gray-1);
+}
+
+.form-steps__button {
+  position: relative;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  color: whitesmoke;
+  background: var(--dark-blue);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.form-steps {
+  position: relative;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  height: 6px;
+  width: 70%;
+  overflow-x: hidden;
+  transform: translateY(-50%);
+}
+
+.progress-bar__fill {
+  width: 100%;
+  height: 100%;
+  background-color: var(--silver);
+  transition: all var(--form-transition-time) ease-out;
+  transform: translateX(calc(-100% + 33.3333333333% * var(--translate-multiplier)));
+}
+
+.stepper-form {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.form-section-container {
+  width: calc(400% + 16rem);
+  display: flex;
+  transition: transform var(--form-transition-time);
+  transform: translateX(calc(-25% * var(--translate-multiplier)));
 }/*# sourceMappingURL=styles.css.map */
