@@ -15,58 +15,37 @@ $(document).ready(function() {
 
     
 
-
-// stepper //
-    const nextSectionButtons = $('.next-button');
-    const previousSectionButtons = $('.prev-button');
-    const form = $('#form');
-    let stepOffset = 0;
-  
-    function addStepButtonClickListeners(numberOfStepButtons) {
-      for (let i = 0; i < numberOfStepButtons; i++) {
-        let stepButton = $(`#step-button-${i + 1}`);
-        stepButton.on('click', (e) => handleStepButtonclick(e, i));
-      }
-    }
-  
-    addStepButtonClickListeners(4);
-  
-    form.on('submit', handleFormSubmit);
-  
-    nextSectionButtons.on('click', nextStepInForm);
-  
-    previousSectionButtons.on('click', previousStepInForm);
-  
-    function nextStepInForm(e) {
-      e.preventDefault();
-  
-      stepOffset++;
-      updateTranslateMultiplier();
-    }
-  
-    function previousStepInForm(e) {
-      e.preventDefault();
-  
-      stepOffset--;
-      updateTranslateMultiplier();
-    }
-  
-    function handleStepButtonclick(e, stepNumber) {
-      e.preventDefault();
-  
-      stepOffset = stepNumber;
-      updateTranslateMultiplier();
-    }
-  
-    function handleFormSubmit(e) {
-      e.preventDefault();
-  
-      alert('Thanks for placing an order!');
-  
-      location.reload();
-    }
-  
-    function updateTranslateMultiplier() {
-      $('html').css('--translate-multiplier', stepOffset);
-    }
+    $( "#step-button-1" ).click(function() {
+        $( ".progress-bar span" ).animate({
+         width: "35%"
+          }, 1000 );
+          $("#step-button-2").removeClass('active'); 
+          $("#step-button-3").removeClass('active'); 
+          $("#step-button-4").removeClass('active'); 
+    });
+    $( "#step-button-2" ).click(function() {
+        $( ".progress-bar span" ).animate({
+         width: "65%"
+          }, 1000 );
+          $(this).addClass('active'); 
+          $("#step-button-3").removeClass('active'); 
+          $("#step-button-4").removeClass('active'); 
+    });
+    $( "#step-button-3" ).click(function() {
+        $( ".progress-bar span" ).animate({
+         width: "99%"
+          }, 1000 );
+          $(this).addClass('active'); 
+          $("#step-button-4").removeClass('active'); 
+          $("#step-button-2").addClass('active'); 
+    });
+    $( "#step-button-4" ).click(function() {
+        $( ".progress-bar span" ).animate({
+         width: "99%"
+          }, 1000 );
+          $(this).addClass('active'); 
+          $("#step-button-2").addClass('active'); 
+          $("#step-button-3").addClass('active'); 
+    });
+      
   });
