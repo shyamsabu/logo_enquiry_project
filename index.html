@@ -120,13 +120,14 @@
               <path d="M83.1225 36.6823V49.5363C83.1225 50.5524 83.0721 51.1621 82.9714 51.3653C82.8204 51.6702 82.4176 51.7718 81.8135 51.7718C81.2596 51.7718 80.9072 51.6702 80.7058 51.4669C80.4541 51.1621 80.4037 50.5016 80.4037 49.4347V36.6823H76.1243V49.6379C76.1243 51.2637 77.3326 52.2798 79.6485 52.6355V60.0532H83.928V52.6355C86.244 52.3306 87.4019 51.3145 87.4019 49.6887V36.6823H83.1225Z" fill="white"/>
               <path d="M73.7075 49.333C73.7075 51.5685 71.593 52.7371 67.3135 52.7371C65.2493 52.7371 64.041 52.3306 63.4368 51.4669C62.7823 52.3306 61.4733 52.7371 59.5098 52.7371C55.2303 52.7371 53.1157 51.6193 53.1157 49.333V33.7863H58.1504V49.0282C58.1504 49.1298 58.1504 49.2822 58.1001 49.4854C58.0497 49.7395 58.0497 49.8919 58.0497 49.9935C58.0497 50.9588 58.5532 51.4669 59.5098 51.4669C60.265 51.4669 60.6677 51.1621 60.8691 50.654C60.9195 50.6032 60.9195 50.1459 60.9195 49.333V33.7863H65.9541V49.333C65.9541 49.4346 65.9541 49.5871 65.9038 49.7903C65.8534 49.9935 65.8535 50.1459 65.8535 50.2475C65.8535 51.1113 66.3066 51.4669 67.3135 51.4669C68.2701 51.4669 68.7736 50.9588 68.7736 49.9427C68.7736 49.7903 68.7736 49.6379 68.7232 49.3838V48.9266V33.7863H73.7579V49.333H73.7075Z" fill="white"/>
               </g>
-              </svg>          
+            </svg>          
           </div>
           <div class="stepper_wrap">
-              <button id="step-button-1" class="form-steps__button active"> <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.68015 12.0809C5.41629 12.0809 5.15244 11.9802 4.95102 11.7787L0.401367 7.2291C-0.00146484 6.82643 -0.00146484 6.17351 0.401367 5.77084C0.804199 5.36801 1.45679 5.36801 1.85962 5.77084L5.68015 9.5912L14.0503 1.22119C14.4532 0.818359 15.1057 0.818359 15.5086 1.22119C15.9114 1.62386 15.9114 2.27678 15.5086 2.67944L6.40927 11.7787C6.20786 11.9802 5.944 12.0809 5.68015 12.0809Z" fill="#90C63C"/>
+              <button id="step-button-1" class="form-steps__button active">
+                <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.68015 12.0809C5.41629 12.0809 5.15244 11.9802 4.95102 11.7787L0.401367 7.2291C-0.00146484 6.82643 -0.00146484 6.17351 0.401367 5.77084C0.804199 5.36801 1.45679 5.36801 1.85962 5.77084L5.68015 9.5912L14.0503 1.22119C14.4532 0.818359 15.1057 0.818359 15.5086 1.22119C15.9114 1.62386 15.9114 2.27678 15.5086 2.67944L6.40927 11.7787C6.20786 11.9802 5.944 12.0809 5.68015 12.0809Z" fill="#90C63C"/>
                 </svg>
-                </button>
+              </button>
               <button id="step-button-2" class="form-steps__button">
                   <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.68015 12.0809C5.41629 12.0809 5.15244 11.9802 4.95102 11.7787L0.401367 7.2291C-0.00146484 6.82643 -0.00146484 6.17351 0.401367 5.77084C0.804199 5.36801 1.45679 5.36801 1.85962 5.77084L5.68015 9.5912L14.0503 1.22119C14.4532 0.818359 15.1057 0.818359 15.5086 1.22119C15.9114 1.62386 15.9114 2.27678 15.5086 2.67944L6.40927 11.7787C6.20786 11.9802 5.944 12.0809 5.68015 12.0809Z" fill="#90C63C"/>
@@ -153,11 +154,53 @@
     <div class="step_content">
       <div class="container">
         <div class="row">
+
+
+
           <div class="col-lg-6">
             <div class="left_wrap">
-              
+              <span class="step_count">
+                <i>Step</i><em class="cnt_current">1</em>/<em class="cnt_total">5</em>
+              </span>
+              <h1 class="step_heading">Competitors / Industry</h1>
+              <div class="step_desc">Let's understand your preferences better to craft a logo you'll absolutely love.</div>
+              <form class="lep_form step1_form" action="#">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Select your industry</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option value="1">Dental Clinic</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Who are your main competitors and how do you differ from them?</label>
+                  <input id="comp_website1" type="text" class="form-control" placeholder="Competitor website">
+                </div>
+                <div class="mb-3">
+                  <input id="comp_website2" type="text" class="form-control" placeholder="Competitor website">
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" id="comp_details" rows="3" placeholder="Details"></textarea>
+                </div>
+                <div class="btn_group">
+                  <button type="button" class="btn backbtn">Back</button>
+                  <button type="button" class="btn btn-primary">Next
+                    <span class="btn_svg">
+                      <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.8364 3.69173L9.53691 0.110547C9.33972 -0.0537909 9.04157 -0.0322636 8.87174 0.157544C8.70128 0.347655 8.72298 0.634793 8.92018 0.799131L12.2158 3.54376H0.471751C0.211344 3.54376 0 3.74722 0 3.99857C0 4.24993 0.211344 4.45339 0.471751 4.45339H12.3344L10.4559 6.06978L8.98842 7.18862C8.78431 7.34447 8.7494 7.63039 8.91106 7.82748C9.00415 7.94087 9.14221 8 9.28154 8C9.38406 8 9.48722 7.96816 9.57402 7.90176L11.0626 6.76534L13.8421 4.37485C13.9434 4.28783 14.0009 4.16291 14 4.03193C13.9987 3.90124 13.9396 3.77723 13.8364 3.69173Z" fill="white"/>
+                      </svg>                      
+                    </span>
+                  </button>
+                </div>
+
+              </form>
             </div>
           </div>
+
+
+
+
           <div class="col-lg-6">
             <div class="right_wrap">
               <img src="images/step_right_img.svg" alt="SVG Image" class="banner_img img-fluid">
