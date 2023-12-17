@@ -250,9 +250,9 @@ $(document).ready(function() {
 
   // font section form 
   const items = [
-    { imagePath: "./images/modern.png", description: "Modern" },
-    { imagePath: "./images/handwritten.png", description: "Handwritten" },
-    { imagePath: "./images/elegant.png", description: "Elegant" },
+    { imagePath: "./images/font_preview/modern.png", description: "Item 1", subText: "Crisp with an urban flair" },
+    { imagePath: "./images/font_preview/handwritten.png", description: "Item 2", subText: "Add a human touch" },
+    { imagePath: "./images/font_preview/elegant.png", description: "Item 3", subText: "Touch of sophistication" },
     // Add more items as needed
   ];
 
@@ -262,9 +262,11 @@ $(document).ready(function() {
     const itemBox = $('<div class="item-box"></div>');
     const itemImage = $(`<img src="${item.imagePath}" alt="${item.description}" class="item-image">`);
     const tickIcon = $('<div class="tick-icon"></div>');
+    const subtext = $('<span class="subtext"></span>').text(item.subText);
 
     itemBox.append(itemImage);
     itemBox.append(tickIcon);
+    itemBox.append(subtext);
 
     itemBox.on('click', function () {
       itemBox.toggleClass('selected');

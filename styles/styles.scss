@@ -646,6 +646,9 @@ textarea{
     cursor: pointer;
     border: 2px solid transparent;
     overflow: hidden;
+    height: 100px;
+    width: 31%;
+    padding: 10px;
   }
   
   .item-box.selected {
@@ -655,6 +658,12 @@ textarea{
   .item-image {
     width: 100%;
     height: auto;
+  }
+  .subtext {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
   }
 }
 
