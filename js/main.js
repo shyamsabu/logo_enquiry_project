@@ -26,6 +26,11 @@ $(document).ready(function() {
           $("#step-button-3").removeClass('active'); 
           $("#step-button-4").removeClass('active'); 
           $("#step-button-5").removeClass('active');
+          $('.form_wrap_5').hide();
+          $('.form_wrap_4').hide();
+          $('.form_wrap_3').hide();
+          $('.form_wrap_2').hide();
+          $('.form_wrap_1').show();
     });
     $( "#step-button-2" ).click(function() {
         $( ".progress-bar span" ).animate({
@@ -34,6 +39,11 @@ $(document).ready(function() {
           $(this).addClass('active'); 
           $("#step-button-3").removeClass('active'); 
           $("#step-button-4").removeClass('active'); 
+          $('.form_wrap_5').hide();
+          $('.form_wrap_4').hide();
+          $('.form_wrap_3').hide();
+          $('.form_wrap_1').hide();
+          $('.form_wrap_2').show();
     });
     $( "#step-button-3" ).click(function() {
         $( ".progress-bar span" ).animate({
@@ -42,6 +52,11 @@ $(document).ready(function() {
           $(this).addClass('active'); 
           $("#step-button-4").removeClass('active'); 
           $("#step-button-2").addClass('active'); 
+          $('.form_wrap_5').hide();
+          $('.form_wrap_4').hide();
+          $('.form_wrap_2').hide();
+          $('.form_wrap_1').hide();
+          $('.form_wrap_3').show();
     });
     $( "#step-button-4" ).click(function() {
         $( ".progress-bar span" ).animate({
@@ -51,6 +66,11 @@ $(document).ready(function() {
           $("#step-button-2").addClass('active'); 
           $("#step-button-3").addClass('active'); 
           $("#step-button-5").removeClass('active'); 
+          $('.form_wrap_5').hide();
+          $('.form_wrap_2').hide();
+          $('.form_wrap_3').hide();
+          $('.form_wrap_1').hide();
+          $('.form_wrap_4').show();
     });
     $( "#step-button-5" ).click(function() {
       $( ".progress-bar span" ).animate({
@@ -60,6 +80,11 @@ $(document).ready(function() {
         $("#step-button-2").addClass('active'); 
         $("#step-button-3").addClass('active'); 
         $("#step-button-4").addClass('active'); 
+          $('.form_wrap_2').hide();
+          $('.form_wrap_4').hide();
+          $('.form_wrap_3').hide();
+          $('.form_wrap_1').hide();
+          $('.form_wrap_5').show();
     });
 
 
@@ -125,6 +150,10 @@ $(document).ready(function() {
       $('.form_wrap_3').hide();
       $('.form_wrap_4').show();
       $('.form_wrap_5').hide();
+      $( ".progress-bar span" ).animate({
+        width: "99%"
+        }, 1000 );
+        $("#step-button-5").removeClass('active'); 
     });
     $( "#prev_btn_4" ).click(function() {
       $('.form_wrap_2').hide();
@@ -132,6 +161,10 @@ $(document).ready(function() {
       $('.form_wrap_4').hide();
       $('.form_wrap_3').show();
       $('.form_wrap_5').hide();
+      $( ".progress-bar span" ).animate({
+        width: "75%"
+        }, 1000 );
+        $("#step-button-4").removeClass('active'); 
     });
     $( "#prev_btn_3" ).click(function() {
       $('.form_wrap_3').hide();
@@ -139,6 +172,10 @@ $(document).ready(function() {
       $('.form_wrap_4').hide();
       $('.form_wrap_2').show();
       $('.form_wrap_5').hide();
+      $( ".progress-bar span" ).animate({
+        width: "50%"
+        }, 1000 );
+        $("#step-button-3").removeClass('active');
     });
     $( "#prev_btn_2" ).click(function() {
       $('.form_wrap_3').hide();
@@ -146,6 +183,10 @@ $(document).ready(function() {
       $('.form_wrap_4').hide();
       $('.form_wrap_1').show();
       $('.form_wrap_5').hide();
+      $( ".progress-bar span" ).animate({
+        width: "28%"
+        }, 1000 );
+        $("#step-button-2").removeClass('active');
     });
 
 
