@@ -78,9 +78,18 @@ body {
 
 
 .slider {
+  &.slick-slider{
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+  }
   .slick-prev,
   .slick-next  {
     display: none;
+  }
+  .slick-slide {
+    pointer-events: auto !important;
   }
 }
 
@@ -504,6 +513,160 @@ textarea{
       color: #ACACAC;
   }
 }
+
+//color shades
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-box {
+  width: 31%;
+  height: 144px;
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tick-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #5A7FF8;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+.tick-icon:before {
+  content: '\2713'; /* Unicode character for a checkmark */
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.color-info {
+  text-align: left;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #555;
+  min-height: 58px;
+  strong{
+    color: #000000;
+    font-weight: 600;
+  }
+  em{
+    font-style: normal;
+    color: #969696;
+  }
+}
+
+.color-shades {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.shade-box {
+  display: inline-flex;
+  position: relative;
+  width: 25%;
+  min-width: 25%;
+  height: 25px;
+  margin: 0;
+}
+
+
+//logo form
+#logoSelectionForm{
+
+  .logo_category_wrap{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    
+    .logo_category {
+      margin-bottom: 20px;
+      display: inline-flex;
+      flex-direction: column;
+      width: 50%;
+      h3{
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .logo_images {
+        display: flex;
+        gap: 10px;
+        margin-right: 30px;
+        .logo_box {
+          cursor: pointer;
+          border: 2px solid transparent;
+          &.selected {
+            border-color: blue;
+          }
+          .logo {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      } 
+
+    }       
+    
+  }
+  
+}
+
+
+//font form
+.step5_form{
+  .item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .item-box {
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent;
+    overflow: hidden;
+    height: 100px;
+    width: 31%;
+    padding: 10px;
+  }
+  
+  .item-box.selected {
+    border-color: blue;
+  }
+  
+  .item-image {
+    width: 100%;
+    height: auto;
+  }
+  .subtext {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+  }
+}
+
 
 // template //
 .header{
