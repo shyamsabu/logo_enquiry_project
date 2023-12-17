@@ -248,6 +248,52 @@ $(document).ready(function() {
   // ===========================================================
 
 
+  // font section form 
+  const items = [
+    { imagePath: "./images/modern.png", description: "Modern" },
+    { imagePath: "./images/handwritten.png", description: "Handwritten" },
+    { imagePath: "./images/elegant.png", description: "Elegant" },
+    // Add more items as needed
+  ];
+
+  const selectedItems = [];
+
+  items.forEach((item, index) => {
+    const itemBox = $('<div class="item-box"></div>');
+    const itemImage = $(`<img src="${item.imagePath}" alt="${item.description}" class="item-image">`);
+    const tickIcon = $('<div class="tick-icon"></div>');
+
+    itemBox.append(itemImage);
+    itemBox.append(tickIcon);
+
+    itemBox.on('click', function () {
+      itemBox.toggleClass('selected');
+      tickIcon.toggle();
+      
+      if (itemBox.hasClass('selected')) {
+        selectedItems.push(index);
+      } else {
+        const selectedIndex = selectedItems.indexOf(index);
+        if (selectedIndex !== -1) {
+          selectedItems.splice(selectedIndex, 1);
+        }
+      }
+
+      // Log the selected items array to the console
+      console.log('Selected Items:', selectedItems);
+    });
+
+    $('#itemContainer').append(itemBox);
+  });
+
+  $('#itemSelectionForm').on('submit', function (event) {
+    event.preventDefault();
+    // Perform any additional actions on form submission if needed
+  });
+  // ========================================
+
+  
+
 
 });
 

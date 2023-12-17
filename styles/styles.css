@@ -671,6 +671,25 @@ textarea {
   max-width: 100%;
 }
 
+.step5_form .item-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.step5_form .item-box {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+.step5_form .item-box.selected {
+  border-color: blue;
+}
+.step5_form .item-image {
+  width: 100%;
+  height: auto;
+}
+
 .header {
   position: relative;
 }

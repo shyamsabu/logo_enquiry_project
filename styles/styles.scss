@@ -633,6 +633,32 @@ textarea{
 }
 
 
+//font form
+.step5_form{
+  .item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .item-box {
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent;
+    overflow: hidden;
+  }
+  
+  .item-box.selected {
+    border-color: blue;
+  }
+  
+  .item-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
 // template //
 .header{
   position: relative;
