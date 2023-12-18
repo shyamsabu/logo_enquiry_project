@@ -212,11 +212,17 @@ $(document).ready(function() {
   const colorShadesCount = 8;
 
   const colors = [
-    { name: 'red', shades: ['#FFCDD2', '#EF9A9A', '#E57373', '#EF5350', '#F44336', '#E53935', '#D32F2F', '#C62828'] },
-    { name: 'orange', shades: ['#F6CD9D', '#F5B051', '#F5A00B', '#F48407', '#F48509', '#F37004', '#F25805', '#F13E04'] },
-    { name: 'green', shades: ['#C8E6C9', '#A5D6A7', '#81C784', '#66BB6A', '#4CAF50', '#43A047', '#388E3C', '#2E7D32'] },
-    { name: 'blue', shades: ['#BBDEFB', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3', '#1E88E5', '#1976D2', '#1565C0'] },
-    { name: 'pink', shades: ['#F8BBD0', '#F48FB1', '#F06292', '#EC407A', '#E91E63', '#D81B60', '#C2185B', '#AD1457'] }
+    { name: 'red', description:'Energy, passion, love', shades: ['#F9BABA', '#F57B7B', '#F45352', '#E43736', '#F01C1A', '#CF0703', '#AF0503', '#880200'] },
+    { name: 'orange', description:'Fun, vibrant, youthful', shades: ['#F6CD9D', '#F5B051', '#F5A00B', '#F48407', '#F48509', '#F37004', '#F25805', '#F13E04'] },
+    { name: 'yellow', description:'Bright, cheerful, full of joy', shades: ['#FCFCDF', '#FAEBA3', '#F6E36E', '#F5D83C', '#F8E713', '#F7CB10', '#F6BA0F', '#F5A70D'] },
+
+    { name: 'blue', description:'Strength, power, reliability', shades: ['#ECF9FF', '#A4DCFC', '#83D0DB', '#57A9B5', '#75ADF7', '#5984EF', '#4664EE', '#312DC1'] },
+    { name: 'purple', description:'Mysterious, luxurious, spiritual', shades: ['#EDB9FF', '#C47BEF', '#B200E2', '#8700C9', '#C4A8E6', '#7E53BA', '#7D00FE', '#5400A7'] },
+    { name: 'pink', description:'Love, compassion, playful', shades: ['#F9E7F3', '#F77CC4', '#ED54AD', '#F31297', '#DB93CD', '#E36AB3', '#CE1885', '#AE0B6E'] },
+
+    { name: 'green', description:'Growth, health, wealth', shades: ['#F3F9CC', '#EBF990', '#BCCB8A', '#5C8A60', '#8CB542', '#699635', '#42541C', '#1A3922'] },
+    { name: 'brown', description:'Honesty, comfort, stability', shades: ['#E9B076', '#C96A1F', '#8C380A', '#591916', '#9C571D', '#7F4C21', '#4E321B', '#2B150A'] },
+    { name: 'grayscale', description:'Honesty, comfort, stability', shades: ['#F8F8F8', '#E6E6E6', '#D6D6D6', '#89939F', '#807979', '#5A5A5D', '#282821', '#0B0909'] },
     // Add more colors with their shades as needed
   ];
 
@@ -225,7 +231,7 @@ $(document).ready(function() {
 
     const tickIcon = $('<div class="tick-icon"></div>');
 
-    const colorInfo = $(`<div class="color-info"><strong>${color.name.charAt(0).toUpperCase() + color.name.slice(1)}</strong><br><em>${colorDescriptions[color.name]}</em></div>`);
+    const colorInfo = $(`<div class="color-info"><strong>${color.name.charAt(0).toUpperCase() + color.name.slice(1)}</strong><br><em>${color.description}</em></div>`);
 
     const colorShades = $('<div class="color-shades"></div>');
 
@@ -294,6 +300,13 @@ $(document).ready(function() {
     { imagePath: "./images/font_preview/modern.png", description: "Item 1", subText: "Crisp with an urban flair" },
     { imagePath: "./images/font_preview/handwritten.png", description: "Item 2", subText: "Add a human touch" },
     { imagePath: "./images/font_preview/elegant.png", description: "Item 3", subText: "Touch of sophistication" },
+
+    { imagePath: "./images/font_preview/classy.png", description: "Item 3", subText: "Stand the test of time" },
+    { imagePath: "./images/font_preview/vintage.png", description: "Item 3", subText: "Add a feel of nostalgia" },
+    { imagePath: "./images/font_preview/bold.png", description: "Item 3", subText: "Leave an impact" },
+    { imagePath: "./images/font_preview/quirky.png", description: "Item 3", subText: "Add a playful twist" },
+    { imagePath: "./images/font_preview/thin.png", description: "Item 3", subText: "Show the gentle side" },
+    { imagePath: "./images/font_preview/bubbly.png", description: "Item 3", subText: "Cheerful and lively" }
     // Add more items as needed
   ];
 
