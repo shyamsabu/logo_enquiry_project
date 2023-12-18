@@ -207,7 +207,7 @@ body {
           margin-bottom: 15px;
         }
       }
-      .mb-3{
+      .form-control{
         margin-bottom: 10px!important;
         @media (min-width: 768px) {
           margin-bottom: 15px!important;
@@ -259,7 +259,7 @@ body {
           right: 0;
           bottom: 0;
           width:0;
-          transition: all 2s ease;
+          transition: all 0.7s ease;
         }
         &:hover{
           &:before{
@@ -448,13 +448,39 @@ body {
     &.backbtn{
       color: #052D70;
       background-color: #fff;
+      border-radius: 3px;
+      height: 35px;
+      &:hover{
+        background-color: #052D70;
+        color:#fff;
+      }
     }
     &:last-child{
-      margin-right: 0;
+      border-radius: 3px;
+      height: 35px;
+      padding: 4px 15px;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '';
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width:0;
+        transition: all 0.7s ease;
+      }
+      &:hover{
+        &:before{
+          background: rgba(33, 33, 33, 0.09);
+          width: 100%;
+        }
+      }
     }
   }
   span.btn_svg {
-    margin-left: 3px;
+    margin-left: 10px;
   }
 }
 .step_count{
@@ -486,12 +512,11 @@ textarea{
 .step_desc{
   font-size: .9rem;
   color: #919191;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 7px;
+  margin-bottom: 30px;
 }
 .lep_form{
   color: #000000;
-  margin-right: 25%;
   select{
     option{
       color: #666666;
@@ -735,6 +760,7 @@ textarea{
     justify-self: center;
     .left_wrap{
       color: #333;
+      margin-right: 25%;
     }
     .bnr_fxd_svg{
       position: absolute;
@@ -819,3 +845,27 @@ textarea{
     margin-top: 20px;
   }
 }
+
+// common style //
+
+.h_resp_45{
+  height: 45px!important;
+}
+.h_resp_100{
+  height: 100px!important;
+}
+.mrg_b{
+  margin-bottom: 30px;
+}
+.form-select{
+  border-radius: 3px!important;
+}
+.form-control{
+  border-radius: 3px!important;
+}
+
+.inner_form_wrap{
+  min-height: 550px;
+  margin-bottom: 20px;
+}
+// common style //
