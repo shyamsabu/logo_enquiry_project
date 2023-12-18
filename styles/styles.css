@@ -754,7 +754,7 @@ textarea {
   width: 99%;
 }
 .header .step_header .wrap_d-flex .stepper_wrap .progress-bar span {
-  width: 29%;
+  width: 0%;
   height: 3px;
   background: var(--green);
 }

@@ -20,12 +20,13 @@ $(document).ready(function() {
 
     $( "#step-button-1" ).click(function() {
         $( ".progress-bar span" ).animate({
-         width: "29%"
+         width: "0%"
           }, 1000 );
           $("#step-button-2").removeClass('active'); 
           $("#step-button-3").removeClass('active'); 
           $("#step-button-4").removeClass('active'); 
           $("#step-button-5").removeClass('active');
+          $("#step-button-1").removeClass('active');
           $('.form_wrap_5').hide();
           $('.form_wrap_4').hide();
           $('.form_wrap_3').hide();
@@ -34,9 +35,9 @@ $(document).ready(function() {
     });
     $( "#step-button-2" ).click(function() {
         $( ".progress-bar span" ).animate({
-         width: "50%"
+         width: "29%"
           }, 1000 );
-          $(this).addClass('active'); 
+          $("#step-button-1").addClass('active'); 
           $("#step-button-3").removeClass('active'); 
           $("#step-button-4").removeClass('active'); 
           $('.form_wrap_5').hide();
@@ -47,9 +48,9 @@ $(document).ready(function() {
     });
     $( "#step-button-3" ).click(function() {
         $( ".progress-bar span" ).animate({
-         width: "75%"
+         width: "50%"
           }, 1000 );
-          $(this).addClass('active'); 
+          $("#step-button-1").addClass('active'); 
           $("#step-button-4").removeClass('active'); 
           $("#step-button-2").addClass('active'); 
           $('.form_wrap_5').hide();
@@ -60,9 +61,9 @@ $(document).ready(function() {
     });
     $( "#step-button-4" ).click(function() {
         $( ".progress-bar span" ).animate({
-         width: "99%"
+         width: "75%"
           }, 1000 );
-          $(this).addClass('active'); 
+          $("#step-button-1").addClass('active'); 
           $("#step-button-2").addClass('active'); 
           $("#step-button-3").addClass('active'); 
           $("#step-button-5").removeClass('active'); 
@@ -76,7 +77,7 @@ $(document).ready(function() {
       $( ".progress-bar span" ).animate({
        width: "99%"
         }, 1000 );
-        $(this).addClass('active'); 
+        $("#step-button-1").addClass('active'); 
         $("#step-button-2").addClass('active'); 
         $("#step-button-3").addClass('active'); 
         $("#step-button-4").addClass('active'); 
@@ -99,9 +100,9 @@ $(document).ready(function() {
       $('.form_wrap_2').show();
       $('.form_wrap_1').hide();
       $( ".progress-bar span" ).animate({
-          width: "50%"
+          width: "29%"
           }, 1000 );
-          $("#step-button-2").addClass('active'); 
+          $("#step-button-1").addClass('active'); 
     });
 
     $( "#next_btn_form_2" ).click(function() {
@@ -109,9 +110,9 @@ $(document).ready(function() {
       $('.form_wrap_1').hide();
       $('.form_wrap_3').show();
       $( ".progress-bar span" ).animate({
-          width: "75%"
+          width: "50%"
           }, 1000 );
-          $("#step-button-3").addClass('active'); 
+          $("#step-button-1").addClass('active'); 
           $("#step-button-2").addClass('active'); 
     });
     $( "#next_btn_form_3" ).click(function() {
@@ -120,10 +121,10 @@ $(document).ready(function() {
       $('.form_wrap_3').hide();
       $('.form_wrap_4').show();
       $( ".progress-bar span" ).animate({
-          width: "99%"
+          width: "75%"
           }, 1000 );
-          $("#step-button-4").addClass('active'); 
           $("#step-button-3").addClass('active'); 
+          $("#step-button-1").addClass('active'); 
           $("#step-button-2").addClass('active'); 
     });
     $( "#next_btn_form_4" ).click(function() {
@@ -135,10 +136,10 @@ $(document).ready(function() {
       $( ".progress-bar span" ).animate({
           width: "99%"
           }, 1000 );
-          $("#step-button-5").addClass('active'); 
+          $("#step-button-4").addClass('active'); 
           $("#step-button-3").addClass('active'); 
           $("#step-button-2").addClass('active'); 
-          $("#step-button-4").addClass('active'); 
+          $("#step-button-1").addClass('active'); 
     });
 
 
@@ -151,9 +152,10 @@ $(document).ready(function() {
       $('.form_wrap_4').show();
       $('.form_wrap_5').hide();
       $( ".progress-bar span" ).animate({
-        width: "99%"
+        width: "75%"
         }, 1000 );
         $("#step-button-5").removeClass('active'); 
+        $("#step-button-4").removeClass('active');
     });
     $( "#prev_btn_4" ).click(function() {
       $('.form_wrap_2').hide();
@@ -162,9 +164,9 @@ $(document).ready(function() {
       $('.form_wrap_3').show();
       $('.form_wrap_5').hide();
       $( ".progress-bar span" ).animate({
-        width: "75%"
+        width: "50%"
         }, 1000 );
-        $("#step-button-4").removeClass('active'); 
+        $("#step-button-3").removeClass('active'); 
     });
     $( "#prev_btn_3" ).click(function() {
       $('.form_wrap_3').hide();
@@ -173,9 +175,9 @@ $(document).ready(function() {
       $('.form_wrap_2').show();
       $('.form_wrap_5').hide();
       $( ".progress-bar span" ).animate({
-        width: "50%"
+        width: "28%"
         }, 1000 );
-        $("#step-button-3").removeClass('active');
+        $("#step-button-2").removeClass('active');
     });
     $( "#prev_btn_2" ).click(function() {
       $('.form_wrap_3').hide();
@@ -184,14 +186,15 @@ $(document).ready(function() {
       $('.form_wrap_1').show();
       $('.form_wrap_5').hide();
       $( ".progress-bar span" ).animate({
-        width: "28%"
+        width: "0%"
         }, 1000 );
-        $("#step-button-2").removeClass('active');
+        $("#step-button-1").removeClass('active');
     });
 
 
 
     $('#next_btn_form_5').on('click', function(event){
+      $("#step-button-5").addClass('active');
       event.preventDefault(); 
       $('.slider').slick('slickNext');
     });
