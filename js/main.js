@@ -19,182 +19,185 @@ $(document).ready(function() {
     });
 
     $( "#step-button-1" ).click(function() {
-        $( ".progress-bar span" ).animate({
-         width: "29%"
-          }, 1000 );
-          $("#step-button-2").removeClass('active'); 
-          $("#step-button-3").removeClass('active'); 
-          $("#step-button-4").removeClass('active'); 
-          $("#step-button-5").removeClass('active');
-          $('.form_wrap_5').hide();
-          $('.form_wrap_4').hide();
-          $('.form_wrap_3').hide();
-          $('.form_wrap_2').hide();
-          $('.form_wrap_1').show();
-    });
-    $( "#step-button-2" ).click(function() {
-        $( ".progress-bar span" ).animate({
-         width: "50%"
-          }, 1000 );
-          $(this).addClass('active'); 
-          $("#step-button-3").removeClass('active'); 
-          $("#step-button-4").removeClass('active'); 
-          $('.form_wrap_5').hide();
-          $('.form_wrap_4').hide();
-          $('.form_wrap_3').hide();
-          $('.form_wrap_1').hide();
-          $('.form_wrap_2').show();
-    });
-    $( "#step-button-3" ).click(function() {
-        $( ".progress-bar span" ).animate({
-         width: "75%"
-          }, 1000 );
-          $(this).addClass('active'); 
-          $("#step-button-4").removeClass('active'); 
-          $("#step-button-2").addClass('active'); 
-          $('.form_wrap_5').hide();
-          $('.form_wrap_4').hide();
-          $('.form_wrap_2').hide();
-          $('.form_wrap_1').hide();
-          $('.form_wrap_3').show();
-    });
-    $( "#step-button-4" ).click(function() {
-        $( ".progress-bar span" ).animate({
-         width: "99%"
-          }, 1000 );
-          $(this).addClass('active'); 
-          $("#step-button-2").addClass('active'); 
-          $("#step-button-3").addClass('active'); 
-          $("#step-button-5").removeClass('active'); 
-          $('.form_wrap_5').hide();
-          $('.form_wrap_2').hide();
-          $('.form_wrap_3').hide();
-          $('.form_wrap_1').hide();
-          $('.form_wrap_4').show();
-    });
-    $( "#step-button-5" ).click(function() {
       $( ".progress-bar span" ).animate({
-       width: "99%"
+       width: "0%"
         }, 1000 );
-        $(this).addClass('active'); 
+        $("#step-button-2").removeClass('active'); 
+        $("#step-button-3").removeClass('active'); 
+        $("#step-button-4").removeClass('active'); 
+        $("#step-button-5").removeClass('active');
+        $("#step-button-1").removeClass('active');
+        $('.form_wrap_5').hide();
+        $('.form_wrap_4').hide();
+        $('.form_wrap_3').hide();
+        $('.form_wrap_2').hide();
+        $('.form_wrap_1').show();
+  });
+  $( "#step-button-2" ).click(function() {
+      $( ".progress-bar span" ).animate({
+       width: "29%"
+        }, 1000 );
+        $("#step-button-1").addClass('active'); 
+        $("#step-button-3").removeClass('active'); 
+        $("#step-button-4").removeClass('active'); 
+        $('.form_wrap_5').hide();
+        $('.form_wrap_4').hide();
+        $('.form_wrap_3').hide();
+        $('.form_wrap_1').hide();
+        $('.form_wrap_2').show();
+  });
+  $( "#step-button-3" ).click(function() {
+      $( ".progress-bar span" ).animate({
+       width: "50%"
+        }, 1000 );
+        $("#step-button-1").addClass('active'); 
+        $("#step-button-4").removeClass('active'); 
+        $("#step-button-2").addClass('active'); 
+        $('.form_wrap_5').hide();
+        $('.form_wrap_4').hide();
+        $('.form_wrap_2').hide();
+        $('.form_wrap_1').hide();
+        $('.form_wrap_3').show();
+  });
+  $( "#step-button-4" ).click(function() {
+      $( ".progress-bar span" ).animate({
+       width: "75%"
+        }, 1000 );
+        $("#step-button-1").addClass('active'); 
         $("#step-button-2").addClass('active'); 
         $("#step-button-3").addClass('active'); 
-        $("#step-button-4").addClass('active'); 
-          $('.form_wrap_2').hide();
-          $('.form_wrap_4').hide();
-          $('.form_wrap_3').hide();
-          $('.form_wrap_1').hide();
-          $('.form_wrap_5').show();
-    });
-
-
-
-
-    $('.form_wrap_2').hide();
-    $('.form_wrap_3').hide();
-    $('.form_wrap_4').hide();
-    $('.form_wrap_5').hide();
-
-    $( "#next_btn_form_1" ).click(function() {
-      $('.form_wrap_2').show();
-      $('.form_wrap_1').hide();
-      $( ".progress-bar span" ).animate({
-          width: "50%"
-          }, 1000 );
-          $("#step-button-2").addClass('active'); 
-    });
-
-    $( "#next_btn_form_2" ).click(function() {
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').show();
-      $( ".progress-bar span" ).animate({
-          width: "75%"
-          }, 1000 );
-          $("#step-button-3").addClass('active'); 
-          $("#step-button-2").addClass('active'); 
-    });
-    $( "#next_btn_form_3" ).click(function() {
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').hide();
-      $('.form_wrap_4').show();
-      $( ".progress-bar span" ).animate({
-          width: "99%"
-          }, 1000 );
-          $("#step-button-4").addClass('active'); 
-          $("#step-button-3").addClass('active'); 
-          $("#step-button-2").addClass('active'); 
-    });
-    $( "#next_btn_form_4" ).click(function() {
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').hide();
-      $('.form_wrap_4').hide();
-      $('.form_wrap_5').show();
-      $( ".progress-bar span" ).animate({
-          width: "99%"
-          }, 1000 );
-          $("#step-button-5").addClass('active'); 
-          $("#step-button-3").addClass('active'); 
-          $("#step-button-2").addClass('active'); 
-          $("#step-button-4").addClass('active'); 
-    });
-
-
-
-
-    $( "#prev_btn_5" ).click(function() {
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').hide();
-      $('.form_wrap_4').show();
-      $('.form_wrap_5').hide();
-      $( ".progress-bar span" ).animate({
-        width: "99%"
-        }, 1000 );
         $("#step-button-5").removeClass('active'); 
-    });
-    $( "#prev_btn_4" ).click(function() {
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_4').hide();
-      $('.form_wrap_3').show();
-      $('.form_wrap_5').hide();
-      $( ".progress-bar span" ).animate({
-        width: "75%"
+        $('.form_wrap_5').hide();
+        $('.form_wrap_2').hide();
+        $('.form_wrap_3').hide();
+        $('.form_wrap_1').hide();
+        $('.form_wrap_4').show();
+  });
+  $( "#step-button-5" ).click(function() {
+    $( ".progress-bar span" ).animate({
+     width: "99%"
+      }, 1000 );
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+      $("#step-button-3").addClass('active'); 
+      $("#step-button-4").addClass('active'); 
+        $('.form_wrap_2').hide();
+        $('.form_wrap_4').hide();
+        $('.form_wrap_3').hide();
+        $('.form_wrap_1').hide();
+        $('.form_wrap_5').show();
+  });
+
+
+
+
+  $('.form_wrap_2').hide();
+  $('.form_wrap_3').hide();
+  $('.form_wrap_4').hide();
+  $('.form_wrap_5').hide();
+
+  $( "#next_btn_form_1" ).click(function() {
+    $('.form_wrap_2').show();
+    $('.form_wrap_1').hide();
+    $( ".progress-bar span" ).animate({
+        width: "29%"
         }, 1000 );
-        $("#step-button-4").removeClass('active'); 
-    });
-    $( "#prev_btn_3" ).click(function() {
-      $('.form_wrap_3').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_4').hide();
-      $('.form_wrap_2').show();
-      $('.form_wrap_5').hide();
-      $( ".progress-bar span" ).animate({
+        $("#step-button-1").addClass('active'); 
+  });
+
+  $( "#next_btn_form_2" ).click(function() {
+    $('.form_wrap_2').hide();
+    $('.form_wrap_1').hide();
+    $('.form_wrap_3').show();
+    $( ".progress-bar span" ).animate({
         width: "50%"
         }, 1000 );
-        $("#step-button-3").removeClass('active');
-    });
-    $( "#prev_btn_2" ).click(function() {
-      $('.form_wrap_3').hide();
-      $('.form_wrap_2').hide();
-      $('.form_wrap_4').hide();
-      $('.form_wrap_1').show();
-      $('.form_wrap_5').hide();
-      $( ".progress-bar span" ).animate({
-        width: "28%"
+        $("#step-button-1").addClass('active'); 
+        $("#step-button-2").addClass('active'); 
+  });
+  $( "#next_btn_form_3" ).click(function() {
+    $('.form_wrap_2').hide();
+    $('.form_wrap_1').hide();
+    $('.form_wrap_3').hide();
+    $('.form_wrap_4').show();
+    $( ".progress-bar span" ).animate({
+        width: "75%"
         }, 1000 );
-        $("#step-button-2").removeClass('active');
-    });
+        $("#step-button-3").addClass('active'); 
+        $("#step-button-1").addClass('active'); 
+        $("#step-button-2").addClass('active'); 
+  });
+  $( "#next_btn_form_4" ).click(function() {
+    $('.form_wrap_2').hide();
+    $('.form_wrap_1').hide();
+    $('.form_wrap_3').hide();
+    $('.form_wrap_4').hide();
+    $('.form_wrap_5').show();
+    $( ".progress-bar span" ).animate({
+        width: "99%"
+        }, 1000 );
+        $("#step-button-4").addClass('active'); 
+        $("#step-button-3").addClass('active'); 
+        $("#step-button-2").addClass('active'); 
+        $("#step-button-1").addClass('active'); 
+  });
 
 
 
-    $('#next_btn_form_5').on('click', function(event){
-      event.preventDefault(); 
-      $('.slider').slick('slickNext');
-    });
+
+  $( "#prev_btn_5" ).click(function() {
+    $('.form_wrap_2').hide();
+    $('.form_wrap_1').hide();
+    $('.form_wrap_3').hide();
+    $('.form_wrap_4').show();
+    $('.form_wrap_5').hide();
+    $( ".progress-bar span" ).animate({
+      width: "75%"
+      }, 1000 );
+      $("#step-button-5").removeClass('active'); 
+      $("#step-button-4").removeClass('active');
+  });
+  $( "#prev_btn_4" ).click(function() {
+    $('.form_wrap_2').hide();
+    $('.form_wrap_1').hide();
+    $('.form_wrap_4').hide();
+    $('.form_wrap_3').show();
+    $('.form_wrap_5').hide();
+    $( ".progress-bar span" ).animate({
+      width: "50%"
+      }, 1000 );
+      $("#step-button-3").removeClass('active'); 
+  });
+  $( "#prev_btn_3" ).click(function() {
+    $('.form_wrap_3').hide();
+    $('.form_wrap_1').hide();
+    $('.form_wrap_4').hide();
+    $('.form_wrap_2').show();
+    $('.form_wrap_5').hide();
+    $( ".progress-bar span" ).animate({
+      width: "28%"
+      }, 1000 );
+      $("#step-button-2").removeClass('active');
+  });
+  $( "#prev_btn_2" ).click(function() {
+    $('.form_wrap_3').hide();
+    $('.form_wrap_2').hide();
+    $('.form_wrap_4').hide();
+    $('.form_wrap_1').show();
+    $('.form_wrap_5').hide();
+    $( ".progress-bar span" ).animate({
+      width: "0%"
+      }, 1000 );
+      $("#step-button-1").removeClass('active');
+  });
+
+
+
+  $('#next_btn_form_5').on('click', function(event){
+    $("#step-button-5").addClass('active');
+    event.preventDefault(); 
+    $('.slider').slick('slickNext');
+  });
 
 
 
@@ -350,7 +353,38 @@ $(document).ready(function() {
 
   
 
+//  tagify //
 
+var $input = $('#tag_inp').tagify({
+  whitelist : [
+      {"id":1, "value":"some string"}
+  ]
+})
+.on('add', function(e, tagName){
+    console.log('JQEURY EVENT: ', 'added', tagName)
+})
+.on("invalid", function(e, tagName) {
+    console.log('JQEURY EVENT: ',"invalid", e, ' ', tagName);
+});
+
+//  tagify //
+
+
+
+// image select//
+function formatState (state) {
+  if (!state.id) { return state.text; }
+  var $state = $(
+    '<span><img src="' + $(state.element).attr('data-src') + '" class="img-flag" /> ' + state.text + '</span>'
+  );
+  return $state;
+};
+$("#img_select").select2({
+  dropdownCss: { "max-height": "200px" }, // Adjust as needed
+  minimumResultsForSearch: Infinity,
+  templateResult: formatState,
+  templateSelection: formatState
+});
 });
 
 

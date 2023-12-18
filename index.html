@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@yaireo/tagify/dist/tagify.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles/styles.css">
   <title>Your Landing Page</title>
 </head>
@@ -119,7 +121,7 @@
             </svg>          
           </div>
           <div class="stepper_wrap">
-              <button id="step-button-1" class="form-steps__button active">
+               <button id="step-button-1" class="form-steps__button">
                 <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.68015 12.0809C5.41629 12.0809 5.15244 11.9802 4.95102 11.7787L0.401367 7.2291C-0.00146484 6.82643 -0.00146484 6.17351 0.401367 5.77084C0.804199 5.36801 1.45679 5.36801 1.85962 5.77084L5.68015 9.5912L14.0503 1.22119C14.4532 0.818359 15.1057 0.818359 15.5086 1.22119C15.9114 1.62386 15.9114 2.27678 15.5086 2.67944L6.40927 11.7787C6.20786 11.9802 5.944 12.0809 5.68015 12.0809Z" fill="#90C63C"/>
                 </svg>
@@ -202,16 +204,16 @@
                       <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                       <textarea class="form-control h_resp_100 mrg_b" id="compet_details" rows="3" placeholder="Details"></textarea>
                       <label for="logo_elements" class="form-label">What specific elements would you like to include in your logo design?</label>
-                      <input id="comp_website2" type="text" class="form-control h_resp_45 mrg_b" placeholder="Competitor website">
+                      <input id="tag_inp" type="text" value="Shield, pigeon, Lion"class="form-control adj_height mrg_b">
                     <div class=" texture_line">
                       <label for="texture_line_dp" class="form-label">What level of detailing do you prefer?</label>
-                      <select class="form-select h_resp_45" aria-label="Default select example">
-                        <option value="1">&lt;thumbnail&gt; Stroke type</option>
-                        <option value="2">&lt;thumbnail&gt; Image type</option>
-                        <option value="3">&lt;thumbnail&gt; Text/Font with image type</option>
-                        <option value="3">&lt;thumbnail&gt; Font only type</option>
-                        <option value="3">&lt;thumbnail&gt; Vector shape type</option>
-                      </select>
+                      <div class="select_wrap">
+                        <select id="img_select" class="form-control h_resp_45">
+                          <option value='option-1' data-src="./images/logos/image_37.png">H&M</option>
+                          <option value='option-2' data-src="./images/logos/image_38.png">FILA</option>
+                          <option value='option-3' data-src="./images/logos/image_40.png">Coco Cola</option>
+                        </select>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -409,6 +411,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://unpkg.com/@yaireo/tagify/dist/jQuery.tagify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
