@@ -340,7 +340,38 @@ $(document).ready(function() {
 
   
 
+//  tagify //
 
+  var $input = $('#tag_inp').tagify({
+    whitelist : [
+        {"id":1, "value":"some string"}
+    ]
+  })
+  .on('add', function(e, tagName){
+      console.log('JQEURY EVENT: ', 'added', tagName)
+  })
+  .on("invalid", function(e, tagName) {
+      console.log('JQEURY EVENT: ',"invalid", e, ' ', tagName);
+  });
+
+//  tagify //
+
+
+
+// image select//
+  function formatState (state) {
+    if (!state.id) { return state.text; }
+    var $state = $(
+      '<span><img src="' + $(state.element).attr('data-src') + '" class="img-flag" /> ' + state.text + '</span>'
+    );
+    return $state;
+  };
+  $("#img_select").select2({
+    dropdownCss: { "max-height": "200px" }, // Adjust as needed
+    minimumResultsForSearch: Infinity,
+    templateResult: formatState,
+    templateSelection: formatState
+  });
 });
 
 
