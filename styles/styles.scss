@@ -630,7 +630,7 @@ textarea{
       flex-direction: column;
       width: 50%;
       h3{
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
       }
 
@@ -640,12 +640,18 @@ textarea{
         margin-right: 30px;
         .logo_box {
           cursor: pointer;
-          border: 2px solid transparent;
+          width: 152px;
+          height: 108px;
+          border: 1px solid #dbdbdb;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           &.selected {
             border-color: blue;
           }
           .logo {
-            width: 100%;
+            width: auto;
             max-width: 100%;
           }
         }
@@ -671,9 +677,15 @@ textarea{
     cursor: pointer;
     border: 2px solid transparent;
     overflow: hidden;
-    height: 100px;
+    height: 150px;
     width: 31%;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #D2D5DB;
+    border-radius: 5px; 
   }
   
   .item-box.selected {
@@ -681,8 +693,8 @@ textarea{
   }
   
   .item-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-width: 100%;
   }
   .subtext {
     display: block;
@@ -720,7 +732,7 @@ textarea{
           background: var(--silver);
           width: 99%;
           span{
-            width: 0%;
+            width: 29%;
             height: 3px;
             background: var(--green);
           }

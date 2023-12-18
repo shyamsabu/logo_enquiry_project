@@ -674,7 +674,7 @@ textarea {
   width: 50%;
 }
 #logoSelectionForm .logo_category_wrap .logo_category h3 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 #logoSelectionForm .logo_category_wrap .logo_category .logo_images {
@@ -684,13 +684,19 @@ textarea {
 }
 #logoSelectionForm .logo_category_wrap .logo_category .logo_images .logo_box {
   cursor: pointer;
-  border: 2px solid transparent;
+  width: 152px;
+  height: 108px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #logoSelectionForm .logo_category_wrap .logo_category .logo_images .logo_box.selected {
   border-color: blue;
 }
 #logoSelectionForm .logo_category_wrap .logo_category .logo_images .logo_box .logo {
-  width: 100%;
+  width: auto;
   max-width: 100%;
 }
 
@@ -704,16 +710,22 @@ textarea {
   cursor: pointer;
   border: 2px solid transparent;
   overflow: hidden;
-  height: 100px;
+  height: 150px;
   width: 31%;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #D2D5DB;
+  border-radius: 5px;
 }
 .step5_form .item-box.selected {
   border-color: blue;
 }
 .step5_form .item-image {
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-width: 100%;
 }
 .step5_form .subtext {
   display: block;
@@ -754,7 +766,7 @@ textarea {
   width: 99%;
 }
 .header .step_header .wrap_d-flex .stepper_wrap .progress-bar span {
-  width: 0%;
+  width: 29%;
   height: 3px;
   background: var(--green);
 }
