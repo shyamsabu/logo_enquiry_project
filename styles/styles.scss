@@ -1109,7 +1109,11 @@ textarea{
    }
   }
 }
-// svg animation styles
+
+// =====================================
+// ============================
+// *** svg animation styles ***
+
 // #step_right_svg{
 //     -webkit-animation: floatSvg 3s infinite  alternate;
 //     -moz-animation: floatSvg 3s infinite  alternate;
@@ -1153,6 +1157,27 @@ textarea{
     -webkit-animation:fadeOut 4s linear infinite;
     -moz-animation:fadeOut 4s linear infinite;
     animation:fadeOut 4s linear infinite;
+}
+
+.left_wrap{
+  position: relative;
+  overflow: hidden;
+}
+.form_wrap_1,.form_wrap_2,.form_wrap_3,.form_wrap_4,.form_wrap_5 {
+  position: relative;
+  left: -800px;
+  -webkit-animation: slideFromLeft 1s forwards;
+  // -webkit-animation-delay: 1.5s;
+  animation: slideFromLeft 1s forwards;
+  // animation-delay: 1.5s;
+}
+// ==============================
+@-webkit-keyframes slideFromLeft {
+  100% { left: 0; }
+}
+
+@keyframes slideFromLeft {
+  100% { left: 0; }
 }
 /*============================*/
 @-webkit-keyframes floatSvg {
