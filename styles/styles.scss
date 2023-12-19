@@ -110,7 +110,7 @@ body {
       height: 100vh;
     }
     @media (min-width: 1200px) {
-      margin-right: 24px;
+      margin-right: 0;
     }
     @media (min-width: 1600px) {
       margin-right: 50px;
@@ -131,7 +131,7 @@ body {
         margin-bottom: 15px;
       }
       @media (min-width: 992px) {
-        font-size: 27px;
+        font-size: 32px;
       }
       @media (min-width: 1600px) {
         font-size: 39.5px;
@@ -159,7 +159,7 @@ body {
         font-size: 13px;
       }
       @media (min-width: 1200px) {
-        font-size: 12.5px;
+        font-size: 14px;
       }
       @media (min-width: 1600px) {
         font-size: 16px;
@@ -343,11 +343,11 @@ body {
     }
     @media (min-width: 1200px) {
       .tw_logo {
-        margin-bottom: 30px;
-        width: 30%;
+        margin-bottom: 36px;
+        width: 31%;
       }
       .banner_img {
-        max-width: 75%;
+        max-width: 72%;
       }
     }
     @media (min-width: 1600px) {
@@ -378,19 +378,30 @@ body {
         height: 80px;
       }
       @media (min-width: 992px) {
-        bottom: 0;
-        right: -6%;
+        bottom: 0%;
+        right: -8.3%;
         display: block!important;
+        svg{
+          height: 170px;
+        }
+      }
+      @media (min-width: 1200px) {
+        bottom: 0%;
+        right: -7.3%;
+        display: block!important;
+        svg{
+          height: 170px;
+        }
+      }
+      @media (min-width: 1366px) {
+        right: -4.5%;
         svg{
           height: 200px;
         }
-      }
-      @media (min-width: 1367px) {
-        right: -5%;
         
       }
       @media (min-width: 1600px) {
-        right: -4%;
+        right: -3.8%;
         
       }
        @media (min-width: 1867px) {
@@ -484,6 +495,21 @@ body {
         }
       }
     }
+    @media (max-width: 1365px) {
+      font-size: 14px;
+      &:last-child{
+        border-radius: 3px;
+        height:30px;
+        padding: 4px 10px;
+        .btn_svg{
+          margin-left: 6px;
+        }
+      }
+      &.backbtn{
+        border-radius: 3px;
+        height: 30px;
+      }
+    }
   }
   span.btn_svg {
     margin-left: 10px;
@@ -504,6 +530,12 @@ body {
   .cnt_total{
     color: #ccc;
   }
+  @media (max-width: 1599px) {
+    font-size: 15px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 13px;
+  }
 }
 textarea{
   resize: none;
@@ -514,6 +546,12 @@ textarea{
   margin: 10px 0 0;
   padding: 0;
   color: #333;
+  @media (max-width: 1599px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 1199px) {
+    font-size: 1.4rem;
+  }
 }
 .step_desc{
   font-size: .9rem;
@@ -522,6 +560,12 @@ textarea{
   margin-bottom: 30px;
   @media (max-width: 1856px) {
     margin-bottom: 20px;
+  }
+  @media (max-width: 1599px) {
+    font-size: .8rem;
+  }
+  @media (max-width: 1199px) {
+    margin-bottom: 15px;
   }
 }
 .lep_form{
@@ -579,6 +623,14 @@ textarea{
   @media (max-width: 1856px) {
     height: 113px;
   }
+  @media (max-width: 1599px) {
+    height: 115px;
+    justify-content: space-between;
+  }
+  @media (max-width: 1199px) {
+    height: 105px;
+    width: 30%;
+  }
 }
 
 .tick-icon {
@@ -621,6 +673,12 @@ textarea{
   em{
     font-style: normal;
     color: #969696;
+    @media (max-width: 1599px) {
+      font-size: 11px;
+    }
+    @media (max-width: 1199px) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -644,6 +702,9 @@ textarea{
   margin: 0;
   @media (max-width: 1856px) {
     height: 20px;
+  }
+  @media (max-width: 1199px) {
+    height: 15px;
   }
 }
 
@@ -734,6 +795,9 @@ textarea{
     @media (max-width: 1856px) {
       height: 115px;
     }
+    @media (max-width: 1199px) {
+      height: 100px;
+    }
   }
   
   .item-box.selected {
@@ -745,6 +809,9 @@ textarea{
     max-width: 100%;
     @media (max-width: 1856px) {
       max-width: 80%;
+    }
+    @media (max-width: 1856px) {
+      max-width: 60%;
     }
   }
   .subtext {
@@ -838,6 +905,13 @@ textarea{
             }
           }
         }
+        @media (max-width: 1599px) {
+          width:360px;
+        }
+        @media (max-width: 1365px) {
+          width:280px;
+        }
+
       }
     }
   }
@@ -848,6 +922,9 @@ textarea{
     justify-self: center;
     .left_wrap{
       color: #333;
+      @media (max-width: 1599px) {
+        padding-top: 15px;
+      }
     }
     .bnr_fxd_svg{
       position: absolute;
@@ -857,49 +934,70 @@ textarea{
         height: 80px;
       }
       @media (min-width: 992px) {
-        bottom: -5%;
-        right: -6%;
+        bottom: 0%;
+        right: -8.3%;
         display: block!important;
+        svg{
+          height: 170px;
+        }
+      }
+      @media (min-width: 1200px) {
+        bottom: -1%;
+        right: -7.3%;
+        display: block!important;
+        svg{
+          height: 170px;
+        }
+      }
+      @media (min-width: 1366px) {
+        right: -4.5%;
+        bottom: -2%;
         svg{
           height: 200px;
         }
-      }
-      @media (min-width: 1367px) {
-        right: -5%;
         
       }
       @media (min-width: 1600px) {
-        right: -4%;
+        right: -3.8%;
         bottom: -2%;
         
       }
        @media (min-width: 1867px) {
         right: 0%;
-        bottom: -3%;
+        bottom: -2%;
         svg{
           height: 267px;
         }
       }
     }
+    .svg_wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      @media (min-width: 992px) {
+        display: block;
+      }
+    }
     @media (min-width: 992px) {
-      .banner_img {
-        max-width: 100%;
+      #step_right_svg {
+       height: 300px;
       }
     }
     @media (min-width: 1200px) {
-      .banner_img {
-        max-width: 75%;
+      #step_right_svg {
+        height: 350px;
       }
     }
     @media (min-width: 1600px) {
-      height: 88vh;
-      .banner_img {
-        max-width: 70%;
+      height: 89vh;
+      #step_right_svg {
+        height: 450px;
       }
     }
     @media (min-width: 1867px) {
-      .banner_img {
-        max-width: 95%;
+      #step_right_svg {
+        height: 550px;
       }
     }
   }
@@ -907,10 +1005,21 @@ textarea{
 // template //
 
 
+// mobile svg ///
 
+.svg_wrapper.mobile{
+  display: block!important;
+  display: flex!important;
+  margin-top: 140px;
+  svg{
+    height: 150px;
+  }
+  @media (min-width: 992px) {
+    display:none!important;
+  }
+}
 
-
-
+// mobile svg ///
 
 
 
@@ -942,17 +1051,30 @@ textarea{
 }
 
 // common style //
-
+.form-label{
+  @media (max-width: 1599px) {
+    font-size: 14px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 12px;
+  }
+}
 .h_resp_45{
   height: 50px!important;
   @media (max-width: 1856px) {
     height: 40px!important;
+  }
+  @media (max-width: 1199px) {
+    height: 35px!important;
   }
 }
 .h_resp_100{
   height: 130px!important;
   @media (max-width: 1856px) {
     height: 80px!important;
+  }
+  @media (max-width: 1199px) {
+    height: 60px!important;
   }
 }
 .adj_height{
@@ -962,16 +1084,30 @@ textarea{
   @media (max-width: 1856px) {
     min-height: 40px !important;
   }
+  @media (max-width: 1199px) {
+    min-height: 35px !important;
+  }
 }
 .mrg_b{
   margin-bottom: 30px;
   @media (max-width: 1856px) {
     margin-bottom: 20px;
   }
+  @media (max-width: 1199px) {
+    margin-bottom: 15px;
+  }
 }
 .form-select{
   border-radius: 3px!important;
   border-color: #C5C6C9!important;
+  color: #666666;
+  @media (max-width: 1599px) {
+    font-size: 14px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 12px;
+    height: 35px !important;
+  }
 }
 .form-control{
   border-radius: 3px!important;
@@ -979,6 +1115,12 @@ textarea{
   &:focus{
     border-color: #dee2e6!important;
     box-shadow: none!important;
+  }
+  @media (max-width: 1599px) {
+    font-size: 14px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 12px;
   }
 }
 
@@ -989,13 +1131,31 @@ textarea{
     min-height: 370px;
     margin-bottom: 15px;
   }
+  @media (max-width: 1599px) {
+    min-height: 380px;
+  }
+  @media (max-width: 1199px) {
+    min-height: 365px;
+  }
 }
 .button_wrap{
   margin-right: 25%;
+  @media (max-width: 1599px) {
+    margin-right: 20%;
+  }
+  @media (max-width: 1199px) {
+    margin-right: 10%;
+  }
 }
 .select2-container{
   height:50px;
   min-width: 542px;
+  @media (max-width: 1599px) {
+    min-width: 434px;
+  }
+  @media (max-width: 1199px) {
+   min-width: 408px;
+  }
 }
 .select_wrap{
   width:100%;
@@ -1009,11 +1169,17 @@ textarea{
   @media (max-width: 1856px) {
     height:40px;
   }
+  @media (max-width: 1199px) {
+    height:35px;
+  }
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
   transform: translateY(8px);
   left: 0%;
   border-width: 7px 6px 0 6px;
+  @media (max-width: 1199px) {
+    transform: translateY(3px);
+  }
 }
 .select2-container--default .select2-results>.select2-results__options{
   max-height: 150px;
@@ -1044,9 +1210,16 @@ textarea{
   span{
     display: flex;
     align-items: center;
+    @media (max-width: 1599px) {
+      font-size: 14px;
+    }
     img{
       margin-right: 15px;
       max-width: 35px;
+      @media (max-width: 1599px) {
+        margin-right: 10px;
+        max-width: 30px;
+      }
     }
   }
 }
@@ -1073,6 +1246,10 @@ textarea{
   font-size: 12px;
   color:rgba(101, 101, 101, 1) ;
   margin-bottom: 10px;
+  @media (max-width: 1199px) {
+   min-width: 50px;
+   margin-bottom: 0px;
+  }
 }
 .tagify {
   display: flex;
@@ -1085,6 +1262,9 @@ textarea{
     margin-bottom: 5px;
     margin-bottom: 5px;
    font-size: 13px;
+   @media (max-width: 1199px) {
+    font-size: 11px;
+  }
    &:hover{
     div{
       &:before{
