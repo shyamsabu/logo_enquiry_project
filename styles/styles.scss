@@ -159,7 +159,7 @@ body {
         font-size: 13px;
       }
       @media (min-width: 1200px) {
-        font-size: 13.3px;
+        font-size: 14px;
       }
       @media (min-width: 1600px) {
         font-size: 16px;
@@ -378,11 +378,11 @@ body {
         height: 80px;
       }
       @media (min-width: 992px) {
-        bottom: 0;
-        right: -4.5%;
+        bottom: 0%;
+        right: -8.3%;
         display: block!important;
         svg{
-          height: 200px;
+          height: 170px;
         }
       }
       @media (min-width: 1200px) {
@@ -495,6 +495,21 @@ body {
         }
       }
     }
+    @media (max-width: 1365px) {
+      font-size: 14px;
+      &:last-child{
+        border-radius: 3px;
+        height:30px;
+        padding: 4px 10px;
+        .btn_svg{
+          margin-left: 6px;
+        }
+      }
+      &.backbtn{
+        border-radius: 3px;
+        height: 30px;
+      }
+    }
   }
   span.btn_svg {
     margin-left: 10px;
@@ -518,6 +533,9 @@ body {
   @media (max-width: 1599px) {
     font-size: 15px;
   }
+  @media (max-width: 1199px) {
+    font-size: 13px;
+  }
 }
 textarea{
   resize: none;
@@ -531,6 +549,9 @@ textarea{
   @media (max-width: 1599px) {
     font-size: 1.6rem;
   }
+  @media (max-width: 1199px) {
+    font-size: 1.4rem;
+  }
 }
 .step_desc{
   font-size: .9rem;
@@ -542,6 +563,9 @@ textarea{
   }
   @media (max-width: 1599px) {
     font-size: .8rem;
+  }
+  @media (max-width: 1199px) {
+    margin-bottom: 15px;
   }
 }
 .lep_form{
@@ -603,6 +627,10 @@ textarea{
     height: 115px;
     justify-content: space-between;
   }
+  @media (max-width: 1199px) {
+    height: 105px;
+    width: 30%;
+  }
 }
 
 .tick-icon {
@@ -648,6 +676,9 @@ textarea{
     @media (max-width: 1599px) {
       font-size: 11px;
     }
+    @media (max-width: 1199px) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -671,6 +702,9 @@ textarea{
   margin: 0;
   @media (max-width: 1856px) {
     height: 20px;
+  }
+  @media (max-width: 1199px) {
+    height: 15px;
   }
 }
 
@@ -761,6 +795,9 @@ textarea{
     @media (max-width: 1856px) {
       height: 115px;
     }
+    @media (max-width: 1199px) {
+      height: 100px;
+    }
   }
   
   .item-box.selected {
@@ -772,6 +809,9 @@ textarea{
     max-width: 100%;
     @media (max-width: 1856px) {
       max-width: 80%;
+    }
+    @media (max-width: 1856px) {
+      max-width: 60%;
     }
   }
   .subtext {
@@ -894,11 +934,11 @@ textarea{
         height: 80px;
       }
       @media (min-width: 992px) {
-        bottom: -5%;
-        right: -4.5%;
+        bottom: 0%;
+        right: -8.3%;
         display: block!important;
         svg{
-          height: 200px;
+          height: 170px;
         }
       }
       @media (min-width: 1200px) {
@@ -934,15 +974,19 @@ textarea{
       display: flex;
       align-items: center;
       justify-content: center;
+      display: none;
+      @media (min-width: 992px) {
+        display: block;
+      }
     }
     @media (min-width: 992px) {
       #step_right_svg {
-        max-width: 100%;
+       height: 300px;
       }
     }
     @media (min-width: 1200px) {
       #step_right_svg {
-        max-width: 80%;
+        height: 350px;
       }
     }
     @media (min-width: 1600px) {
@@ -961,10 +1005,21 @@ textarea{
 // template //
 
 
+// mobile svg ///
 
+.svg_wrapper.mobile{
+  display: block!important;
+  display: flex!important;
+  margin-top: 140px;
+  svg{
+    height: 150px;
+  }
+  @media (min-width: 992px) {
+    display:none!important;
+  }
+}
 
-
-
+// mobile svg ///
 
 
 
@@ -1000,17 +1055,26 @@ textarea{
   @media (max-width: 1599px) {
     font-size: 14px;
   }
+  @media (max-width: 1199px) {
+    font-size: 12px;
+  }
 }
 .h_resp_45{
   height: 50px!important;
   @media (max-width: 1856px) {
     height: 40px!important;
   }
+  @media (max-width: 1199px) {
+    height: 35px!important;
+  }
 }
 .h_resp_100{
   height: 130px!important;
   @media (max-width: 1856px) {
     height: 80px!important;
+  }
+  @media (max-width: 1199px) {
+    height: 60px!important;
   }
 }
 .adj_height{
@@ -1020,11 +1084,17 @@ textarea{
   @media (max-width: 1856px) {
     min-height: 40px !important;
   }
+  @media (max-width: 1199px) {
+    min-height: 35px !important;
+  }
 }
 .mrg_b{
   margin-bottom: 30px;
   @media (max-width: 1856px) {
     margin-bottom: 20px;
+  }
+  @media (max-width: 1199px) {
+    margin-bottom: 15px;
   }
 }
 .form-select{
@@ -1033,6 +1103,10 @@ textarea{
   color: #666666;
   @media (max-width: 1599px) {
     font-size: 14px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 12px;
+    height: 35px !important;
   }
 }
 .form-control{
@@ -1044,6 +1118,9 @@ textarea{
   }
   @media (max-width: 1599px) {
     font-size: 14px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 12px;
   }
 }
 
@@ -1057,11 +1134,17 @@ textarea{
   @media (max-width: 1599px) {
     min-height: 380px;
   }
+  @media (max-width: 1199px) {
+    min-height: 365px;
+  }
 }
 .button_wrap{
   margin-right: 25%;
   @media (max-width: 1599px) {
     margin-right: 20%;
+  }
+  @media (max-width: 1199px) {
+    margin-right: 10%;
   }
 }
 .select2-container{
@@ -1069,6 +1152,9 @@ textarea{
   min-width: 542px;
   @media (max-width: 1599px) {
     min-width: 434px;
+  }
+  @media (max-width: 1199px) {
+   min-width: 408px;
   }
 }
 .select_wrap{
@@ -1083,11 +1169,17 @@ textarea{
   @media (max-width: 1856px) {
     height:40px;
   }
+  @media (max-width: 1199px) {
+    height:35px;
+  }
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
   transform: translateY(8px);
   left: 0%;
   border-width: 7px 6px 0 6px;
+  @media (max-width: 1199px) {
+    transform: translateY(3px);
+  }
 }
 .select2-container--default .select2-results>.select2-results__options{
   max-height: 150px;
@@ -1154,6 +1246,10 @@ textarea{
   font-size: 12px;
   color:rgba(101, 101, 101, 1) ;
   margin-bottom: 10px;
+  @media (max-width: 1199px) {
+   min-width: 50px;
+   margin-bottom: 0px;
+  }
 }
 .tagify {
   display: flex;
@@ -1166,6 +1262,9 @@ textarea{
     margin-bottom: 5px;
     margin-bottom: 5px;
    font-size: 13px;
+   @media (max-width: 1199px) {
+    font-size: 11px;
+  }
    &:hover{
     div{
       &:before{
