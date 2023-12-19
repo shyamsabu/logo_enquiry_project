@@ -379,18 +379,29 @@ body {
       }
       @media (min-width: 992px) {
         bottom: 0;
-        right: -6%;
+        right: -4.5%;
         display: block!important;
         svg{
           height: 200px;
         }
       }
-      @media (min-width: 1367px) {
-        right: -5%;
+      @media (min-width: 1200px) {
+        bottom: 0%;
+        right: -7.3%;
+        display: block!important;
+        svg{
+          height: 170px;
+        }
+      }
+      @media (min-width: 1366px) {
+        right: -4.5%;
+        svg{
+          height: 200px;
+        }
         
       }
       @media (min-width: 1600px) {
-        right: -4%;
+        right: -3.8%;
         
       }
        @media (min-width: 1867px) {
@@ -504,6 +515,9 @@ body {
   .cnt_total{
     color: #ccc;
   }
+  @media (max-width: 1599px) {
+    font-size: 15px;
+  }
 }
 textarea{
   resize: none;
@@ -514,6 +528,9 @@ textarea{
   margin: 10px 0 0;
   padding: 0;
   color: #333;
+  @media (max-width: 1599px) {
+    font-size: 1.6rem;
+  }
 }
 .step_desc{
   font-size: .9rem;
@@ -522,6 +539,9 @@ textarea{
   margin-bottom: 30px;
   @media (max-width: 1856px) {
     margin-bottom: 20px;
+  }
+  @media (max-width: 1599px) {
+    font-size: .8rem;
   }
 }
 .lep_form{
@@ -579,6 +599,10 @@ textarea{
   @media (max-width: 1856px) {
     height: 113px;
   }
+  @media (max-width: 1599px) {
+    height: 115px;
+    justify-content: space-between;
+  }
 }
 
 .tick-icon {
@@ -621,6 +645,9 @@ textarea{
   em{
     font-style: normal;
     color: #969696;
+    @media (max-width: 1599px) {
+      font-size: 11px;
+    }
   }
 }
 
@@ -838,6 +865,13 @@ textarea{
             }
           }
         }
+        @media (max-width: 1599px) {
+          width:360px;
+        }
+        @media (max-width: 1365px) {
+          width:280px;
+        }
+
       }
     }
   }
@@ -848,6 +882,9 @@ textarea{
     justify-self: center;
     .left_wrap{
       color: #333;
+      @media (max-width: 1599px) {
+        padding-top: 15px;
+      }
     }
     .bnr_fxd_svg{
       position: absolute;
@@ -858,48 +895,65 @@ textarea{
       }
       @media (min-width: 992px) {
         bottom: -5%;
-        right: -6%;
+        right: -4.5%;
         display: block!important;
         svg{
           height: 200px;
         }
       }
-      @media (min-width: 1367px) {
-        right: -5%;
+      @media (min-width: 1200px) {
+        bottom: -1%;
+        right: -7.3%;
+        display: block!important;
+        svg{
+          height: 170px;
+        }
+      }
+      @media (min-width: 1366px) {
+        right: -4.5%;
+        bottom: -2%;
+        svg{
+          height: 200px;
+        }
         
       }
       @media (min-width: 1600px) {
-        right: -4%;
+        right: -3.8%;
         bottom: -2%;
         
       }
        @media (min-width: 1867px) {
         right: 0%;
-        bottom: -3%;
+        bottom: -2%;
         svg{
           height: 267px;
         }
       }
     }
+    .svg_wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     @media (min-width: 992px) {
-      .banner_img {
+      #step_right_svg {
         max-width: 100%;
       }
     }
     @media (min-width: 1200px) {
-      .banner_img {
-        max-width: 75%;
+      #step_right_svg {
+        max-width: 80%;
       }
     }
     @media (min-width: 1600px) {
-      height: 88vh;
-      .banner_img {
-        max-width: 70%;
+      height: 89vh;
+      #step_right_svg {
+        height: 450px;
       }
     }
     @media (min-width: 1867px) {
-      .banner_img {
-        max-width: 95%;
+      #step_right_svg {
+        height: 550px;
       }
     }
   }
@@ -942,7 +996,11 @@ textarea{
 }
 
 // common style //
-
+.form-label{
+  @media (max-width: 1599px) {
+    font-size: 14px;
+  }
+}
 .h_resp_45{
   height: 50px!important;
   @media (max-width: 1856px) {
@@ -972,6 +1030,10 @@ textarea{
 .form-select{
   border-radius: 3px!important;
   border-color: #C5C6C9!important;
+  color: #666666;
+  @media (max-width: 1599px) {
+    font-size: 14px;
+  }
 }
 .form-control{
   border-radius: 3px!important;
@@ -979,6 +1041,9 @@ textarea{
   &:focus{
     border-color: #dee2e6!important;
     box-shadow: none!important;
+  }
+  @media (max-width: 1599px) {
+    font-size: 14px;
   }
 }
 
@@ -989,13 +1054,22 @@ textarea{
     min-height: 370px;
     margin-bottom: 15px;
   }
+  @media (max-width: 1599px) {
+    min-height: 380px;
+  }
 }
 .button_wrap{
   margin-right: 25%;
+  @media (max-width: 1599px) {
+    margin-right: 20%;
+  }
 }
 .select2-container{
   height:50px;
   min-width: 542px;
+  @media (max-width: 1599px) {
+    min-width: 434px;
+  }
 }
 .select_wrap{
   width:100%;
@@ -1044,9 +1118,16 @@ textarea{
   span{
     display: flex;
     align-items: center;
+    @media (max-width: 1599px) {
+      font-size: 14px;
+    }
     img{
       margin-right: 15px;
       max-width: 35px;
+      @media (max-width: 1599px) {
+        margin-right: 10px;
+        max-width: 30px;
+      }
     }
   }
 }
