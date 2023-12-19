@@ -1109,3 +1109,203 @@ textarea{
    }
   }
 }
+
+// =====================================
+// ============================
+// *** svg animation styles ***
+
+// #step_right_svg{
+//     -webkit-animation: floatSvg 3s infinite  alternate;
+//     -moz-animation: floatSvg 3s infinite  alternate;
+//     animation: floatSvg 3s infinite  alternate;
+// }
+
+#main_bodies{
+    -webkit-animation: float 4s infinite  alternate;
+    animation: float 4s infinite  alternate;
+}
+
+#cloud_curve{
+    -webkit-animation:fadeOutMoveLeft 8s linear infinite;
+    -moz-animation:fadeOutMoveLeft 8s linear infinite;
+    animation:fadeOutMoveLeft 8s linear infinite;
+    fill: #fff;
+}
+#cloud1{
+    -webkit-animation:fadeOutMoveRight 8s linear infinite;
+    -moz-animation:fadeOutMoveRight 8s linear infinite;
+    animation:fadeOutMoveRight 8s linear infinite;
+    fill: #fff;
+}
+#cloud2{
+    -webkit-animation:fadeOutMoveRight 8s linear infinite;
+    -moz-animation:fadeOutMoveRight 8s linear infinite;
+    animation:fadeOutMoveRight 8s linear infinite;
+    fill: #fff;
+}
+#bird{
+    -webkit-animation:floatOpa 2s linear infinite;
+    -moz-animation:floatOpa 2s linear infinite;
+    animation:floatOpa 2s linear infinite;
+}
+#curves{
+    -webkit-animation:fadeOut 4s linear infinite;
+    -moz-animation:fadeOut 4s linear infinite;
+    animation:fadeOut 4s linear infinite;
+}
+#red_circle, #yellow_circle{
+    -webkit-animation:fadeOut 4s linear infinite;
+    -moz-animation:fadeOut 4s linear infinite;
+    animation:fadeOut 4s linear infinite;
+}
+
+.left_wrap{
+  position: relative;
+  overflow: hidden;
+}
+.form_wrap_1,.form_wrap_2,.form_wrap_3,.form_wrap_4,.form_wrap_5 {
+  position: relative;
+  left: -800px;
+  -webkit-animation: slideFromLeft 1s forwards;
+  // -webkit-animation-delay: 1.5s;
+  animation: slideFromLeft 1s forwards;
+  // animation-delay: 1.5s;
+}
+// ==============================
+@-webkit-keyframes slideFromLeft {
+  100% { left: 0; }
+}
+
+@keyframes slideFromLeft {
+  100% { left: 0; }
+}
+/*============================*/
+@-webkit-keyframes floatSvg {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes floatSvg {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+/*=================================*/
+@-webkit-keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+/*======================================*/
+@-webkit-keyframes floatOpa {
+    0% {
+        transform: translatey(0px);
+        opacity:1;
+    }
+    50% {
+        transform: translatey(-10px);
+        opacity:.6;
+    }
+    100% {
+        transform: translatey(0px);
+        opacity:1;
+    }
+}
+@keyframes floatOpa {
+    0% {
+        transform: translatey(0px);
+        opacity:1;
+    }
+    50% {
+        transform: translatey(-10px);
+        opacity:.6;
+    }
+    100% {
+        transform: translatey(0px);
+        opacity:1;
+    }
+}
+/*==================================*/
+@keyframes fadeIn {
+    0% {
+        opacity: .1;
+    }
+    50% {
+        opacity: .9;
+    }
+    100% {
+        opacity: .1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadeOutMoveLeft {
+    0% {
+        opacity: 0;
+        transform: translatex(0px);
+    }
+    25% {
+      opacity: .5;
+        transform: translatex(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translatex(-80px);
+    }
+    75% {
+        opacity: .5;
+        transform: translatex(-100px);
+    }
+    100% {
+        opacity: 0;
+        transform: translatex(-120px);
+    }
+} 
+@keyframes fadeOutMoveRight {
+    0% {
+        opacity: 0;
+        transform: translatex(0px);
+    }
+    25% {
+        opacity: .5;
+        transform: translatex(60px);
+    }
+    50% {
+        opacity: 1;
+        transform: translatex(110px);
+    }
+    75% {
+        opacity: .5;
+        transform: translatex(140px);
+    }
+    100% {
+        opacity: 0;
+        transform: translatex(190px);
+    }
+}
+/*===============================*/
