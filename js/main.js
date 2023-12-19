@@ -40,6 +40,7 @@ $(document).ready(function() {
         $("#step-button-1").addClass('active'); 
         $("#step-button-3").removeClass('active'); 
         $("#step-button-4").removeClass('active'); 
+        $("#step-button-2").removeClass('active')
         $('.form_wrap_5').hide();
         $('.form_wrap_4').hide();
         $('.form_wrap_3').hide();
@@ -51,7 +52,8 @@ $(document).ready(function() {
        width: "50%"
         }, 1000 );
         $("#step-button-1").addClass('active'); 
-        $("#step-button-4").removeClass('active'); 
+        $("#step-button-4").removeClass('active');
+        $("#step-button-3").removeClass('active'); 
         $("#step-button-2").addClass('active'); 
         $('.form_wrap_5').hide();
         $('.form_wrap_4').hide();
@@ -67,6 +69,7 @@ $(document).ready(function() {
         $("#step-button-2").addClass('active'); 
         $("#step-button-3").addClass('active'); 
         $("#step-button-5").removeClass('active'); 
+        $("#step-button-4").removeClass('active'); 
         $('.form_wrap_5').hide();
         $('.form_wrap_2').hide();
         $('.form_wrap_3').hide();
