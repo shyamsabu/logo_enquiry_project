@@ -7,8 +7,7 @@ $(document).ready(function() {
       adaptiveHeight: false,
       arrows: false,
       draggable: false
-    });
-  
+    });  
     $('.lets_get_started_btn').on('click', function(event) {
       event.preventDefault(); // Prevent the default behavior (page reload)
       $('.slider').slick('slickNext');
@@ -17,7 +16,6 @@ $(document).ready(function() {
       event.preventDefault(); // Prevent the default behavior (page reload)
       $('.slider').slick('slickPrev');
     });
-
     $( "#step-button-1" ).click(function() {
       $( ".progress-bar span" ).animate({
        width: "0%"
@@ -100,49 +98,105 @@ $(document).ready(function() {
   $('.form_wrap_5').hide();
 
   $( "#next_btn_form_1" ).click(function() {
-    $('.form_wrap_2').show();
-    $('.form_wrap_1').hide();
-    $( ".progress-bar span" ).animate({
-        width: "29%"
-        }, 1000 );
-        $("#step-button-1").addClass('active'); 
+    // $('.form_wrap_2').show();
+    // $('.form_wrap_1').hide();
+    // $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
+    // $("#step-button-1").addClass('active');
+    
+    var isValid = validateForm('form_wrap_1');
+    if (!isValid) {
+      console.log("invalid form")
+        return;
+    }
+    else{
+      $('.form_wrap_2').show();
+      $('.form_wrap_1').hide();
+      $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
+      $("#step-button-1").addClass('active');
+    }
   });
 
   $( "#next_btn_form_2" ).click(function() {
-    $('.form_wrap_2').hide();
-    $('.form_wrap_1').hide();
-    $('.form_wrap_3').show();
-    $( ".progress-bar span" ).animate({
-        width: "50%"
-        }, 1000 );
-        $("#step-button-1").addClass('active'); 
-        $("#step-button-2").addClass('active'); 
+    // $('.form_wrap_2').hide();
+    // $('.form_wrap_1').hide();
+    // $('.form_wrap_3').show();
+    // $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
+    // $("#step-button-1").addClass('active'); 
+    // $("#step-button-2").addClass('active'); 
+
+    var isValid = validateForm('form_wrap_2');
+    if (!isValid) {
+      console.log("invalid form")
+        return;
+    }
+    else{
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').show();
+      $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+    }
+
+
   });
+
   $( "#next_btn_form_3" ).click(function() {
-    $('.form_wrap_2').hide();
-    $('.form_wrap_1').hide();
-    $('.form_wrap_3').hide();
-    $('.form_wrap_4').show();
-    $( ".progress-bar span" ).animate({
-        width: "75%"
-        }, 1000 );
-        $("#step-button-3").addClass('active'); 
-        $("#step-button-1").addClass('active'); 
-        $("#step-button-2").addClass('active'); 
+    // $('.form_wrap_2').hide();
+    // $('.form_wrap_1').hide();
+    // $('.form_wrap_3').hide();
+    // $('.form_wrap_4').show();
+    // $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
+    // $("#step-button-3").addClass('active'); 
+    // $("#step-button-1").addClass('active'); 
+    // $("#step-button-2").addClass('active');
+    var isValid = validateForm('form_wrap_3');
+    if (!isValid) {
+      console.log("invalid form")
+        return;
+    }
+    else{
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_4').show();
+      $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
+      $("#step-button-3").addClass('active'); 
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+    }
   });
+
   $( "#next_btn_form_4" ).click(function() {
-    $('.form_wrap_2').hide();
-    $('.form_wrap_1').hide();
-    $('.form_wrap_3').hide();
-    $('.form_wrap_4').hide();
-    $('.form_wrap_5').show();
-    $( ".progress-bar span" ).animate({
-        width: "99%"
-        }, 1000 );
-        $("#step-button-4").addClass('active'); 
-        $("#step-button-3").addClass('active'); 
-        $("#step-button-2").addClass('active'); 
-        $("#step-button-1").addClass('active'); 
+    // $('.form_wrap_2').hide();
+    // $('.form_wrap_1').hide();
+    // $('.form_wrap_3').hide();
+    // $('.form_wrap_4').hide();
+    // $('.form_wrap_5').show();
+    // $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
+    // $("#step-button-4").addClass('active'); 
+    // $("#step-button-3").addClass('active'); 
+    // $("#step-button-2").addClass('active'); 
+    // $("#step-button-1").addClass('active'); 
+
+    var isValid = validateForm('form_wrap_4');
+    if (!isValid) {
+      console.log("invalid form")
+        return;
+    }
+    else{
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_4').hide();
+      $('.form_wrap_5').show();
+      $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
+      $("#step-button-4").addClass('active'); 
+      $("#step-button-3").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+      $("#step-button-1").addClass('active'); 
+    }
+
   });
 
 
@@ -391,6 +445,54 @@ $("#img_select").select2({
 });
 
 
+  // validation code
+  // Common validation function
+  function validateForm(formWrapClass) {
+    var isValid = true;
+
+    // Find all fields with data-mandatory="true" within the specified form wrap
+    $('.' + formWrapClass + ' [data-mandatory="true"]').each(function() {
+        var field = $(this);
+        var fieldValue = field.val();
+        var validationMsg = field.data('validation-msg');
+        
+        // Find the next .validation_message within the same form wrap
+        var validationMessageSpan = field.next('.validation_message');
+
+        // Check if the mandatory field is empty or contains only spaces
+        if (!fieldValue || /^\s*$/.test(fieldValue)) {
+            isValid = false;
+
+            // Display validation message below the field
+            validationMessageSpan.text(validationMsg || 'This field is required.');
+        } else if (/[@!#$%^&*<>]/.test(fieldValue)) {
+            // Check if the field contains restricted special characters
+            isValid = false;
+
+            // Display validation message below the field
+            validationMessageSpan.text('Special characters like !@#$%^*<> are not allowed.');
+        } else {
+            // Clear validation message if the field is not empty and passes checks
+            validationMessageSpan.text('');
+        }
+
+        // Add focusout event to hide validation message when user inputs valid data
+        field.on('focusout', function() {
+            // Use setTimeout to delay execution and ensure fieldValue is properly populated
+            setTimeout(function() {
+                var fieldValue = field.val();
+                if (fieldValue && !/^\s*$/.test(fieldValue)) {
+                    validationMessageSpan.text('');
+                }
+            }, 10);
+        });
+    });
+
+    return isValid;
+  }
+// ===============================
+// ===============================
+// ===============================
 
 
   
