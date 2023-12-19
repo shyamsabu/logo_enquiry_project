@@ -9,6 +9,23 @@
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles/styles.css">
   <title>Your Landing Page</title>
+  <style>
+    .validation_message{
+      color: #c13c3c;
+      font-size: .8rem;
+    }
+    .hint_label{
+      font-size: .9rem;
+      color: #5f5f5f;
+    }
+    .select2-container{
+      min-width: 100%;
+      max-width: 100%;
+    }
+    .color-box{
+      width: 30%;
+    }
+  </style>
 </head>
 <body>
   <!-- <div class="container logo_req_wrapper">
@@ -171,16 +188,25 @@
                 <div class="button_wrap">
                   <div class="inner_form_wrap">
                     <form class="lep_form step1_form" action="#">
+                      
                       <label for="exampleInputEmail1" class="form-label ">Select your industry</label>
-                        <select class="form-select h_resp_45 mrg_b" aria-label="Default select example">
+                      <select class="form-select h_resp_45 mrg_b" aria-label="Default select example" data-mandatory="true" data-validation-msg="Please select industry">
                           <option value="1">Dental Clinic</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
-                        </select>
+                      </select>
+                      <span class="validation_message"></span>
+
                       <label class="form-label">Who are your main competitors and how do you differ from them?</label>
-                      <input id="comp_website1" type="text" class="form-control h_resp_45 mrg_b" placeholder="Competitor website">
+                      <input id="comp_website1" type="text" class="form-control h_resp_45 mrg_b" placeholder="Competitor website" data-mandatory="true" data-validation-msg="Please enter competitor website">
+                      <span class="validation_message"></span>
                       <input id="comp_website2" type="text" class="form-control h_resp_45 mrg_b" placeholder="Competitor website">
-                      <textarea class="form-control h_resp_100" id="comp_details" rows="3" placeholder="Details"></textarea>
+
+                      <textarea class="form-control h_resp_100" id="comp_details" rows="3" placeholder="Details" data-mandatory="true" data-validation-msg="Please enter competitor details"></textarea>
+                      <span class="validation_message"></span>
+
+
+
                     </form>
                   </div>
                   <div class="btn_group">
@@ -204,20 +230,27 @@
                 <div class="button_wrap">
                   <div class="inner_form_wrap">
                     <form class="lep_form step2_form" action="#">
-                        <label class="form-label">Who are your main competitors and how do you differ from them?</label>
-                        <textarea class="form-control h_resp_100 mrg_b" id="compet_details" rows="3" placeholder="Details"></textarea>
-                        <label for="logo_elements" class="form-label">What specific elements would you like to include in your logo design?</label>
-                        <input id="tag_inp" type="text" value="Shield, pigeon, Lion"class="form-control adj_height mrg_b">
+                      
+                      <label class="form-label">Who are your main competitors and how do you differ from them?</label>
+                      <textarea class="form-control h_resp_100 mrg_b" id="compet_details" rows="3" placeholder="Details" data-mandatory="true" data-validation-msg="Please enter the data"></textarea>
+                      <span class="validation_message"></span>
+
+                      <label for="logo_elements" class="form-label">What specific elements would you like to include in your logo design?<span class="hint_label">e.g., shield, pigeon, lion, etc.</span></label>
+                      <input id="tag_inp" type="text" value="Shield, pigeon, Lion"class="form-control adj_height mrg_b" data-mandatory="true" data-validation-msg="Please enter logo element">
+                      <span class="validation_message"></span>
+
                       <div class=" texture_line">
                         <label for="texture_line_dp" class="form-label">What level of detailing do you prefer?</label>
                         <div class="select_wrap">
-                          <select id="img_select" class="form-control h_resp_45">
+                          <select id="img_select" class="form-control h_resp_45" data-mandatory="true" data-validation-msg="Please select logo detail">
                             <option value='option-1' data-src="./images/logos/image_37.png">H&M</option>
                             <option value='option-2' data-src="./images/logos/image_38.png">FILA</option>
                             <option value='option-3' data-src="./images/logos/image_40.png">Coco Cola</option>
                           </select>
                         </div>
+                        <span class="validation_message"></span>
                       </div>
+
                     </form>
                   </div>
                   <div class="btn_group">
@@ -236,13 +269,14 @@
                 <span class="step_count">
                   <i>Step</i><em class="cnt_current">3</em>/<em class="cnt_total">5</em>
                 </span>
-                <h2 class="step_heading">kindly choose your preferred colour themes</h2>
+                <h2 class="step_heading">Kindly choose your preferred colour themes</h2>
                 <div class="step_desc">Choose one or more colours for your brand. You can always customize your colour later.</div>
                 <div class="button_wrap">
                   <div class="inner_form_wrap">
                     <form class="lep_form step3_form" action="#">
                         <div class="color-picker" id="colorTheme">
-                      </div>  
+                        </div> 
+                        <span class="validation_message"></span> 
                     </form>
                   </div>
                   <div class="btn_group">
@@ -333,6 +367,8 @@
                         </div>
                         
                       </div>
+
+                      <span class="validation_message"></span>
                   
                       <!-- Add more logo categories as needed -->
                   
@@ -366,6 +402,8 @@
                       <div class="item-container" id="itemContainer">
                         <!-- Items will be dynamically generated here -->
                       </div>
+                      
+                      <span class="validation_message"></span>
       
                     </form>
                   </div>
