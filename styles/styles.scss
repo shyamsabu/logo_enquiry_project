@@ -110,7 +110,7 @@ body {
       height: 100vh;
     }
     @media (min-width: 1200px) {
-      margin-right: 24px;
+      margin-right: 0;
     }
     @media (min-width: 1600px) {
       margin-right: 50px;
@@ -131,7 +131,7 @@ body {
         margin-bottom: 15px;
       }
       @media (min-width: 992px) {
-        font-size: 27px;
+        font-size: 32px;
       }
       @media (min-width: 1600px) {
         font-size: 39.5px;
@@ -159,7 +159,7 @@ body {
         font-size: 13px;
       }
       @media (min-width: 1200px) {
-        font-size: 12.5px;
+        font-size: 13.3px;
       }
       @media (min-width: 1600px) {
         font-size: 16px;
@@ -343,11 +343,11 @@ body {
     }
     @media (min-width: 1200px) {
       .tw_logo {
-        margin-bottom: 30px;
-        width: 30%;
+        margin-bottom: 36px;
+        width: 31%;
       }
       .banner_img {
-        max-width: 75%;
+        max-width: 72%;
       }
     }
     @media (min-width: 1600px) {
