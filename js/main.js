@@ -115,15 +115,7 @@ $(document).ready(function() {
       $("#step-button-1").addClass('active');
     }
   });
-
   $( "#next_btn_form_2" ).click(function() {
-    // $('.form_wrap_2').hide();
-    // $('.form_wrap_1').hide();
-    // $('.form_wrap_3').show();
-    // $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
-    // $("#step-button-1").addClass('active'); 
-    // $("#step-button-2").addClass('active'); 
-
     var isValid = validateForm('form_wrap_2');
     if (!isValid) {
       console.log("invalid form")
@@ -140,16 +132,7 @@ $(document).ready(function() {
 
 
   });
-
   $( "#next_btn_form_3" ).click(function() {
-    // $('.form_wrap_2').hide();
-    // $('.form_wrap_1').hide();
-    // $('.form_wrap_3').hide();
-    // $('.form_wrap_4').show();
-    // $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
-    // $("#step-button-3").addClass('active'); 
-    // $("#step-button-1").addClass('active'); 
-    // $("#step-button-2").addClass('active');
     var isValid = validateForm('form_wrap_3');
     if (!isValid) {
       console.log("invalid form")
@@ -168,17 +151,6 @@ $(document).ready(function() {
   });
 
   $( "#next_btn_form_4" ).click(function() {
-    // $('.form_wrap_2').hide();
-    // $('.form_wrap_1').hide();
-    // $('.form_wrap_3').hide();
-    // $('.form_wrap_4').hide();
-    // $('.form_wrap_5').show();
-    // $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
-    // $("#step-button-4").addClass('active'); 
-    // $("#step-button-3").addClass('active'); 
-    // $("#step-button-2").addClass('active'); 
-    // $("#step-button-1").addClass('active'); 
-
     var isValid = validateForm('form_wrap_4');
     if (!isValid) {
       console.log("invalid form")
@@ -487,6 +459,23 @@ $("#img_select").select2({
             }, 10);
         });
     });
+
+    if(formWrapClass === 'form_wrap_3'){
+      // Find the color picker within the specified form wrap
+      var colorPicker = $('.' + formWrapClass + ' .color-picker');
+
+      // Check if at least one color is selected
+      if (colorPicker.find('.color-box.selected').length === 0) {
+          isValid = false;
+
+          // Display validation message below the color picker
+          colorPicker.next('.validation_message').text('Please select at least one color.');
+      } else {
+          // Clear validation message if at least one color is selected
+          colorPicker.next('.validation_message').text('');
+      }
+    }
+    
 
     return isValid;
   }
