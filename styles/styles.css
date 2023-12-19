@@ -1394,6 +1394,25 @@ textarea {
   overflow-y: auto;
 }
 
+.validation_message {
+  color: #c13c3c;
+  font-size: 0.8rem;
+}
+
+.hint_label {
+  font-size: 0.9rem;
+  color: #5f5f5f;
+}
+
+.select2-container {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.color-box {
+  width: 30%;
+}
+
 .tagify--focus {
   border-color: #dee2e6 !important;
 }

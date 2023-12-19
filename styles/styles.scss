@@ -1006,7 +1006,6 @@ textarea{
 
 
 // mobile svg ///
-
 .svg_wrapper.mobile{
   display: block!important;
   display: flex!important;
@@ -1018,7 +1017,6 @@ textarea{
     display:none!important;
   }
 }
-
 // mobile svg ///
 
 
@@ -1123,7 +1121,6 @@ textarea{
     font-size: 12px;
   }
 }
-
 .inner_form_wrap{
   min-height: 470px;
   margin-bottom: 20px;
@@ -1229,7 +1226,23 @@ textarea{
 }
 // common style //
 
-
+// validation
+.validation_message{
+  color: #c13c3c;
+  font-size: .8rem;
+}
+.hint_label{
+  font-size: .9rem;
+  color: #5f5f5f;
+}
+.select2-container{
+  min-width: 100%;
+  max-width: 100%;
+}
+.color-box{
+  width: 30%;
+}
+// ===================
 
 // tagify //
 .tagify--focus{
@@ -1293,18 +1306,15 @@ textarea{
 // =====================================
 // ============================
 // *** svg animation styles ***
-
 // #step_right_svg{
 //     -webkit-animation: floatSvg 3s infinite  alternate;
 //     -moz-animation: floatSvg 3s infinite  alternate;
 //     animation: floatSvg 3s infinite  alternate;
 // }
-
 #main_bodies{
     -webkit-animation: float 4s infinite  alternate;
     animation: float 4s infinite  alternate;
 }
-
 #cloud_curve{
     -webkit-animation:fadeOutMoveLeft 8s linear infinite;
     -moz-animation:fadeOutMoveLeft 8s linear infinite;
@@ -1338,7 +1348,6 @@ textarea{
     -moz-animation:fadeOut 4s linear infinite;
     animation:fadeOut 4s linear infinite;
 }
-
 .left_wrap{
   position: relative;
   overflow: hidden;
@@ -1355,7 +1364,6 @@ textarea{
 @-webkit-keyframes slideFromLeft {
   100% { left: 0; }
 }
-
 @keyframes slideFromLeft {
   100% { left: 0; }
 }
@@ -1364,7 +1372,6 @@ textarea{
     0% { transform: translateY(0); }
     100% { transform: translateY(-10px); }
 }
-
 @keyframes floatSvg {
     0% { transform: translateY(0); }
     100% { transform: translateY(-10px); }
