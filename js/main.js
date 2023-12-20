@@ -349,17 +349,17 @@ $(document).ready(function() {
   items.forEach((item, index) => {
     const itemBox = $('<div class="item-box"></div>');
     const itemImage = $(`<img src="${item.imagePath}" alt="${item.description}" class="item-image">`);
-    const tickIcon = $('<div class="tick-icon"></div>');
+    const fontTickIcon = $('<div class="font-tick-icon"></div>');
     const subtext = $('<span class="subtext"></span>').text(item.subText);
 
     itemBox.append(itemImage);
-    itemBox.append(tickIcon);
+    itemBox.append(fontTickIcon);
     itemBox.append(subtext);
 
     // Font box click event handler
     itemBox.on('click', function () {
       itemBox.toggleClass('selected');
-      tickIcon.toggle();
+      fontTickIcon.toggle();
 
       const altText = itemBox.find('.item-image').attr('alt');
 
@@ -402,10 +402,11 @@ $(document).ready(function() {
       itemValidationMessage.text('');
 
       // Log alt text of item-image inside the selected item-box
-      selectedItems.forEach(index => {
-        const selectedAltText = $('.item-box.selected').eq(index).find('.item-image').attr('alt');
-        console.log('Selected Item Alt Text:', selectedAltText);
+      const selectedAltText = [];
+      selectedItems.forEach(index => {        
+        selectedAltText.push(index.altText);       
       });
+      console.log('Selected Item Alt Text:', selectedAltText); 
 
       // Proceed to the next step or perform any other action
       $("#step-button-5").addClass('active');
@@ -458,62 +459,74 @@ $("#img_select").select2({
     var isValid = true;
 
     // Find all fields with data-mandatory="true" within the specified form wrap
-    $('.' + formWrapClass + ' [data-mandatory="true"]').each(function() {
-        var field = $(this);
-        var fieldValue = field.val();
-        var validationMsg = field.data('validation-msg');
-        
-        // Find the next .validation_message within the same form wrap
-        var validationMessageSpan = field.next('.validation_message');
+    $('.' + formWrapClass + ' [data-mandatory="true"]').each(function () {
+      var field = $(this);
+      var fieldValue = field.val();
+      var validationMsg = field.data('validation-msg');
 
-        // Check if the mandatory field is empty or contains only spaces
-        if (!fieldValue || /^\s*$/.test(fieldValue)) {
-            isValid = false;
+      // Find the next .validation_message within the same form wrap
+      var validationMessageSpan = field.next('.validation_message');
 
-            // Display validation message below the field
-            validationMessageSpan.text(validationMsg || 'This field is required.');
-        } else if (/[@!#$%^&*<>]/.test(fieldValue)) {
-            // Check if the field contains restricted special characters
-            isValid = false;
+      // Check if the mandatory field is empty or contains only spaces
+      if (!fieldValue || /^\s*$/.test(fieldValue)) {
+        isValid = false;
 
-            // Display validation message below the field
-            validationMessageSpan.text('Special characters like !@#$%^*<> are not allowed.');
-        } else {
-            // Clear validation message if the field is not empty and passes checks
+        // Display validation message below the field
+        validationMessageSpan.text(validationMsg || 'This field is required.');
+
+        // Add 'error' class to the invalid field
+        field.addClass('error');
+      } else if (/[@!#$%^&*<>]/.test(fieldValue)) {
+        // Check if the field contains restricted special characters
+        isValid = false;
+
+        // Display validation message below the field
+        validationMessageSpan.text('Special characters like !@#$%^*<> are not allowed.');
+
+        // Add 'error' class to the invalid field
+        field.addClass('error');
+      } else {
+        // Clear validation message and 'error' class if the field is not empty and passes checks
+        validationMessageSpan.text('');
+        field.removeClass('error');
+      }
+
+      // Add focusout event to hide validation message when the user inputs valid data
+      field.on('focusout', function () {
+        // Use setTimeout to delay execution and ensure fieldValue is properly populated
+        setTimeout(function () {
+          var fieldValue = field.val();
+          if (fieldValue && !/^\s*$/.test(fieldValue)) {
             validationMessageSpan.text('');
-        }
-
-        // Add focusout event to hide validation message when user inputs valid data
-        field.on('focusout', function() {
-            // Use setTimeout to delay execution and ensure fieldValue is properly populated
-            setTimeout(function() {
-                var fieldValue = field.val();
-                if (fieldValue && !/^\s*$/.test(fieldValue)) {
-                    validationMessageSpan.text('');
-                }
-            }, 10);
-        });
+            field.removeClass('error');
+          }
+        }, 10);
+      });
     });
 
-    if(formWrapClass === 'form_wrap_3'){
+    if (formWrapClass === 'form_wrap_3') {
       // Find the color picker within the specified form wrap
       var colorPicker = $('.' + formWrapClass + ' .color-picker');
 
       // Check if at least one color is selected
       if (colorPicker.find('.color-box.selected').length === 0) {
-          isValid = false;
+        isValid = false;
 
-          // Display validation message below the color picker
-          colorPicker.next('.validation_message').text('Please select at least one color.');
+        // Display validation message below the color picker
+        colorPicker.next('.validation_message').text('Please select at least one color.');
+
+        // Add 'error' class to the invalid field
+        // colorPicker.addClass('error');
       } else {
-          // Clear validation message if at least one color is selected
-          colorPicker.next('.validation_message').text('');
+        // Clear validation message and 'error' class if at least one color is selected
+        colorPicker.next('.validation_message').text('');
+        // colorPicker.removeClass('error');
       }
     }
-    
 
     return isValid;
   }
+
 // ===============================
 // ===============================
 // ===============================

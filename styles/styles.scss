@@ -1330,11 +1330,11 @@ textarea{
   }
 }
 .form-control{
-  border-radius: 3px!important;
-  border-color: #C5C6C9!important;
+  border-radius: 3px;
+  border-color: #C5C6C9;
   &:focus{
-    border-color: #dee2e6!important;
-    box-shadow: none!important;
+    border-color: #dee2e6;
+    box-shadow: none;
   }
   @media (max-width: 1599px) {
     font-size: 14px;
@@ -1342,6 +1342,9 @@ textarea{
   @media (max-width: 1199px) {
     font-size: 12px;
   }
+}
+.error{
+  border: 1px solid #d94e4e !important;
 }
 .inner_form_wrap{
   min-height: 470px;
