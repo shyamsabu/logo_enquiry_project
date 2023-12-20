@@ -275,22 +275,23 @@ $(document).ready(function() {
 
   $('.logo_box').on('click', function () {
     const logoId = $(this).find('.logo').data('logo-id');
+    const logoAlt = $(this).find('.logo').attr('alt');
     const isSelected = $(this).hasClass('selected');
-
+  
     if (isSelected) {
       // Logo is already selected, remove it from the array
-      const index = selectedLogos.indexOf(logoId);
+      const index = selectedLogos.findIndex(logo => logo.logoId === logoId);
       if (index !== -1) {
         selectedLogos.splice(index, 1);
       }
     } else {
       // Logo is not selected, add it to the array
-      selectedLogos.push(logoId);
+      selectedLogos.push({ logoId, logoCategory: $(this).closest('.logo_category').attr('id'), logoAlt });
     }
-
+  
     // Toggle the 'selected' class for visual feedback
     $(this).toggleClass('selected');
-
+  
     // Log the selected logos array to the console
     console.log('Selected Logos:', selectedLogos);
   });
@@ -316,14 +317,17 @@ $(document).ready(function() {
       const selectedLogoCategoryId = selectedLogoCategory.attr('id');
       const selectedLogoCategoryText = selectedLogoCategory.find('h3').text();
       
-      selectedLogos.forEach(logoId => {
+      // Log selected logo category id, h3 text, and selected logo alt text
+      selectedLogos.forEach(({ logoId, logoCategory }) => {
         const selectedLogo = $(`.logo_box.selected .logo[data-logo-id="${logoId}"]`);
         const selectedLogoAltText = selectedLogo.attr('alt');
-        
-        console.log('Selected Logo Category ID:', selectedLogoCategoryId);
-        console.log('Selected Logo Category Text:', selectedLogoCategoryText);
+
+        console.log('Selected Logo Category ID:', logoCategory);
         console.log('Selected Logo Alt Text:', selectedLogoAltText);
       });
+
+      // Log the entire selectedLogos array to the console
+      console.log('Selected Logos Array:', selectedLogos);
 
 
       // Proceed to the next step or perform any other action
@@ -341,22 +345,22 @@ $(document).ready(function() {
   });
   // ===========================================================
 
-  // font section form 
+  // Font section form 
   const items = [
-    { imagePath: "./images/font_preview/modern.png", description: "Item 1", subText: "Crisp with an urban flair" },
-    { imagePath: "./images/font_preview/handwritten.png", description: "Item 2", subText: "Add a human touch" },
-    { imagePath: "./images/font_preview/elegant.png", description: "Item 3", subText: "Touch of sophistication" },
-
-    { imagePath: "./images/font_preview/classy.png", description: "Item 3", subText: "Stand the test of time" },
-    { imagePath: "./images/font_preview/vintage.png", description: "Item 3", subText: "Add a feel of nostalgia" },
-    { imagePath: "./images/font_preview/bold.png", description: "Item 3", subText: "Leave an impact" },
-    { imagePath: "./images/font_preview/quirky.png", description: "Item 3", subText: "Add a playful twist" },
-    { imagePath: "./images/font_preview/thin.png", description: "Item 3", subText: "Show the gentle side" },
-    { imagePath: "./images/font_preview/bubbly.png", description: "Item 3", subText: "Cheerful and lively" }
+    { imagePath: "./images/font_preview/modern.png", description: "modern", subText: "Crisp with an urban flair" },
+    { imagePath: "./images/font_preview/handwritten.png", description: "handwritten", subText: "Add a human touch" },
+    { imagePath: "./images/font_preview/elegant.png", description: "elegant", subText: "Touch of sophistication" },
+    { imagePath: "./images/font_preview/classy.png", description: "classy", subText: "Stand the test of time" },
+    { imagePath: "./images/font_preview/vintage.png", description: "vintage", subText: "Add a feel of nostalgia" },
+    { imagePath: "./images/font_preview/bold.png", description: "bold", subText: "Leave an impact" },
+    { imagePath: "./images/font_preview/quirky.png", description: "quirky", subText: "Add a playful twist" },
+    { imagePath: "./images/font_preview/thin.png", description: "thin", subText: "Show the gentle side" },
+    { imagePath: "./images/font_preview/bubbly.png", description: "bubbly", subText: "Cheerful and lively" }
     // Add more items as needed
   ];
+
   const selectedItems = [];
-  let fontVal = $('.form_wrap_5 .validation_message');
+
   items.forEach((item, index) => {
     const itemBox = $('<div class="item-box"></div>');
     const itemImage = $(`<img src="${item.imagePath}" alt="${item.description}" class="item-image">`);
@@ -367,30 +371,38 @@ $(document).ready(function() {
     itemBox.append(tickIcon);
     itemBox.append(subtext);
 
+    // Font box click event handler
     itemBox.on('click', function () {
       itemBox.toggleClass('selected');
       tickIcon.toggle();
-      
+
+      const altText = itemBox.find('.item-image').attr('alt');
+
       if (itemBox.hasClass('selected')) {
-        fontVal.text('');
-        selectedItems.push(index);
+        // Clear validation message if at least one item is selected
+        $('.form_wrap_5 .validation_message').text('');
+        selectedItems.push({ index, altText });
       } else {
-        const selectedIndex = selectedItems.indexOf(index);
+        const selectedIndex = selectedItems.findIndex(item => item.index === index);
         if (selectedIndex !== -1) {
           selectedItems.splice(selectedIndex, 1);
         }
       }
-
       // Log the selected items array to the console
-      console.log('Selected Items:', selectedItems);
+      console.log('Selected Font Items:', selectedItems);
     });
-
+    // Append item box to the container
     $('#itemContainer').append(itemBox);
   });
+
   $('#itemSelectionForm').on('submit', function (event) {
     event.preventDefault();
     // Perform any additional actions on form submission if needed
   });
+  // ==============================
+  // ==============================
+  // ==============================
+  // ==============================
 
   $('#next_btn_form_5').on('click', function(event){    
     event.preventDefault(); 
