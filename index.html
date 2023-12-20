@@ -53,13 +53,17 @@
             <h1>Let's work together to craft an <br> exceptional logo for your business.</h1>
             <p>Your brand's new logo represents its identity, so we kindly request that you dedicate a moment to fill out this questionnaire. <strong>Understanding your brand more thoroughly is crucial for us.</strong></p>
             <form  class="lep_home_form step0_form" action="#">
+             <div class="form_feild_wrap">
               <label for="name" class="form-label">Enter your brand name</label>
               <input type="text" id="name" name="name" class="form-control " placeholder="" data-mandatory="true" data-validation-msg="Please enter brand name">
-              <span class="validation_message"></span>
+              <span class="validation_message" style="margin-top: 3px;"></span>
+             </div>
     
-              <label for="email" class="form-label">Add your slogan</label>
-              <input type="text" id="email" name="email" class="form-control" placeholder="" data-mandatory="true" data-validation-msg="Please enter slogan">
-              <span class="validation_message"></span>
+              <div class="form_feild_wrap">
+                <label for="email" class="form-label">Add your slogan</label>
+                <input type="text" id="email" name="email" class="form-control" placeholder="" data-mandatory="true" data-validation-msg="Please enter slogan">
+                <span class="validation_message" style="margin-top: 3px;"></span>
+              </div>
       
               <button class="btn btn-success lets_get_started_btn">
                   Let's Get Started 
@@ -389,8 +393,8 @@
                   <div class="inner_form_wrap">
                     <form class="lep_form step1_form" action="#">
                       
-                      <label for="exampleInputEmail1" class="form-label ">Select your industry</label>
                       <div class="form_field_wrap mrg_b">
+                        <label for="exampleInputEmail1" class="form-label ">Select your industry</label>
                         <select class="form-select h_resp_45 " aria-label="Default select example" data-mandatory="true" data-validation-msg="Please select industry">
                           <option value="1">Dental Clinic</option>
                           <option value="2">Two</option>
@@ -399,8 +403,8 @@
                       <span class="validation_message" style="margin-top: 3px;"></span>
                       </div>
 
-                      <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                       <div class="form_field mrg_b">
+                        <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                         <input id="comp_website1" type="text" class="form-control h_resp_45 " placeholder="Competitor website" data-mandatory="true" data-validation-msg="Please enter competitor website">
                         <span class="validation_message" style="margin-top: 3px;"></span>
                       </div>             
@@ -438,14 +442,14 @@
                   <div class="inner_form_wrap">
                     <form class="lep_form step2_form" action="#">
                       
-                      <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                       <div class="form_field mrg_b">
+                        <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                         <textarea class="form-control h_resp_100 " id="compet_details" rows="3" placeholder="Details" data-mandatory="true" data-validation-msg="Please enter the data"></textarea>
                         <span class="validation_message" style="margin-top: 3px;"></span>
                       </div>
 
-                      <label for="logo_elements" class="form-label">What specific elements would you like to include in your logo design?<span class="hint_label">e.g., shield, pigeon, lion, etc.</span></label>
                      <div class="form_field mrg_b">
+                      <label for="logo_elements" class="form-label">What specific elements would you like to include in your logo design?<span class="hint_label">e.g., shield, pigeon, lion, etc.</span></label>
                       <input id="tag_inp" type="text" value="Shield, pigeon, Lion"class="form-control adj_height " data-mandatory="true" data-validation-msg="Please enter logo element">
                       <span class="validation_message" style="margin-top: 3px;"></span>
                      </div>
@@ -490,10 +494,12 @@
                         </div> 
                         <span class="validation_message" style="margin-left: 7px;"></span>
                         <!-- Add the "Select All" checkbox -->
-                        <input type="checkbox" id="selectAllCheckbox"> <label for="selectAllCheckbox">Select All</label>
                     </form>
                   </div>
                   <div class="btn_group">
+                    <div class="select_inp_wrap">
+                      <input type="checkbox" id="selectAllCheckbox"> <label for="selectAllCheckbox">Select All</label>
+                    </div>
                     <button type="button" id="prev_btn_3" class="btn backbtn">Back</button>
                     <button type="button" id="next_btn_form_3" class="btn btn-primary">Next
                       <span class="btn_svg">
@@ -620,8 +626,17 @@
                     </form>
                   </div>
                   <div class="btn_group">
+                    <!-- <div class="select_inp_wrap">
+                      <input type="checkbox" id="selectAllCheckbox"> <label for="selectAllCheckbox">Select All</label>
+                    </div> -->
                     <button type="button" id="prev_btn_5" class="btn backbtn">Back</button>
-                    <button type="button" id="next_btn_form_5" class="btn btn-primary">Next</button>
+                    <button type="button" id="next_btn_form_5" class="btn btn-primary">Next
+                      <span class="btn_svg">
+                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.8364 3.69173L9.53691 0.110547C9.33972 -0.0537909 9.04157 -0.0322636 8.87174 0.157544C8.70128 0.347655 8.72298 0.634793 8.92018 0.799131L12.2158 3.54376H0.471751C0.211344 3.54376 0 3.74722 0 3.99857C0 4.24993 0.211344 4.45339 0.471751 4.45339H12.3344L10.4559 6.06978L8.98842 7.18862C8.78431 7.34447 8.7494 7.63039 8.91106 7.82748C9.00415 7.94087 9.14221 8 9.28154 8C9.38406 8 9.48722 7.96816 9.57402 7.90176L11.0626 6.76534L13.8421 4.37485C13.9434 4.28783 14.0009 4.16291 14 4.03193C13.9987 3.90124 13.9396 3.77723 13.8364 3.69173Z" fill="white"/>
+                        </svg>                      
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
