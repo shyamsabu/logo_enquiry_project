@@ -310,25 +310,10 @@ $(document).ready(function() {
       logoValidationMessage.text('Please select at least one logo.');
     } else {
       // Clear validation message if at least one logo is selected
-      logoValidationMessage.text('');
-
-      // Log selected logo category id, h3 text, and selected logo alt text
-      const selectedLogoCategory = $('.logo_box.selected').closest('.logo_category');
-      const selectedLogoCategoryId = selectedLogoCategory.attr('id');
-      const selectedLogoCategoryText = selectedLogoCategory.find('h3').text();
-      
-      // Log selected logo category id, h3 text, and selected logo alt text
-      selectedLogos.forEach(({ logoId, logoCategory }) => {
-        const selectedLogo = $(`.logo_box.selected .logo[data-logo-id="${logoId}"]`);
-        const selectedLogoAltText = selectedLogo.attr('alt');
-
-        console.log('Selected Logo Category ID:', logoCategory);
-        console.log('Selected Logo Alt Text:', selectedLogoAltText);
-      });
+      logoValidationMessage.text('');      
 
       // Log the entire selectedLogos array to the console
       console.log('Selected Logos Array:', selectedLogos);
-
 
       // Proceed to the next step or perform any other action
       $('.form_wrap_2').hide();
