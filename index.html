@@ -52,15 +52,27 @@
           <div class="banner_content">
             <h1>Let's work together to craft an <br> exceptional logo for your business.</h1>
             <p>Your brand's new logo represents its identity, so we kindly request that you dedicate a moment to fill out this questionnaire. <strong>Understanding your brand more thoroughly is crucial for us.</strong></p>
-            <form>
+            <form  class="lep_home_form step0_form" action="#">
+             <div class="form_feild_wrap">
               <label for="name" class="form-label">Enter your brand name</label>
-                <input type="text" id="name" name="name" class="form-control " placeholder="">
-      
+              <input type="text" id="name" name="name" class="form-control " placeholder="" data-mandatory="true" data-validation-msg="Please enter brand name">
+              <span class="validation_message" style="margin-top: 3px;"></span>
+             </div>
+    
+              <div class="form_feild_wrap">
                 <label for="email" class="form-label">Add your slogan</label>
-                <input type="text" id="email" name="email" class="form-control" placeholder="">
+                <input type="text" id="email" name="email" class="form-control" placeholder="" data-mandatory="true" data-validation-msg="Please enter slogan">
+                <span class="validation_message" style="margin-top: 3px;"></span>
+              </div>
       
-              <button class="btn btn-success lets_get_started_btn">Let's Get Started <i><svg width="34" height="25" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.486 11.5367L29.9732 0.345461C29.3534 -0.168097 28.4164 -0.100824 27.8826 0.492326C27.3469 1.08642 27.4151 1.98373 28.0348 2.49728L38.3926 11.0743H1.48265C0.664225 11.0743 0 11.71 0 12.4955C0 13.281 0.664225 13.9168 1.48265 13.9168H38.7652L32.8613 18.9681L28.2493 22.4644C27.6078 22.9515 27.4981 23.845 28.0062 24.4609C28.2988 24.8152 28.7327 25 29.1705 25C29.4928 25 29.817 24.9005 30.0898 24.693L34.768 21.1417L43.5038 13.6714C43.822 13.3995 44.0029 13.0091 44 12.5998C43.996 12.1914 43.8102 11.8039 43.486 11.5367Z" fill="white"/>
-                </svg></i></button>
+              <button class="btn btn-success lets_get_started_btn">
+                  Let's Get Started 
+                  <i>
+                    <svg width="34" height="25" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M43.486 11.5367L29.9732 0.345461C29.3534 -0.168097 28.4164 -0.100824 27.8826 0.492326C27.3469 1.08642 27.4151 1.98373 28.0348 2.49728L38.3926 11.0743H1.48265C0.664225 11.0743 0 11.71 0 12.4955C0 13.281 0.664225 13.9168 1.48265 13.9168H38.7652L32.8613 18.9681L28.2493 22.4644C27.6078 22.9515 27.4981 23.845 28.0062 24.4609C28.2988 24.8152 28.7327 25 29.1705 25C29.4928 25 29.817 24.9005 30.0898 24.693L34.768 21.1417L43.5038 13.6714C43.822 13.3995 44.0029 13.0091 44 12.5998C43.996 12.1914 43.8102 11.8039 43.486 11.5367Z" fill="white"/>
+                    </svg>
+                  </i>
+              </button>
             </form>
           </div>
         </div>
@@ -381,8 +393,8 @@
                   <div class="inner_form_wrap">
                     <form class="lep_form step1_form" action="#">
                       
-                      <label for="exampleInputEmail1" class="form-label ">Select your industry</label>
                       <div class="form_field_wrap mrg_b">
+                        <label for="exampleInputEmail1" class="form-label ">Select your industry</label>
                         <select class="form-select h_resp_45 " aria-label="Default select example" data-mandatory="true" data-validation-msg="Please select industry">
                           <option value="1">Dental Clinic</option>
                           <option value="2">Two</option>
@@ -391,8 +403,8 @@
                       <span class="validation_message" style="margin-top: 3px;"></span>
                       </div>
 
-                      <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                       <div class="form_field mrg_b">
+                        <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                         <input id="comp_website1" type="text" class="form-control h_resp_45 " placeholder="Competitor website" data-mandatory="true" data-validation-msg="Please enter competitor website">
                         <span class="validation_message" style="margin-top: 3px;"></span>
                       </div>             
@@ -430,14 +442,14 @@
                   <div class="inner_form_wrap">
                     <form class="lep_form step2_form" action="#">
                       
-                      <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                       <div class="form_field mrg_b">
+                        <label class="form-label">Who are your main competitors and how do you differ from them?</label>
                         <textarea class="form-control h_resp_100 " id="compet_details" rows="3" placeholder="Details" data-mandatory="true" data-validation-msg="Please enter the data"></textarea>
                         <span class="validation_message" style="margin-top: 3px;"></span>
                       </div>
 
-                      <label for="logo_elements" class="form-label">What specific elements would you like to include in your logo design?<span class="hint_label">e.g., shield, pigeon, lion, etc.</span></label>
                      <div class="form_field mrg_b">
+                      <label for="logo_elements" class="form-label">What specific elements would you like to include in your logo design?<span class="hint_label">e.g., shield, pigeon, lion, etc.</span></label>
                       <input id="tag_inp" type="text" value="Shield, pigeon, Lion"class="form-control adj_height " data-mandatory="true" data-validation-msg="Please enter logo element">
                       <span class="validation_message" style="margin-top: 3px;"></span>
                      </div>
@@ -481,9 +493,13 @@
                         <div class="color-picker" id="colorTheme">
                         </div> 
                         <span class="validation_message" style="margin-left: 7px;"></span>
+                        <!-- Add the "Select All" checkbox -->
                     </form>
                   </div>
                   <div class="btn_group">
+                    <div class="select_inp_wrap">
+                      <input type="checkbox" id="selectAllCheckbox"> <label for="selectAllCheckbox">Select All</label>
+                    </div>
                     <button type="button" id="prev_btn_3" class="btn backbtn">Back</button>
                     <button type="button" id="next_btn_form_3" class="btn btn-primary">Next
                       <span class="btn_svg">
@@ -515,65 +531,65 @@
                           </div>
                         </div>
                     
-                        <div class="logo_category mrg" id="pictorialLogos">
+                        <div class="logo_category mrg" id="lettermarkLogos">
                           <h3>Lettermark Logos</h3>
                           <div class="logo_images">
-                            <span class="logo_box"><img src="./images/logos/image_37.png" alt="Pictorial Logo 1" class="logo" data-logo-id="3"></span>
-                            <span class="logo_box"><img src="./images/logos/image_44.png" alt="Pictorial Logo 2" class="logo" data-logo-id="4"></span>
+                            <span class="logo_box"><img src="./images/logos/image_37.png" alt="Lettermark Logo 1" class="logo" data-logo-id="3"></span>
+                            <span class="logo_box"><img src="./images/logos/image_44.png" alt="Lettermark Logo 2" class="logo" data-logo-id="4"></span>
                           </div>
                         </div>
   
-                        <div class="logo_category" id="pictorialLogos">
+                        <div class="logo_category" id="wordmarkLogos">
                           <h3>Wordmark Logos</h3>
                           <div class="logo_images">
-                            <span class="logo_box"><img src="./images/logos/image_38.png" alt="Pictorial Logo 1" class="logo" data-logo-id="3"></span>
-                            <span class="logo_box"><img src="./images/logos/image_40.png" alt="Pictorial Logo 2" class="logo" data-logo-id="4"></span>
+                            <span class="logo_box"><img src="./images/logos/image_38.png" alt="Wordmark Logo 1" class="logo" data-logo-id="5"></span>
+                            <span class="logo_box"><img src="./images/logos/image_40.png" alt="Wordmark Logo 2" class="logo" data-logo-id="6"></span>
                           </div>
                         </div>
   
                         <div class="logo_category mrg" id="pictorialLogos">
                           <h3>Pictorial Logos</h3>
                           <div class="logo_images">
-                            <span class="logo_box"><img src="./images/logos/image_43.png" alt="Pictorial Logo 1" class="logo" data-logo-id="3"></span>
-                            <span class="logo_box"><img src="./images/logos/image_47.png" alt="Pictorial Logo 2" class="logo" data-logo-id="4"></span>
+                            <span class="logo_box"><img src="./images/logos/image_43.png" alt="Pictorial Logo 1" class="logo" data-logo-id="7"></span>
+                            <span class="logo_box"><img src="./images/logos/image_47.png" alt="Pictorial Logo 2" class="logo" data-logo-id="8"></span>
                           </div>
                         </div>
   
-                        <div class="logo_category" id="pictorialLogos">
+                        <div class="logo_category" id="abstractLogos">
                           <h3>Abstract Logos</h3>
                           <div class="logo_images">
-                            <span class="logo_box"><img src="./images/logos/image_48.png" alt="Pictorial Logo 1" class="logo" data-logo-id="3"></span>
-                            <span class="logo_box"><img src="./images/logos/image_49.png" alt="Pictorial Logo 2" class="logo" data-logo-id="4"></span>
+                            <span class="logo_box"><img src="./images/logos/image_48.png" alt="Abstract Logo 1" class="logo" data-logo-id="9"></span>
+                            <span class="logo_box"><img src="./images/logos/image_49.png" alt="Abstract Logo 2" class="logo" data-logo-id="10"></span>
                           </div>
                         </div>
   
-                        <div class="logo_category mrg" id="pictorialLogos">
+                        <div class="logo_category mrg" id="mascotsLogos">
                           <h3>Mascots Logos</h3>
                           <div class="logo_images">
-                            <span class="logo_box"><img src="./images/logos/image_51.png" alt="Pictorial Logo 1" class="logo" data-logo-id="3"></span>
-                            <span class="logo_box"><img src="./images/logos/image_64.png" alt="Pictorial Logo 2" class="logo" data-logo-id="4"></span>
+                            <span class="logo_box"><img src="./images/logos/image_51.png" alt="Mascots Logo 1" class="logo" data-logo-id="11"></span>
+                            <span class="logo_box"><img src="./images/logos/image_64.png" alt="Mascots Logo 2" class="logo" data-logo-id="12"></span>
                           </div>
                         </div>
   
-                        <div class="logo_category" id="pictorialLogos">
+                        <div class="logo_category" id="combinationMarkLogos">
                           <h3>Combination Mark Logos</h3>
                           <div class="logo_images">
-                            <span class="logo_box"><img src="./images/logos/image_66.png" alt="Pictorial Logo 1" class="logo" data-logo-id="3"></span>
-                            <span class="logo_box"><img src="./images/logos/image_67.png" alt="Pictorial Logo 2" class="logo" data-logo-id="4"></span>
+                            <span class="logo_box"><img src="./images/logos/image_66.png" alt="Combination Mark Logo 1" class="logo" data-logo-id="13"></span>
+                            <span class="logo_box"><img src="./images/logos/image_67.png" alt="Combination Mark Logo 2" class="logo" data-logo-id="14"></span>
                           </div>
                         </div>
   
-                        <div class="logo_category mrg" id="pictorialLogos">
+                        <div class="logo_category mrg" id="emblemLogos">
                           <h3>Emblem Logos</h3>
                           <div class="logo_images">
-                            <span class="logo_box"><img src="./images/logos/image_70.png" alt="Pictorial Logo 1" class="logo" data-logo-id="3"></span>
-                            <span class="logo_box"><img src="./images/logos/image_71.png" alt="Pictorial Logo 2" class="logo" data-logo-id="4"></span>
+                            <span class="logo_box"><img src="./images/logos/image_70.png" alt="Emblem Logo 1" class="logo" data-logo-id="15"></span>
+                            <span class="logo_box"><img src="./images/logos/image_71.png" alt="Emblem Logo 2" class="logo" data-logo-id="16"></span>
                           </div>
                         </div>
                         
                       </div>
 
-                      <span class="validation_message"></span>
+                      <span class="validation_message" id="logoValidationMessage"></span>
                   
                       <!-- Add more logo categories as needed -->
                   
@@ -602,18 +618,17 @@
                 <div class="step_desc">Select one or more font styles for your logo. A particular font can be chosen at a later stage.</div>
                 <div class="button_wrap">
                   <div class="inner_form_wrap">
-                    <form id="itemSelectionForm" class="lep_form step5_form" action="#">
-                      
-                      
+                    <form id="itemSelectionForm" class="lep_form step5_form" action="#">                      
                       <div class="item-container" id="itemContainer">
                         <!-- Items will be dynamically generated here -->
-                      </div>
-                      
-                      <span class="validation_message"></span>
-      
+                      </div>                      
+                      <span class="validation_message"></span>      
                     </form>
                   </div>
                   <div class="btn_group">
+                    <!-- <div class="select_inp_wrap">
+                      <input type="checkbox" id="selectAllCheckbox"> <label for="selectAllCheckbox">Select All</label>
+                    </div> -->
                     <button type="button" id="prev_btn_5" class="btn backbtn">Back</button>
                     <button type="button" id="next_btn_form_5" class="btn btn-primary">Next
                       <span class="btn_svg">
@@ -624,11 +639,9 @@
                     </button>
                   </div>
                 </div>
-                
-
-
               </div>
 
+              
             </div>
           </div>
 

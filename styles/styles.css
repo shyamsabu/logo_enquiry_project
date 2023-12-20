@@ -257,21 +257,21 @@ body {
     margin-bottom: 15px;
   }
 }
-.banner .banner_content form .form-control {
+.banner .banner_content form .form_feild_wrap {
   margin-bottom: 10px !important;
 }
 @media (min-width: 768px) {
-  .banner .banner_content form .form-control {
+  .banner .banner_content form .form_feild_wrap {
     margin-bottom: 15px !important;
   }
 }
 @media (min-width: 1600px) {
-  .banner .banner_content form .form-control {
+  .banner .banner_content form .form_feild_wrap {
     margin-bottom: 20px !important;
   }
 }
 @media (min-width: 1867px) {
-  .banner .banner_content form .form-control {
+  .banner .banner_content form .form_feild_wrap {
     margin-bottom: 20px !important;
   }
 }
@@ -930,10 +930,17 @@ textarea {
   }
 }
 
+.select_inp_wrap {
+  float: left;
+  margin-right: auto;
+  font-size: 15px;
+}
+
 .step5_form .item-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: space-between;
 }
 .step5_form .item-box {
   position: relative;
@@ -1084,14 +1091,29 @@ textarea {
   justify-content: center;
   transition: all 0.7s ease;
 }
+.header .step_header .wrap_d-flex .stepper_wrap .form-steps__button::before {
+  width: 25px;
+  height: 25px;
+  transition: all 0.7s ease;
+}
 .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active {
+  position: relative;
+}
+.header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active::before {
+  content: "";
+  position: absolute;
   width: 28px;
   height: 28px;
   background: rgb(5, 45, 112) !important;
   border: 2px solid var(--green);
+  border-radius: 50px;
+  top: -18%;
 }
 .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active svg {
   display: block;
+  position: absolute;
+  z-index: 1;
+  top: 4px;
 }
 .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button svg {
   display: none;
@@ -1104,13 +1126,17 @@ textarea {
     width: 23px;
     height: 23px;
   }
-  .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active {
+  .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button::before {
+    width: 23px;
+    height: 23px;
+  }
+  .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active::before {
     width: 25px;
     height: 25px;
   }
   .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active svg {
-    height: 10px;
-    margin-bottom: 2px;
+    height: 11px;
+    left: 1.5px;
   }
 }
 @media (max-width: 1599px) {
@@ -1121,6 +1147,19 @@ textarea {
 @media (max-width: 1365px) {
   .header .step_header .wrap_d-flex .stepper_wrap {
     width: 280px;
+  }
+  .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button {
+    width: 23px;
+    height: 23px;
+  }
+  .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active::before {
+    width: 24px;
+    height: 24px;
+  }
+  .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.active svg {
+    height: 9px;
+    left: 1.5px;
+    top: 5px;
   }
 }
 @media (max-width: 991px) {
@@ -1487,6 +1526,11 @@ textarea {
   border-radius: 3px !important;
   border-color: #C5C6C9 !important;
   color: #666666;
+  --bs-form-select-bg-img: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"  height="3" viewBox="0 0 16 3" fill="none"%3E%3Cpath fill-rule="evenodd"  clip-rule="evenodd" d="M1.26867 0.209586L5.98418 5.06949L10.7313 0.209586C11.3643 -0.457459 12.4403 0.622518 11.8073 1.28956L6.42724 6.81651C6.20571 7.03886 5.79429 7.07062 5.57276 6.84827L0.192654 1.28956C-0.440299 0.622518 0.635721 -0.457459 1.26867 0.209586Z" fill="%23666666"%3E%3C/path%3E%3C/svg%3E') !important;
+}
+.form-select:focus {
+  border-color: #dee2e6 !important;
+  box-shadow: none !important;
 }
 @media (max-width: 1599px) {
   .form-select {
@@ -1575,7 +1619,7 @@ textarea {
 }
 @media (max-width: 1199px) {
   .select2-container {
-    min-width: 408px;
+    min-width: 407px;
   }
 }
 @media (max-width: 991px) {
@@ -1617,9 +1661,18 @@ textarea {
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
-  transform: translateY(8px);
+  transform: translateY(9px);
   left: 0%;
-  border-width: 7px 6px 0 6px;
+  background-image: url('data:image/svg+xml,%3Csvg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M1.26867 0.209586L5.98418 5.06949L10.7313 0.209586C11.3643 -0.457459 12.4403 0.622518 11.8073 1.28956L6.42724 6.81651C6.20571 7.03886 5.79429 7.07062 5.57276 6.84827L0.192654 1.28956C-0.440299 0.622518 0.635721 -0.457459 1.26867 0.209586Z" fill="%23C5C6C9"%3E%3C/path%3E%3C/svg%3E') !important;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1856px) {
+  .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    transform: translateY(5px);
+  }
 }
 @media (max-width: 1199px) {
   .select2-container--default .select2-selection--single .select2-selection__arrow b {
@@ -1688,6 +1741,7 @@ textarea {
 .validation_message {
   color: #c13c3c;
   font-size: 0.8rem;
+  display: flex;
 }
 
 .hint_label {
