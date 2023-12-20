@@ -652,7 +652,7 @@ textarea{
   }
 }
 
-.tick-icon {
+.tick-icon, .font-tick-icon {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -662,18 +662,20 @@ textarea{
   border-radius: 50%;
   display: none;
   cursor: pointer;
+  &:before {
+    content: '\2713'; /* Unicode character for a checkmark */
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.tick-icon:before {
-  content: '\2713'; /* Unicode character for a checkmark */
-  color: #fff;
-  font-size: 12px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.error{
+  border: 1px solid #d94e4e !important;
 }
-
 .color-info {
   text-align: left;
   margin-top: 5px;
@@ -1272,8 +1274,8 @@ textarea{
   }
 }
 .form-select{
-  border-radius: 3px!important;
-  border-color: #C5C6C9!important;
+  border-radius: 3px;
+  border-color: #C5C6C9;
   color: #666666;
   @media (max-width: 1599px) {
     font-size: 14px;
@@ -1283,11 +1285,11 @@ textarea{
   }
 }
 .form-control{
-  border-radius: 3px!important;
-  border-color: #C5C6C9!important;
+  border-radius: 3px;
+  border-color: #C5C6C9;
   &:focus{
-    border-color: #dee2e6!important;
-    box-shadow: none!important;
+    border-color: #dee2e6;
+    box-shadow: none;
   }
   @media (max-width: 1599px) {
     font-size: 14px;
