@@ -822,6 +822,8 @@ textarea{
   float: left;
   margin-right: auto;
   font-size: 15px;
+  margin-left: 5px;
+  margin-top: 15px;
 }
 .step5_form{
   .item-container {
@@ -1293,7 +1295,8 @@ textarea{
 .adj_height{
   min-height: 50px !important;
   max-height: 75px!important;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   @media (max-width: 1856px) {
     min-height: 40px !important;
   }
@@ -1445,6 +1448,7 @@ textarea{
   }
   span{
     color: rgb(101, 101, 101);
+    font-size: 13px;
   }
 }
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
@@ -1458,15 +1462,18 @@ textarea{
   span{
     display: flex;
     align-items: center;
+    font-size: 15px;
     @media (max-width: 1599px) {
-      font-size: 14px;
+      font-size: 13px;
     }
     img{
       margin-right: 15px;
       max-width: 35px;
+      max-height: 30px;
       @media (max-width: 1599px) {
         margin-right: 10px;
         max-width: 30px;
+        max-height: 25px;
       }
     }
   }
