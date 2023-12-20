@@ -421,16 +421,17 @@ $(document).ready(function() {
 //  tagify //
 
 var $input = $('#tag_inp').tagify({
-  whitelist : [
-      {"id":1, "value":"some string"}
-  ]
+  whitelist: [
+      {"id": 1, "value": "some string"}
+  ],
+  placeholder: 'Lines ,shapes, hope, intelligence, etc.' 
 })
-.on('add', function(e, tagName){
-    console.log('JQEURY EVENT: ', 'added', tagName)
-})
-.on("invalid", function(e, tagName) {
-    console.log('JQEURY EVENT: ',"invalid", e, ' ', tagName);
-});
+  .on('add', function(e, tagName) {
+      console.log('JQEURY EVENT: ', 'added', tagName);
+  })
+  .on("invalid", function(e, tagName) {
+      console.log('JQEURY EVENT:', "invalid", e, ' ', tagName);
+  });
 
 //  tagify //
 
