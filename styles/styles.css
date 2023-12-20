@@ -1688,6 +1688,7 @@ textarea {
 .validation_message {
   color: #c13c3c;
   font-size: 0.8rem;
+  display: flex;
 }
 
 .hint_label {

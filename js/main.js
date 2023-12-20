@@ -10,7 +10,24 @@ $(document).ready(function() {
     });  
     $('.lets_get_started_btn').on('click', function(event) {
       event.preventDefault(); // Prevent the default behavior (page reload)
-      $('.slider').slick('slickNext');
+      // $('.slider').slick('slickNext');
+
+      var formWrapClass = 'step0_form';
+
+      // Call the validateForm function
+      var isValid = validateForm(formWrapClass);
+
+      // Check if the form is valid
+      if (isValid) {
+          // Your code here if the form is valid
+          console.log('Form is valid. Proceed with your code.');
+          $('.slider').slick('slickNext');
+      } else {
+          // Your code here if the form is not valid
+          console.log('Form is not valid. Please check the validation messages.');
+      }
+
+
     });
     $('#prev_btn_slide').on('click', function(event) {
       event.preventDefault(); // Prevent the default behavior (page reload)
@@ -150,30 +167,6 @@ $(document).ready(function() {
     }
   });
 
-  $( "#next_btn_form_4" ).click(function() {
-    var isValid = validateForm('form_wrap_4');
-    if (!isValid) {
-      console.log("invalid form")
-        return;
-    }
-    else{
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').hide();
-      $('.form_wrap_4').hide();
-      $('.form_wrap_5').show();
-      $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
-      $("#step-button-4").addClass('active'); 
-      $("#step-button-3").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
-      $("#step-button-1").addClass('active'); 
-    }
-
-  });
-
-
-
-
   $( "#prev_btn_5" ).click(function() {
     $('.form_wrap_2').hide();
     $('.form_wrap_1').hide();
@@ -221,28 +214,7 @@ $(document).ready(function() {
   });
 
 
-
-  $('#next_btn_form_5').on('click', function(event){
-    $("#step-button-5").addClass('active');
-    event.preventDefault(); 
-    $('.slider').slick('slickNext');
-  });
-
-
-
   //color picker code
-
-  const colorDescriptions = {
-    red: 'Energy, passion, love',
-    orange: 'Fun, vibrant, youthful',
-    green: 'Fresh and natural',
-    blue: 'Calm and serene',
-    pink: 'Romantic and playful'
-    // Add more descriptions as needed
-  };
-
-  const colorShadesCount = 8;
-
   const colors = [
     { name: 'red', description:'Energy, passion, love', shades: ['#F9BABA', '#F57B7B', '#F45352', '#E43736', '#F01C1A', '#CF0703', '#AF0503', '#880200'] },
     { name: 'orange', description:'Fun, vibrant, youthful', shades: ['#F6CD9D', '#F5B051', '#F5A00B', '#F48407', '#F48509', '#F37004', '#F25805', '#F13E04'] },
@@ -257,7 +229,6 @@ $(document).ready(function() {
     { name: 'grayscale', description:'Honesty, comfort, stability', shades: ['#F8F8F8', '#E6E6E6', '#D6D6D6', '#89939F', '#807979', '#5A5A5D', '#282821', '#0B0909'] },
     // Add more colors with their shades as needed
   ];
-
   colors.forEach(color => {
     const colorBox = $('<div class="color-box"></div>');
 
@@ -277,24 +248,28 @@ $(document).ready(function() {
     colorBox.click(function () {
       colorBox.toggleClass('selected');
       tickIcon.toggle();
+
+      var isSelected = $(this).hasClass('selected');
+      if(isSelected) { $('.validation_message').text('') };
     });
+
 
     colorBox.append(tickIcon);
     colorBox.append(colorInfo);
     colorBox.append(colorShades);
     $('#colorTheme').append(colorBox);
   });
+  // Add a click event handler for the "Select All" checkbox
+  $("#selectAllCheckbox").click(function () {
+    var isChecked = $(this).prop("checked");
 
-  // Helper function to convert hex color to RGB
-  function hexToRgb(hex) {
-    const bigint = parseInt(hex.slice(1), 16);
-    const r = (bigint >> 16) & 255;
-    const g = (bigint >> 8) & 255;
-    const b = bigint & 255;
-    return [r, g, b];
-  }
+    // Toggle the "selected" class and tick icon for all color boxes
+    $(".color-box").toggleClass("selected", isChecked);
+    $(".tick-icon").toggle(isChecked);
 
-
+    // Hide the validation message when "Select All" is checked
+    $(".validation_message").text('');
+  });
   // ==================logo selection form =====================
   const selectedLogos = [];
 
@@ -324,8 +299,47 @@ $(document).ready(function() {
     event.preventDefault();
     // Perform any additional actions on form submission if needed
   });
-  // ===========================================================
 
+  // Validation for the "Next" button
+  $('#next_btn_form_4').on('click', function () {
+    const logoValidationMessage = $('#logoValidationMessage');
+
+    if (selectedLogos.length === 0) {
+      // No logo selected, display validation message
+      logoValidationMessage.text('Please select at least one logo.');
+    } else {
+      // Clear validation message if at least one logo is selected
+      logoValidationMessage.text('');
+
+      // Log selected logo category id, h3 text, and selected logo alt text
+      const selectedLogoCategory = $('.logo_box.selected').closest('.logo_category');
+      const selectedLogoCategoryId = selectedLogoCategory.attr('id');
+      const selectedLogoCategoryText = selectedLogoCategory.find('h3').text();
+      
+      selectedLogos.forEach(logoId => {
+        const selectedLogo = $(`.logo_box.selected .logo[data-logo-id="${logoId}"]`);
+        const selectedLogoAltText = selectedLogo.attr('alt');
+        
+        console.log('Selected Logo Category ID:', selectedLogoCategoryId);
+        console.log('Selected Logo Category Text:', selectedLogoCategoryText);
+        console.log('Selected Logo Alt Text:', selectedLogoAltText);
+      });
+
+
+      // Proceed to the next step or perform any other action
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_4').hide();
+      $('.form_wrap_5').show();
+      $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
+      $("#step-button-4").addClass('active'); 
+      $("#step-button-3").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+      $("#step-button-1").addClass('active'); 
+    }
+  });
+  // ===========================================================
 
   // font section form 
   const items = [
@@ -341,9 +355,8 @@ $(document).ready(function() {
     { imagePath: "./images/font_preview/bubbly.png", description: "Item 3", subText: "Cheerful and lively" }
     // Add more items as needed
   ];
-
   const selectedItems = [];
-
+  let fontVal = $('.form_wrap_5 .validation_message');
   items.forEach((item, index) => {
     const itemBox = $('<div class="item-box"></div>');
     const itemImage = $(`<img src="${item.imagePath}" alt="${item.description}" class="item-image">`);
@@ -359,6 +372,7 @@ $(document).ready(function() {
       tickIcon.toggle();
       
       if (itemBox.hasClass('selected')) {
+        fontVal.text('');
         selectedItems.push(index);
       } else {
         const selectedIndex = selectedItems.indexOf(index);
@@ -373,10 +387,34 @@ $(document).ready(function() {
 
     $('#itemContainer').append(itemBox);
   });
-
   $('#itemSelectionForm').on('submit', function (event) {
     event.preventDefault();
     // Perform any additional actions on form submission if needed
+  });
+
+  $('#next_btn_form_5').on('click', function(event){    
+    event.preventDefault(); 
+    // =============
+    const itemValidationMessage = $('.form_wrap_5 .validation_message');
+
+    if (selectedItems.length === 0) {
+      // No item selected, display validation message
+      itemValidationMessage.text('Please select at least one font style.');
+    } else {
+      // Clear validation message if at least one item is selected
+      itemValidationMessage.text('');
+
+      // Log alt text of item-image inside the selected item-box
+      selectedItems.forEach(index => {
+        const selectedAltText = $('.item-box.selected').eq(index).find('.item-image').attr('alt');
+        console.log('Selected Item Alt Text:', selectedAltText);
+      });
+
+      // Proceed to the next step or perform any other action
+      $("#step-button-5").addClass('active');
+      $('.slider').slick('slickNext');
+    }
+    
   });
   // ========================================
 
