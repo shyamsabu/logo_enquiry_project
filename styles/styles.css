@@ -258,6 +258,7 @@ body {
   }
 }
 .banner .banner_content form .form_feild_wrap {
+  position: relative;
   margin-bottom: 10px !important;
 }
 @media (min-width: 768px) {
@@ -385,6 +386,13 @@ body {
   .banner .banner_content form .lets_get_started_btn i svg {
     height: 20px;
   }
+}
+.banner .banner_image .banner_svg_wrapper {
+  width: 100%;
+}
+.banner .banner_image .banner_svg_wrapper svg {
+  width: 100%;
+  max-width: 100%;
 }
 .banner .desktop {
   display: none !important;
@@ -678,6 +686,7 @@ textarea {
 
 .lep_form {
   color: #000000;
+  position: relative;
 }
 .lep_form select option {
   color: #666666;
@@ -1565,8 +1574,42 @@ textarea {
   }
 }
 
+.validation_message {
+  display: none;
+  padding: 0;
+}
+
 .error {
   border: 1px solid #d94e4e !important;
+}
+.error ~ .validation_message, .error .validation_message {
+  background-color: #fc7085;
+  font-size: 0.8rem;
+  color: #fff;
+  line-height: normal;
+  border-radius: 3px;
+  padding: 2px 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.error ~ .validation_message:after, .error .validation_message:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #fc7085;
+  position: absolute;
+  left: 5px;
+  bottom: -6px;
+}
+
+.form_field {
+  position: relative;
 }
 
 .inner_form_wrap {
@@ -1750,9 +1793,15 @@ textarea {
 }
 
 .validation_message {
-  color: #c13c3c;
   font-size: 0.8rem;
-  display: flex;
+  line-height: normal;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .hint_label {
@@ -1978,7 +2027,7 @@ textarea {
   -webkit-animation-timing-function: ease-out;
   visibility: visible !important;
   animation-count: 1;
-  animation-delay: 0s;
+  animation-delay: 0.2s;
 }
 
 @keyframes bigEntrance {
