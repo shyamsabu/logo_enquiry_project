@@ -326,6 +326,17 @@ body {
       }
     }
   }
+  
+  .banner_image{
+    .banner_svg_wrapper{
+      width: 100%; 
+      svg{
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
   .desktop{
     display: none!important;
     .banner_image{
@@ -1771,7 +1782,7 @@ textarea{
   -webkit-animation-timing-function: ease-out;
   visibility: visible !important;
   animation-count: 1;
-  animation-delay: 0s;
+  animation-delay: .2s;
 }
 
 @keyframes bigEntrance {

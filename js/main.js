@@ -1,42 +1,55 @@
 $(document).ready(function() {
-    $('.slider').slick({
-      dots: false,
-      infinite: false,
-      speed: 900,
-      slidesToShow: 1,
-      adaptiveHeight: false,
-      arrows: false,
-      draggable: false
-    });  
-    $('.lets_get_started_btn').on('click', function(event) {
-      event.preventDefault(); // Prevent the default behavior (page reload)
-      // $('.slider').slick('slickNext');
 
-      var formWrapClass = 'step0_form';
+  loadFormData();
 
-      // Call the validateForm function
-      var isValid = validateForm(formWrapClass);
 
+  $('.slider').slick({
+    dots: false,
+    infinite: false,
+    speed: 900,
+    slidesToShow: 1,
+    adaptiveHeight: false,
+    arrows: false,
+    draggable: false
+  });  
+  $('.lets_get_started_btn').on('click', function(event) {
+    event.preventDefault(); // Prevent the default behavior (page reload)
+    // $('.slider').slick('slickNext');
+
+    var formWrapClass = 'step0_form';
+
+    // Call the validateForm function
+    var isValid = validateForm(formWrapClass);
+
+    // Check if the form is valid
+    if (isValid) {
+        // Your code here if the form is valid
+        console.log('Form is valid. Proceed with your code.');
+        $('.slider').slick('slickNext');
+    } else {
+        // Your code here if the form is not valid
+        console.log('Form is not valid. Please check the validation messages.');
+    }
+
+
+  });
+  $('#prev_btn_slide').on('click', function(event) {
+    event.preventDefault(); // Prevent the default behavior (page reload)
+    $('.slider').slick('slickPrev');
+  });
+
+
+  // step button code
+  $( "#step-button-1" ).click(function() {
+      // Call the validateForm function for the current step
+      let isValid = validateForm('form_wrap_1');
       // Check if the form is valid
       if (isValid) {
-          // Your code here if the form is valid
-          console.log('Form is valid. Proceed with your code.');
-          $('.slider').slick('slickNext');
-      } else {
-          // Your code here if the form is not valid
-          console.log('Form is not valid. Please check the validation messages.');
-      }
+        storeFormData('step1_form');
+        // Your code here if the form is valid
+        console.log('Step 1 form is valid. Proceed with your code.');
 
-
-    });
-    $('#prev_btn_slide').on('click', function(event) {
-      event.preventDefault(); // Prevent the default behavior (page reload)
-      $('.slider').slick('slickPrev');
-    });
-    $( "#step-button-1" ).click(function() {
-      $( ".progress-bar span" ).animate({
-       width: "0%"
-        }, 1000 );
+        $( ".progress-bar span" ).animate({width: "0%"}, 1000 );
         $("#step-button-2").removeClass('active'); 
         $("#step-button-3").removeClass('active'); 
         $("#step-button-4").removeClass('active'); 
@@ -47,65 +60,187 @@ $(document).ready(function() {
         $('.form_wrap_3').hide();
         $('.form_wrap_2').hide();
         $('.form_wrap_1').show();
+
+        $('.form_wrap_2').show();
+        $('.form_wrap_1').hide();
+        $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
+        $("#step-button-1").addClass('active');
+
+
+      } else {
+        // Your code here if the form is not valid
+        console.log('Step 1 form is not valid. Please check the validation messages.');
+        return;
+      }
   });
   $( "#step-button-2" ).click(function() {
-      $( ".progress-bar span" ).animate({
-       width: "29%"
-        }, 1000 );
-        $("#step-button-1").addClass('active'); 
-        $("#step-button-3").removeClass('active'); 
-        $("#step-button-4").removeClass('active'); 
-        $("#step-button-2").removeClass('active')
-        $('.form_wrap_5').hide();
-        $('.form_wrap_4').hide();
-        $('.form_wrap_3').hide();
-        $('.form_wrap_1').hide();
-        $('.form_wrap_2').show();
+    // Call the validateForm function for the current step
+    let isValid = validateForm('form_wrap_2');
+    // Check if the form is valid
+    if (isValid) {
+      storeFormData('step2_form');
+      // Your code here if the form is valid
+      console.log('Step 2 form is valid. Proceed with your code.');
+
+      $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-3").removeClass('active'); 
+      $("#step-button-4").removeClass('active'); 
+      $("#step-button-2").removeClass('active')
+      $('.form_wrap_5').hide();
+      $('.form_wrap_4').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_2').show();
+
+
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').show();
+      $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+      
+    }
+    else{
+      console.log("form 2 is invalid!")
+    }
   });
   $( "#step-button-3" ).click(function() {
-      $( ".progress-bar span" ).animate({
-       width: "50%"
-        }, 1000 );
-        $("#step-button-1").addClass('active'); 
-        $("#step-button-4").removeClass('active');
-        $("#step-button-3").removeClass('active'); 
-        $("#step-button-2").addClass('active'); 
-        $('.form_wrap_5').hide();
-        $('.form_wrap_4').hide();
-        $('.form_wrap_2').hide();
-        $('.form_wrap_1').hide();
-        $('.form_wrap_3').show();
+    // Call the validateForm function for the current step
+    let isValid = validateForm('form_wrap_3');
+    // Check if the form is valid
+    if (isValid) {
+      storeFormData('step3_form');
+      // Your code here if the form is valid
+      console.log('Step 3 form is valid. Proceed with your code.');
+
+      $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-4").removeClass('active');
+      $("#step-button-3").removeClass('active'); 
+      $("#step-button-2").addClass('active'); 
+      $('.form_wrap_5').hide();
+      $('.form_wrap_4').hide();
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').show();
+
+
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_4').show();
+      $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
+      $("#step-button-3").addClass('active'); 
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+
+    }
+    else{
+      console.log("form 3 is invalid!")
+    }
   });
   $( "#step-button-4" ).click(function() {
-      $( ".progress-bar span" ).animate({
-       width: "75%"
-        }, 1000 );
-        $("#step-button-1").addClass('active'); 
-        $("#step-button-2").addClass('active'); 
-        $("#step-button-3").addClass('active'); 
-        $("#step-button-5").removeClass('active'); 
-        $("#step-button-4").removeClass('active'); 
-        $('.form_wrap_5').hide();
-        $('.form_wrap_2').hide();
-        $('.form_wrap_3').hide();
-        $('.form_wrap_1').hide();
-        $('.form_wrap_4').show();
-  });
-  $( "#step-button-5" ).click(function() {
-    $( ".progress-bar span" ).animate({
-     width: "99%"
-      }, 1000 );
+    // Call the validateForm function for the current step
+    let isValid = validateForm('form_wrap_4');
+    // Check if the form is valid
+    if (isValid) {
+      // Your code here if the form is valid
+      console.log('Step 4 form is valid. Proceed with your code.');
+
+      $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
       $("#step-button-1").addClass('active'); 
       $("#step-button-2").addClass('active'); 
       $("#step-button-3").addClass('active'); 
-      $("#step-button-4").addClass('active'); 
-        $('.form_wrap_2').hide();
-        $('.form_wrap_4').hide();
-        $('.form_wrap_3').hide();
-        $('.form_wrap_1').hide();
-        $('.form_wrap_5').show();
-  });
+      $("#step-button-5").removeClass('active'); 
+      $("#step-button-4").removeClass('active'); 
+      $('.form_wrap_5').hide();
+      $('.form_wrap_2').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_4').show();
 
+      let logoValidationMessage = $('#logoValidationMessage');
+
+    if (selectedLogos.length === 0) {
+      // No logo selected, display validation message
+      logoValidationMessage.text('Please select at least one logo.');
+    } else {
+      // Clear validation message if at least one logo is selected
+      logoValidationMessage.text('');      
+
+      // Log the entire selectedLogos array to the console
+      console.log('Selected Logos Array:', selectedLogos);
+
+      // Proceed to the next step or perform any other action
+      $('.form_wrap_2').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_4').hide();
+      $('.form_wrap_5').show();
+      $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
+      $("#step-button-4").addClass('active'); 
+      $("#step-button-3").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+      $("#step-button-1").addClass('active'); 
+    }
+
+    }
+    else{
+      console.log("form 4 is invalid!")
+    }
+  });
+  $( "#step-button-5" ).click(function() {
+    // Call the validateForm function for the current step
+    let isValid = validateForm('form_wrap_4');
+    // Check if the form is valid
+    if (isValid) {
+      // Your code here if the form is valid
+      console.log('Step 5 form is valid. Proceed with your code.');
+
+    $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
+    $("#step-button-1").addClass('active'); 
+    $("#step-button-2").addClass('active'); 
+    $("#step-button-3").addClass('active'); 
+    $("#step-button-4").addClass('active'); 
+    $('.form_wrap_2').hide();
+    $('.form_wrap_4').hide();
+    $('.form_wrap_3').hide();
+    $('.form_wrap_1').hide();
+    $('.form_wrap_5').show();
+
+
+
+
+    let itemValidationMessage = $('.form_wrap_5 .validation_message');
+
+    if (selectedItems.length === 0) {
+      // No item selected, display validation message
+      itemValidationMessage.text('Please select at least one font style.');
+    } else {
+      // Clear validation message if at least one item is selected
+      itemValidationMessage.text('');
+
+      // Log alt text of item-image inside the selected item-box
+      const selectedAltText = [];
+      selectedItems.forEach(index => {        
+        selectedAltText.push(index.altText);       
+      });
+      console.log('Selected Item Alt Text:', selectedAltText); 
+
+      // Proceed to the next step or perform any other action
+      $("#step-button-5").addClass('active');
+      $('.slider').slick('slickNext');
+    }
+
+    }
+    else{
+      console.log("form 5 is invalid!")
+    }
+  });
+// ============================================
+// ============================================
 
 
 
@@ -114,13 +249,8 @@ $(document).ready(function() {
   $('.form_wrap_4').hide();
   $('.form_wrap_5').hide();
 
-  $( "#next_btn_form_1" ).click(function() {
-    // $('.form_wrap_2').show();
-    // $('.form_wrap_1').hide();
-    // $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
-    // $("#step-button-1").addClass('active');
-    
-    var isValid = validateForm('form_wrap_1');
+  $( "#next_btn_form_1" ).click(function() {    
+    let isValid = validateForm('form_wrap_1');
     if (!isValid) {
       console.log("invalid form")
         return;
@@ -133,7 +263,7 @@ $(document).ready(function() {
     }
   });
   $( "#next_btn_form_2" ).click(function() {
-    var isValid = validateForm('form_wrap_2');
+    let isValid = validateForm('form_wrap_2');
     if (!isValid) {
       console.log("invalid form")
         return;
@@ -150,7 +280,7 @@ $(document).ready(function() {
 
   });
   $( "#next_btn_form_3" ).click(function() {
-    var isValid = validateForm('form_wrap_3');
+    let isValid = validateForm('form_wrap_3');
     if (!isValid) {
       console.log("invalid form")
         return;
@@ -173,11 +303,9 @@ $(document).ready(function() {
     $('.form_wrap_3').hide();
     $('.form_wrap_4').show();
     $('.form_wrap_5').hide();
-    $( ".progress-bar span" ).animate({
-      width: "75%"
-      }, 1000 );
-      $("#step-button-5").removeClass('active'); 
-      $("#step-button-4").removeClass('active');
+    $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
+    $("#step-button-5").removeClass('active'); 
+    $("#step-button-4").removeClass('active');
   });
   $( "#prev_btn_4" ).click(function() {
     $('.form_wrap_2').hide();
@@ -185,10 +313,8 @@ $(document).ready(function() {
     $('.form_wrap_4').hide();
     $('.form_wrap_3').show();
     $('.form_wrap_5').hide();
-    $( ".progress-bar span" ).animate({
-      width: "50%"
-      }, 1000 );
-      $("#step-button-3").removeClass('active'); 
+    $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
+    $("#step-button-3").removeClass('active'); 
   });
   $( "#prev_btn_3" ).click(function() {
     $('.form_wrap_3').hide();
@@ -196,10 +322,8 @@ $(document).ready(function() {
     $('.form_wrap_4').hide();
     $('.form_wrap_2').show();
     $('.form_wrap_5').hide();
-    $( ".progress-bar span" ).animate({
-      width: "28%"
-      }, 1000 );
-      $("#step-button-2").removeClass('active');
+    $( ".progress-bar span" ).animate({width: "28%"}, 1000 );
+    $("#step-button-2").removeClass('active');
   });
   $( "#prev_btn_2" ).click(function() {
     $('.form_wrap_3').hide();
@@ -207,10 +331,8 @@ $(document).ready(function() {
     $('.form_wrap_4').hide();
     $('.form_wrap_1').show();
     $('.form_wrap_5').hide();
-    $( ".progress-bar span" ).animate({
-      width: "0%"
-      }, 1000 );
-      $("#step-button-1").removeClass('active');
+    $( ".progress-bar span" ).animate({width: "0%"}, 1000 );
+    $("#step-button-1").removeClass('active');
   });
 
 
@@ -418,115 +540,117 @@ $(document).ready(function() {
 
   
 
-//  tagify //
+  //  tagify //
 
-var $input = $('#tag_inp').tagify({
-  whitelist: [
-      {"id": 1, "value": "some string"}
-  ],
-  placeholder: 'Lines ,shapes, hope, intelligence, etc.' 
-})
-  .on('add', function(e, tagName) {
-      console.log('JQEURY EVENT: ', 'added', tagName);
+  var $input = $('#tag_inp').tagify({
+    whitelist: [
+        {"id": 1, "value": "some string"}
+    ],
+    placeholder: 'Lines ,shapes, hope, intelligence, etc.' 
   })
-  .on("invalid", function(e, tagName) {
-      console.log('JQEURY EVENT:', "invalid", e, ' ', tagName);
-  });
-
-//  tagify //
-
-
-
-// image select//
-function formatState (state) {
-  if (!state.id) { return state.text; }
-  var $state = $(
-    '<span><img src="' + $(state.element).attr('data-src') + '" class="img-flag" /> ' + state.text + '</span>'
-  );
-  return $state;
-};
-$("#img_select").select2({
-  dropdownCss: { "max-height": "200px" }, // Adjust as needed
-  minimumResultsForSearch: Infinity,
-  templateResult: formatState,
-  templateSelection: formatState
-});
-});
-
-
-  // validation code
-  // Common validation function
-  function validateForm(formWrapClass) {
-    var isValid = true;
-
-    // Find all fields with data-mandatory="true" within the specified form wrap
-    $('.' + formWrapClass + ' [data-mandatory="true"]').each(function () {
-      var field = $(this);
-      var fieldValue = field.val();
-      var validationMsg = field.data('validation-msg');
-
-      // Find the next .validation_message within the same form wrap
-      var validationMessageSpan = field.next('.validation_message');
-
-      // Check if the mandatory field is empty or contains only spaces
-      if (!fieldValue || /^\s*$/.test(fieldValue)) {
-        isValid = false;
-
-        // Display validation message below the field
-        validationMessageSpan.text(validationMsg || 'This field is required.');
-
-        // Add 'error' class to the invalid field
-        field.addClass('error');
-      } else if (/[@!#$%^&*<>]/.test(fieldValue)) {
-        // Check if the field contains restricted special characters
-        isValid = false;
-
-        // Display validation message below the field
-        validationMessageSpan.text('Special characters like !@#$%^*<> are not allowed.');
-
-        // Add 'error' class to the invalid field
-        field.addClass('error');
-      } else {
-        // Clear validation message and 'error' class if the field is not empty and passes checks
-        validationMessageSpan.text('');
-        field.removeClass('error');
-      }
-
-      // Add focusout event to hide validation message when the user inputs valid data
-      field.on('focusout', function () {
-        // Use setTimeout to delay execution and ensure fieldValue is properly populated
-        setTimeout(function () {
-          var fieldValue = field.val();
-          if (fieldValue && !/^\s*$/.test(fieldValue)) {
-            validationMessageSpan.text('');
-            field.removeClass('error');
-          }
-        }, 10);
-      });
+    .on('add', function(e, tagName) {
+        console.log('JQEURY EVENT: ', 'added', tagName);
+    })
+    .on("invalid", function(e, tagName) {
+        console.log('JQEURY EVENT:', "invalid", e, ' ', tagName);
     });
 
-    if (formWrapClass === 'form_wrap_3') {
-      // Find the color picker within the specified form wrap
-      var colorPicker = $('.' + formWrapClass + ' .color-picker');
+  //  tagify //
 
-      // Check if at least one color is selected
-      if (colorPicker.find('.color-box.selected').length === 0) {
-        isValid = false;
 
-        // Display validation message below the color picker
-        colorPicker.next('.validation_message').text('Please select at least one color.');
 
-        // Add 'error' class to the invalid field
-        // colorPicker.addClass('error');
-      } else {
-        // Clear validation message and 'error' class if at least one color is selected
-        colorPicker.next('.validation_message').text('');
-        // colorPicker.removeClass('error');
-      }
+  // image select//
+  function formatState (state) {
+    if (!state.id) { return state.text; }
+    var $state = $(
+      '<span><img src="' + $(state.element).attr('data-src') + '" class="img-flag" /> ' + state.text + '</span>'
+    );
+    return $state;
+  };
+  $("#img_select").select2({
+    dropdownCss: { "max-height": "200px" }, // Adjust as needed
+    minimumResultsForSearch: Infinity,
+    templateResult: formatState,
+    templateSelection: formatState
+  });
+
+});
+// ENDOF document ready
+
+
+// validation code
+// Common validation function
+function validateForm(formWrapClass) {
+  var isValid = true;
+
+  // Find all fields with data-mandatory="true" within the specified form wrap
+  $('.' + formWrapClass + ' [data-mandatory="true"]').each(function () {
+    var field = $(this);
+    var fieldValue = field.val();
+    var validationMsg = field.data('validation-msg');
+
+    // Find the next .validation_message within the same form wrap
+    var validationMessageSpan = field.next('.validation_message');
+
+    // Check if the mandatory field is empty or contains only spaces
+    if (!fieldValue || /^\s*$/.test(fieldValue)) {
+      isValid = false;
+
+      // Display validation message below the field
+      validationMessageSpan.text(validationMsg || 'This field is required.');
+
+      // Add 'error' class to the invalid field
+      field.addClass('error');
+    } else if (/[@!#$%^&*<>]/.test(fieldValue)) {
+      // Check if the field contains restricted special characters
+      isValid = false;
+
+      // Display validation message below the field
+      validationMessageSpan.text('Special characters like !@#$%^*<> are not allowed.');
+
+      // Add 'error' class to the invalid field
+      field.addClass('error');
+    } else {
+      // Clear validation message and 'error' class if the field is not empty and passes checks
+      validationMessageSpan.text('');
+      field.removeClass('error');
     }
 
-    return isValid;
+    // Add focusout event to hide validation message when the user inputs valid data
+    field.on('focusout', function () {
+      // Use setTimeout to delay execution and ensure fieldValue is properly populated
+      setTimeout(function () {
+        var fieldValue = field.val();
+        if (fieldValue && !/^\s*$/.test(fieldValue)) {
+          validationMessageSpan.text('');
+          field.removeClass('error');
+        }
+      }, 10);
+    });
+  });
+
+  if (formWrapClass === 'form_wrap_3') {
+    // Find the color picker within the specified form wrap
+    var colorPicker = $('.' + formWrapClass + ' .color-picker');
+
+    // Check if at least one color is selected
+    if (colorPicker.find('.color-box.selected').length === 0) {
+      isValid = false;
+
+      // Display validation message below the color picker
+      colorPicker.next('.validation_message').text('Please select at least one color.');
+
+      // Add 'error' class to the invalid field
+      // colorPicker.addClass('error');
+    } else {
+      // Clear validation message and 'error' class if at least one color is selected
+      colorPicker.next('.validation_message').text('');
+      // colorPicker.removeClass('error');
+    }
   }
+
+  return isValid;
+}
 
 // ===============================
 // ===============================
@@ -534,3 +658,43 @@ $("#img_select").select2({
 
 
   
+
+// Function to serialize form data
+function serializeFormData(formWrapClass) {
+  var formData = {};
+
+  // Serialize form fields using serializeArray
+  $('.' + formWrapClass + ' :input').each(function () {
+    var field = $(this);
+    formData[field.attr('name')] = field.val();
+  });
+
+  // Add information about the active form
+  formData['activeForm'] = formWrapClass;
+
+  return formData;
+}
+
+// Function to store form data in local storage
+function storeFormData(formWrapClass) {
+  var formData = serializeFormData(formWrapClass);
+  console.log("formData --> ",formData)
+  localStorage.setItem('formData', JSON.stringify(formData));
+}
+
+// Function to load form data from local storage
+function loadFormData() {
+  var storedData = localStorage.getItem('formData');
+  if (storedData) {
+    var formData = JSON.parse(storedData);
+
+    // Populate forms with stored data
+    $('.' + formData.activeForm + ' :input').each(function () {
+      var field = $(this);
+      var fieldName = field.attr('name');
+      if (formData[fieldName] !== undefined) {
+        field.val(formData[fieldName]);
+      }
+    });
+  }
+}

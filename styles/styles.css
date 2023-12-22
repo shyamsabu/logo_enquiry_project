@@ -386,6 +386,13 @@ body {
     height: 20px;
   }
 }
+.banner .banner_image .banner_svg_wrapper {
+  width: 100%;
+}
+.banner .banner_image .banner_svg_wrapper svg {
+  width: 100%;
+  max-width: 100%;
+}
 .banner .desktop {
   display: none !important;
 }
@@ -1978,7 +1985,7 @@ textarea {
   -webkit-animation-timing-function: ease-out;
   visibility: visible !important;
   animation-count: 1;
-  animation-delay: 0s;
+  animation-delay: 0.2s;
 }
 
 @keyframes bigEntrance {
