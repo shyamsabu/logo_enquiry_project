@@ -41,11 +41,15 @@ $(document).ready(function() {
 
   // step button code
   $( "#step-button-1" ).click(function() {
+
+    // Check if all previous forms are valid
+    if (arePreviousFormsValid(1)) {
+      // Your existing code for step 1
       // Call the validateForm function for the current step
       let isValid = validateForm('form_wrap_1');
       // Check if the form is valid
       if (isValid) {
-        storeFormData('step1_form');
+        // storeFormData('step1_form');
         // Your code here if the form is valid
         console.log('Step 1 form is valid. Proceed with your code.');
 
@@ -72,13 +76,20 @@ $(document).ready(function() {
         console.log('Step 1 form is not valid. Please check the validation messages.');
         return;
       }
+
+    } else {
+      console.log('Previous forms are not valid. Please check the validation messages.');
+    }
+
+    
+      
   });
   $( "#step-button-2" ).click(function() {
     // Call the validateForm function for the current step
     let isValid = validateForm('form_wrap_2');
     // Check if the form is valid
     if (isValid) {
-      storeFormData('step2_form');
+      // storeFormData('step2_form');
       // Your code here if the form is valid
       console.log('Step 2 form is valid. Proceed with your code.');
 
@@ -111,6 +122,7 @@ $(document).ready(function() {
     let isValid = validateForm('form_wrap_3');
     // Check if the form is valid
     if (isValid) {
+      $('.color-picker').removeClass('error');
       storeFormData('step3_form');
       // Your code here if the form is valid
       console.log('Step 3 form is valid. Proceed with your code.');
@@ -138,106 +150,91 @@ $(document).ready(function() {
 
     }
     else{
+      $('.color-picker').addClass('error');
       console.log("form 3 is invalid!")
     }
   });
-  $( "#step-button-4" ).click(function() {
-    // Call the validateForm function for the current step
-    let isValid = validateForm('form_wrap_4');
-    // Check if the form is valid
-    if (isValid) {
-      // Your code here if the form is valid
-      console.log('Step 4 form is valid. Proceed with your code.');
-
-      $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
-      $("#step-button-1").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
-      $("#step-button-3").addClass('active'); 
-      $("#step-button-5").removeClass('active'); 
-      $("#step-button-4").removeClass('active'); 
-      $('.form_wrap_5').hide();
-      $('.form_wrap_2').hide();
-      $('.form_wrap_3').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_4').show();
-
+  $( "#step-button-4" ).click(function() {    
       let logoValidationMessage = $('#logoValidationMessage');
+      if (selectedLogos.length === 0) {
+        $('.logo_category_wrap').addClass('error');
+        // No logo selected, display validation message
+        logoValidationMessage.text('Please select at least one logo.');
+      } 
+      else {        
 
-    if (selectedLogos.length === 0) {
-      // No logo selected, display validation message
-      logoValidationMessage.text('Please select at least one logo.');
-    } else {
-      // Clear validation message if at least one logo is selected
-      logoValidationMessage.text('');      
+        $('.logo_category_wrap').removeClass('error');
+        // Clear validation message if at least one logo is selected
+        logoValidationMessage.text('');      
 
-      // Log the entire selectedLogos array to the console
-      console.log('Selected Logos Array:', selectedLogos);
+        // Log the entire selectedLogos array to the console
+        console.log('Selected Logos Array:', selectedLogos);
 
-      // Proceed to the next step or perform any other action
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').hide();
-      $('.form_wrap_4').hide();
-      $('.form_wrap_5').show();
-      $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
-      $("#step-button-4").addClass('active'); 
-      $("#step-button-3").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
-      $("#step-button-1").addClass('active'); 
-    }
-
-    }
-    else{
-      console.log("form 4 is invalid!")
-    }
+        // Proceed to the next step or perform any other action
+        $('.form_wrap_2').hide();
+        $('.form_wrap_1').hide();
+        $('.form_wrap_3').hide();
+        $('.form_wrap_4').hide();
+        $('.form_wrap_5').show();
+        $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
+        $("#step-button-4").addClass('active'); 
+        $("#step-button-3").addClass('active'); 
+        $("#step-button-2").addClass('active'); 
+        $("#step-button-1").addClass('active'); 
+      }
   });
   $( "#step-button-5" ).click(function() {
+    console.log("selectedLogos.length====>",selectedLogos.length)
     // Call the validateForm function for the current step
-    let isValid = validateForm('form_wrap_4');
+    let isValid1 = validateForm('form_wrap_1');
+    let isValid2 = validateForm('form_wrap_2');
+    let isValid3 = validateForm('form_wrap_3');
+    let itemValidationMessage = $('.form_wrap_5 .validation_message');
     // Check if the form is valid
-    if (isValid) {
+    if ((selectedLogos.length > 0) && (isValid3 && isValid2 && isValid1)) {
       // Your code here if the form is valid
       console.log('Step 5 form is valid. Proceed with your code.');
 
-    $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
-    $("#step-button-1").addClass('active'); 
-    $("#step-button-2").addClass('active'); 
-    $("#step-button-3").addClass('active'); 
-    $("#step-button-4").addClass('active'); 
-    $('.form_wrap_2').hide();
-    $('.form_wrap_4').hide();
-    $('.form_wrap_3').hide();
-    $('.form_wrap_1').hide();
-    $('.form_wrap_5').show();
+      $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
+      $("#step-button-1").addClass('active'); 
+      $("#step-button-2").addClass('active'); 
+      $("#step-button-3").addClass('active'); 
+      $("#step-button-4").addClass('active'); 
+      $('.form_wrap_2').hide();
+      $('.form_wrap_4').hide();
+      $('.form_wrap_3').hide();
+      $('.form_wrap_1').hide();
+      $('.form_wrap_5').show();
 
 
+      
 
+      if (selectedItems.length === 0) {
+        $('#itemSelectionForm').addClass('error');
+        // No item selected, display validation message
+        itemValidationMessage.text('Please select at least one font style.');
+      } else {
+        $('#itemSelectionForm').removeClass('error');
+        // Clear validation message if at least one item is selected
+        itemValidationMessage.text('');
 
-    let itemValidationMessage = $('.form_wrap_5 .validation_message');
+        // Log alt text of item-image inside the selected item-box
+        const selectedAltText = [];
+        selectedItems.forEach(index => {        
+          selectedAltText.push(index.altText);       
+        });
+        console.log('Selected Item Alt Text:', selectedAltText); 
 
-    if (selectedItems.length === 0) {
-      // No item selected, display validation message
-      itemValidationMessage.text('Please select at least one font style.');
-    } else {
-      // Clear validation message if at least one item is selected
-      itemValidationMessage.text('');
+        // Proceed to the next step or perform any other action
+        $("#step-button-5").addClass('active');
+        $('.slider').slick('slickNext');
+      }
 
-      // Log alt text of item-image inside the selected item-box
-      const selectedAltText = [];
-      selectedItems.forEach(index => {        
-        selectedAltText.push(index.altText);       
-      });
-      console.log('Selected Item Alt Text:', selectedAltText); 
-
-      // Proceed to the next step or perform any other action
-      $("#step-button-5").addClass('active');
-      $('.slider').slick('slickNext');
-    }
-
-    }
-    else{
-      console.log("form 5 is invalid!")
-    }
+      }
+      else{
+        console.log("form 5 is invalid!")
+      }
+    
   });
 // ============================================
 // ============================================
@@ -250,17 +247,25 @@ $(document).ready(function() {
   $('.form_wrap_5').hide();
 
   $( "#next_btn_form_1" ).click(function() {    
-    let isValid = validateForm('form_wrap_1');
-    if (!isValid) {
-      console.log("invalid form")
-        return;
+
+    // Check if all previous forms are valid
+    if (arePreviousFormsValid(2)) {
+      // Your existing code for moving to the next form
+      let isValid = validateForm('form_wrap_1');
+      if (!isValid) {
+        console.log("invalid form")
+          return;
+      }
+      else{
+        $('.form_wrap_2').show();
+        $('.form_wrap_1').hide();
+        $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
+        $("#step-button-1").addClass('active');
+      }
+    } else {
+      console.log('Previous forms are not valid. Please check the validation messages.');
     }
-    else{
-      $('.form_wrap_2').show();
-      $('.form_wrap_1').hide();
-      $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
-      $("#step-button-1").addClass('active');
-    }
+    
   });
   $( "#next_btn_form_2" ).click(function() {
     let isValid = validateForm('form_wrap_2');
@@ -282,10 +287,12 @@ $(document).ready(function() {
   $( "#next_btn_form_3" ).click(function() {
     let isValid = validateForm('form_wrap_3');
     if (!isValid) {
+      $('.color-picker').addClass('error');
       console.log("invalid form")
         return;
     }
     else{
+      $('.color-picker').addClass('error');
       $('.form_wrap_2').hide();
       $('.form_wrap_1').hide();
       $('.form_wrap_3').hide();
@@ -372,7 +379,10 @@ $(document).ready(function() {
       tickIcon.toggle();
 
       var isSelected = $(this).hasClass('selected');
-      if(isSelected) { $('.validation_message').text('') };
+      if(isSelected) { 
+        $('.validation_message').text('');
+        $('.color-picker').removeClass('error'); 
+      };
     });
 
 
@@ -401,12 +411,16 @@ $(document).ready(function() {
     const isSelected = $(this).hasClass('selected');
   
     if (isSelected) {
+      $('.logo_category_wrap').removeClass('error');
+      $('#logoSelectionForm .validation_message').text('');
       // Logo is already selected, remove it from the array
       const index = selectedLogos.findIndex(logo => logo.logoId === logoId);
       if (index !== -1) {
         selectedLogos.splice(index, 1);
       }
     } else {
+      $('.logo_category_wrap').removeClass('error');
+      $('#logoSelectionForm .validation_message').text('');
       // Logo is not selected, add it to the array
       selectedLogos.push({ logoId, logoCategory: $(this).closest('.logo_category').attr('id'), logoAlt });
     }
@@ -428,9 +442,11 @@ $(document).ready(function() {
     const logoValidationMessage = $('#logoValidationMessage');
 
     if (selectedLogos.length === 0) {
+      $('.logo_category_wrap').addClass('error');
       // No logo selected, display validation message
       logoValidationMessage.text('Please select at least one logo.');
     } else {
+      $('.logo_category_wrap').removeClass('error');
       // Clear validation message if at least one logo is selected
       logoValidationMessage.text('');      
 
@@ -486,10 +502,12 @@ $(document).ready(function() {
       const altText = itemBox.find('.item-image').attr('alt');
 
       if (itemBox.hasClass('selected')) {
+        $('#itemSelectionForm').removeClass('error');
         // Clear validation message if at least one item is selected
         $('.form_wrap_5 .validation_message').text('');
         selectedItems.push({ index, altText });
       } else {
+        $('#itemSelectionForm').addClass('error');
         const selectedIndex = selectedItems.findIndex(item => item.index === index);
         if (selectedIndex !== -1) {
           selectedItems.splice(selectedIndex, 1);
@@ -681,6 +699,19 @@ function storeFormData(formWrapClass) {
   console.log("formData --> ",formData)
   localStorage.setItem('formData', JSON.stringify(formData));
 }
+
+// Validation function to check if all previous forms are valid
+function arePreviousFormsValid(currentFormIndex) {
+  for (let i = 1; i < currentFormIndex; i++) {
+    let formWrapClass = 'form_wrap_' + i;
+    if (!validateForm(formWrapClass)) {
+      console.log('Form ' + i + ' is not valid.');
+      return false;
+    }
+  }
+  return true;
+}
+
 
 // Function to load form data from local storage
 function loadFormData() {
