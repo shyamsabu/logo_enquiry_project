@@ -1464,6 +1464,10 @@ textarea {
   }
 }
 
+.red {
+  color: red;
+}
+
 @media (max-width: 1599px) {
   .form-label {
     font-size: 14px;
