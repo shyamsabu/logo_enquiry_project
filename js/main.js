@@ -401,6 +401,7 @@ $(document).ready(function() {
 
     // Hide the validation message when "Select All" is checked
     $(".validation_message").text('');
+    $('#colorTheme').removeClass('error');
   });
   // ==================logo selection form =====================
   const selectedLogos = [];
@@ -504,7 +505,7 @@ $(document).ready(function() {
       if (itemBox.hasClass('selected')) {
         $('#itemSelectionForm').removeClass('error');
         // Clear validation message if at least one item is selected
-        $('.form_wrap_5 .validation_message').text('');
+        $('.form_wrap_5 .validation_message').text('Please select at least one font style.');
         selectedItems.push({ index, altText });
       } else {
         $('#itemSelectionForm').addClass('error');
@@ -535,9 +536,11 @@ $(document).ready(function() {
     const itemValidationMessage = $('.form_wrap_5 .validation_message');
 
     if (selectedItems.length === 0) {
+      $('#itemSelectionForm').addClass('error');
       // No item selected, display validation message
       itemValidationMessage.text('Please select at least one font style.');
     } else {
+      $('#itemSelectionForm').removeClass('error');
       // Clear validation message if at least one item is selected
       itemValidationMessage.text('');
 

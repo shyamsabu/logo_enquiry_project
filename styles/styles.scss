@@ -221,8 +221,11 @@ body {
         @media (min-width: 768px) {
           margin-bottom: 15px!important;
         }
+        @media (min-width: 1200px) {
+          margin-bottom: 25px!important;
+        }
         @media (min-width: 1600px) {
-          margin-bottom: 20px!important;
+          margin-bottom: 23px!important;
         }
         @media (min-width: 1867px) {
           margin-bottom: 20px!important;
@@ -331,6 +334,18 @@ body {
   .banner_image{
     .banner_svg_wrapper{
       width: 100%; 
+      @media (min-width: 992px) {
+        max-width: 100%;
+      }
+      @media (min-width: 1200px) {
+        max-width: 80%;
+      }
+      // @media (min-width: 1600px) {
+      //   max-width: 80%;
+      // }
+      @media (min-width: 1867px) {
+        max-width: 95%;
+      }
       svg{
         width: 100%;
         max-width: 100%;
@@ -349,7 +364,7 @@ body {
     @media (min-width: 992px) {
       display: block!important;
       .tw_logo {
-        margin-bottom: 40px;
+        margin-bottom: 25px;
         width: 35%;
       }
       .banner_img {
@@ -361,8 +376,8 @@ body {
     }
     @media (min-width: 1200px) {
       .tw_logo {
-        margin-bottom: 36px;
-        width: 31%;
+        margin-bottom: 30px;
+        width: 30%;
       }
       .banner_img {
         max-width: 72%;
@@ -370,7 +385,7 @@ body {
     }
     @media (min-width: 1600px) {
       .tw_logo {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         width: 28%;
       }
       .banner_img {
@@ -380,7 +395,7 @@ body {
     @media (min-width: 1867px) {
       height: 100vh;
       .tw_logo {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         width: 27%;
       }
       .banner_img {
@@ -1323,7 +1338,7 @@ textarea{
 .mrg_b{
   margin-bottom: 30px;
   @media (max-width: 1856px) {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   @media (max-width: 1199px) {
     margin-bottom: 15px;
@@ -1376,8 +1391,10 @@ textarea{
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 0;
-      right: 0;
+      bottom: -24px;
+      left: 0px;
+      right: auto;
+      top: auto;
       &:after{
       content: "";
       width: 0;
@@ -1387,9 +1404,23 @@ textarea{
       border-top: 7px solid #fc7085;
       position: absolute;
       left: 5px;
-      bottom: -6px;
+      top: -6px;
+      transform: rotate(180deg);
+    }
+    @media (max-width: 1856px) {
+      font-size: 0.7rem;
+      bottom: -20px;
     }
   }
+}
+.color-picker.error{
+  border: transparent!important;
+}
+.logo_category_wrap.error{
+  border: transparent!important;
+}
+.step5_form.error{
+  border: transparent!important;
 }
 .form_field{
   position: relative;
