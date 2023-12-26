@@ -266,14 +266,9 @@ body {
     margin-bottom: 15px !important;
   }
 }
-@media (min-width: 1200px) {
-  .banner .banner_content form .form_feild_wrap {
-    margin-bottom: 25px !important;
-  }
-}
 @media (min-width: 1600px) {
   .banner .banner_content form .form_feild_wrap {
-    margin-bottom: 23px !important;
+    margin-bottom: 20px !important;
   }
 }
 @media (min-width: 1867px) {
@@ -395,21 +390,6 @@ body {
 .banner .banner_image .banner_svg_wrapper {
   width: 100%;
 }
-@media (min-width: 992px) {
-  .banner .banner_image .banner_svg_wrapper {
-    max-width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  .banner .banner_image .banner_svg_wrapper {
-    max-width: 80%;
-  }
-}
-@media (min-width: 1867px) {
-  .banner .banner_image .banner_svg_wrapper {
-    max-width: 95%;
-  }
-}
 .banner .banner_image .banner_svg_wrapper svg {
   width: 100%;
   max-width: 100%;
@@ -428,7 +408,7 @@ body {
     display: block !important;
   }
   .banner .desktop .tw_logo {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     width: 35%;
   }
   .banner .desktop .banner_img {
@@ -440,8 +420,8 @@ body {
 }
 @media (min-width: 1200px) {
   .banner .desktop .tw_logo {
-    margin-bottom: 30px;
-    width: 30%;
+    margin-bottom: 36px;
+    width: 31%;
   }
   .banner .desktop .banner_img {
     max-width: 72%;
@@ -449,7 +429,7 @@ body {
 }
 @media (min-width: 1600px) {
   .banner .desktop .tw_logo {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     width: 28%;
   }
   .banner .desktop .banner_img {
@@ -461,7 +441,7 @@ body {
     height: 100vh;
   }
   .banner .desktop .tw_logo {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     width: 27%;
   }
   .banner .desktop .banner_img {
@@ -1464,10 +1444,6 @@ textarea {
   }
 }
 
-.red {
-  color: red;
-}
-
 @media (max-width: 1599px) {
   .form-label {
     font-size: 14px;
@@ -1549,7 +1525,7 @@ textarea {
 }
 @media (max-width: 1856px) {
   .mrg_b {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 1199px) {
@@ -1617,10 +1593,8 @@ textarea {
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: -24px;
-  left: 0px;
-  right: auto;
-  top: auto;
+  top: 0;
+  right: 0;
 }
 .error ~ .validation_message:after, .error .validation_message:after {
   content: "";
@@ -1631,26 +1605,7 @@ textarea {
   border-top: 7px solid #fc7085;
   position: absolute;
   left: 5px;
-  top: -6px;
-  transform: rotate(180deg);
-}
-@media (max-width: 1856px) {
-  .error ~ .validation_message, .error .validation_message {
-    font-size: 0.7rem;
-    bottom: -20px;
-  }
-}
-
-.color-picker.error {
-  border: transparent !important;
-}
-
-.logo_category_wrap.error {
-  border: transparent !important;
-}
-
-.step5_form.error {
-  border: transparent !important;
+  bottom: -6px;
 }
 
 .form_field {

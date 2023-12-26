@@ -535,7 +535,6 @@ $(document).ready(function() {
     const itemValidationMessage = $('.form_wrap_5 .validation_message');
 
     if (selectedItems.length === 0) {
-      $('#itemSelectionForm').addClass('error');
       // No item selected, display validation message
       itemValidationMessage.text('Please select at least one font style.');
     } else {
