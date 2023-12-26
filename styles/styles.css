@@ -1146,6 +1146,22 @@ textarea {
   z-index: 1;
   top: 4px;
 }
+.header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.no_icon {
+  position: relative;
+}
+.header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.no_icon::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: rgb(5, 45, 112) !important;
+  border: 2px solid var(--green);
+  border-radius: 50px;
+  top: -18%;
+}
+.header .step_header .wrap_d-flex .stepper_wrap .form-steps__button.no_icon svg {
+  display: none;
+}
 .header .step_header .wrap_d-flex .stepper_wrap .form-steps__button svg {
   display: none;
 }

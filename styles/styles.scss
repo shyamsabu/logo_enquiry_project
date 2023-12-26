@@ -1008,6 +1008,22 @@ textarea{
               z-index: 1;
               top: 4px;
             }
+          }
+          &.no_icon{
+            position: relative;
+            &::before{
+              content: '';
+              position: absolute;
+              width: 28px;
+              height: 28px;
+              background: rgba(5, 45, 112, 1)!important;
+              border:2px solid var(--green);
+              border-radius: 50px;
+              top: -18%;
+            }
+            svg{
+              display: none;
+            } 
           }  
           svg{
             display: none;
