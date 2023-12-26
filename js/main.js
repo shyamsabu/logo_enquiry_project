@@ -297,7 +297,7 @@ $(document).ready(function() {
         return;
     }
     else{
-      $('.color-picker').addClass('error');
+      // $('.color-picker').addClass('error');
       $('.form_wrap_2').hide();
       $('.form_wrap_1').hide();
       $('.form_wrap_3').hide();
@@ -531,7 +531,7 @@ $(document).ready(function() {
         $('.form_wrap_5 .validation_message').text('');
         selectedItems.push({ index, altText });
       } else {
-        $('#itemSelectionForm').addClass('error');
+        // $('#itemSelectionForm').addClass('error');
         const selectedIndex = selectedItems.findIndex(item => item.index === index);
         if (selectedIndex !== -1) {
           selectedItems.splice(selectedIndex, 1);
