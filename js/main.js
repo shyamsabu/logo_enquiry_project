@@ -262,6 +262,11 @@ $(document).ready(function() {
         $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
         $("#step-button-1").addClass('active');
         $("#step-button-2").addClass('no_icon');
+        if ($("#step-button-1").hasClass('active')) {
+          $("#step-button-1").removeClass('no_icon');
+        } else {
+          $("#step-button-1").addClass('no_icon');
+        }
         $("#step-button-1").removeClass('no_icon');
       }
     } else {
@@ -283,6 +288,11 @@ $(document).ready(function() {
       $("#step-button-1").addClass('active'); 
       $("#step-button-2").addClass('active'); 
       $("#step-button-3").addClass('no_icon');
+      if ($("#step-button-2").hasClass('active')) {
+        $("#step-button-2").removeClass('no_icon');
+      } else {
+        $("#step-button-2").addClass('no_icon');
+      }
       $("#step-button-1").removeClass('no_icon');
       $("#step-button-2").removeClass('no_icon');
     }
@@ -306,8 +316,12 @@ $(document).ready(function() {
       $("#step-button-3").addClass('active'); 
       $("#step-button-1").addClass('active'); 
       $("#step-button-2").addClass('active'); 
-
       $("#step-button-4").addClass('no_icon');
+      if ($("#step-button-3").hasClass('active')) {
+        $("#step-button-3").removeClass('no_icon');
+      } else {
+        $("#step-button-3").addClass('no_icon');
+      }
       $("#step-button-1").removeClass('no_icon');
       $("#step-button-2").removeClass('no_icon');
       $("#step-button-3").removeClass('no_icon');
@@ -482,8 +496,13 @@ $(document).ready(function() {
       $("#step-button-3").addClass('active'); 
       $("#step-button-2").addClass('active'); 
       $("#step-button-1").addClass('active'); 
-
       $("#step-button-5").addClass('no_icon');
+
+      if ($("#step-button-").hasClass('active')) {
+        $("#step-button-4").removeClass('no_icon');
+      } else {
+        $("#step-button-4").addClass('no_icon');
+      }
       $("#step-button-1").removeClass('no_icon');
       $("#step-button-2").removeClass('no_icon');
       $("#step-button-3").removeClass('no_icon');
