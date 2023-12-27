@@ -54,11 +54,11 @@ $(document).ready(function() {
         console.log('Step 1 form is valid. Proceed with your code.');
 
         $( ".progress-bar span" ).animate({width: "0%"}, 1000 );
-        $("#step-button-2").removeClass('active'); 
-        $("#step-button-3").removeClass('active'); 
-        $("#step-button-4").removeClass('active'); 
-        $("#step-button-5").removeClass('active');
-        $("#step-button-1").removeClass('active');
+        // $("#step-button-2").removeClass('active'); 
+        // $("#step-button-3").removeClass('active'); 
+        // $("#step-button-4").removeClass('active'); 
+        // $("#step-button-5").removeClass('active');
+        // $("#step-button-1").removeClass('active');
         $('.form_wrap_5').hide();
         $('.form_wrap_4').hide();
         $('.form_wrap_3').hide();
@@ -95,9 +95,9 @@ $(document).ready(function() {
 
       $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
       $("#step-button-1").addClass('active'); 
-      $("#step-button-3").removeClass('active'); 
-      $("#step-button-4").removeClass('active'); 
-      $("#step-button-2").removeClass('active')
+      // $("#step-button-3").removeClass('active'); 
+      // $("#step-button-4").removeClass('active'); 
+      // $("#step-button-2").removeClass('active')
       $('.form_wrap_5').hide();
       $('.form_wrap_4').hide();
       $('.form_wrap_3').hide();
@@ -129,8 +129,8 @@ $(document).ready(function() {
 
       $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
       $("#step-button-1").addClass('active'); 
-      $("#step-button-4").removeClass('active');
-      $("#step-button-3").removeClass('active'); 
+      // $("#step-button-4").removeClass('active');
+      // $("#step-button-3").removeClass('active'); 
       $("#step-button-2").addClass('active'); 
       $('.form_wrap_5').hide();
       $('.form_wrap_4').hide();
@@ -321,10 +321,10 @@ $(document).ready(function() {
     $('.form_wrap_4').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
-    $("#step-button-5").removeClass('active'); 
-    $("#step-button-4").removeClass('active');
+    // $("#step-button-5").removeClass('active'); 
+    // $("#step-button-4").removeClass('active');
     $("#step-button-5").removeClass('no_icon');
-    $("#step-button-4").addClass('no_icon');
+    // $("#step-button-4").addClass('no_icon');
   });
   $( "#prev_btn_4" ).click(function() {
     $('.form_wrap_2').hide();
@@ -333,9 +333,9 @@ $(document).ready(function() {
     $('.form_wrap_3').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
-    $("#step-button-3").removeClass('active'); 
+    // $("#step-button-3").removeClass('active'); 
     $("#step-button-4").removeClass('no_icon');
-    $("#step-button-3").addClass('no_icon');
+    // $("#step-button-3").addClass('no_icon');
   });
   $( "#prev_btn_3" ).click(function() {
     $('.form_wrap_3').hide();
@@ -344,9 +344,9 @@ $(document).ready(function() {
     $('.form_wrap_2').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "28%"}, 1000 );
-    $("#step-button-2").removeClass('active');
+    // $("#step-button-2").removeClass('active');
     $("#step-button-3").removeClass('no_icon');
-    $("#step-button-2").addClass('no_icon');
+    // $("#step-button-2").addClass('no_icon');
   });
   $( "#prev_btn_2" ).click(function() {
     $('.form_wrap_3').hide();
@@ -355,9 +355,9 @@ $(document).ready(function() {
     $('.form_wrap_1').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "0%"}, 1000 );
-    $("#step-button-1").removeClass('active');
+    // $("#step-button-1").removeClass('active');
     $("#step-button-2").removeClass('no_icon');
-    $("#step-button-1").addClass('no_icon');
+    // $("#step-button-1").addClass('no_icon');
   });
 
 
