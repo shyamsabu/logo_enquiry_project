@@ -1,5 +1,14 @@
 $(document).ready(function() {
-
+  $(document).ready(function() {
+    $(window).scroll(function() {
+        // Check the scroll position of the window
+        if ($(this).scrollTop() > 1) {
+            $('.step_header').addClass("sticky");
+        } else {
+            $('.step_header').removeClass("sticky");
+        }
+    });
+});
   loadFormData();
 
 
