@@ -13,6 +13,11 @@ body {
   box-sizing: border-box;
   background: #fff;
 }
+@media (max-width: 991px) {
+  body {
+    overflow-y: auto;
+  }
+}
 
 :root {
   --gray-blue: #2c3e50;
@@ -83,6 +88,16 @@ body {
 }
 .slider .slick-slide {
   pointer-events: auto !important;
+}
+
+@media (max-width: 991px) {
+  .slick-track {
+    height: 100vh;
+  }
+  .slick-track .slick-active {
+    height: 100%;
+    overflow: auto;
+  }
 }
 
 .banner {
@@ -1064,6 +1079,10 @@ textarea {
 @media (max-width: 991px) {
   .header .step_header {
     height: 65px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100vw;
   }
 }
 .header .step_header .wrap_d-flex {
@@ -1220,11 +1239,9 @@ textarea {
   }
 }
 .header .step_content {
-  height: 89vh;
   display: flex;
   align-items: center;
   justify-self: center;
-  overflow: auto;
 }
 .header .step_content .left_wrap {
   color: #333;
@@ -1333,20 +1350,18 @@ textarea {
 .svg_wrapper.mobile {
   display: block !important;
   display: flex !important;
-  margin-top: 90%;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 .svg_wrapper.mobile svg {
   height: 330px;
 }
 @media (min-width: 568px) {
+  .svg_wrapper.mobile {
+    margin-top: 90px;
+  }
   .svg_wrapper.mobile svg {
     height: 460px;
-  }
-}
-@media (min-width: 768px) {
-  .svg_wrapper.mobile {
-    margin-top: 65%;
   }
 }
 @media (min-width: 992px) {

@@ -12,6 +12,10 @@ body {
   overflow: hidden;
   box-sizing: border-box;
   background:#fff;
+  @media (max-width: 991px) {
+    overflow-y:auto;
+  }
+  
 }
 :root {
   --gray-blue: #2c3e50;
@@ -91,6 +95,16 @@ body {
   .slick-slide {
     pointer-events: auto !important;
   }
+}
+.slick-track{
+  @media (max-width: 991px) {
+    height: 100vh;
+    .slick-active{
+      height: 100%;
+      overflow: auto;
+    }
+  }
+  
 }
 
 
@@ -936,6 +950,10 @@ textarea{
     }
     @media (max-width: 991px) {
       height: 65px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      width: 100vw;
     }
     .wrap_d-flex{
       display: flex;
@@ -1084,11 +1102,9 @@ textarea{
     }
   }
   .step_content{
-    height: 89vh;
     display: flex;
     align-items: center;
     justify-self: center;
-    overflow: auto;
     .left_wrap{
       color: #333;
       @media (max-width: 1599px) {
@@ -1183,20 +1199,17 @@ textarea{
 .svg_wrapper.mobile{
   display: block!important;
   display: flex!important;
-  margin-top: 90%;
+  margin-top: 60px;
   margin-bottom: 30px;
   svg{
     height: 330px;
   }
   
   @media (min-width: 568px) {
+    margin-top: 90px;
     svg{
       height: 460px;
     }
-  }
-  @media (min-width: 768px) {
-    margin-top: 65%;
-   
   }
   @media (min-width: 992px) {
     display: none!important;
