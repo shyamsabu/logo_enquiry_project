@@ -12,6 +12,10 @@ body {
   overflow: hidden;
   box-sizing: border-box;
   background:#fff;
+  @media (max-width: 991px) {
+    overflow-y:auto;
+  }
+  
 }
 :root {
   --gray-blue: #2c3e50;
@@ -91,6 +95,16 @@ body {
   .slick-slide {
     pointer-events: auto !important;
   }
+}
+.slick-track{
+  @media (max-width: 991px) {
+    height: 100vh;
+    .slick-active{
+      height: 100%;
+      overflow: auto;
+    }
+  }
+  
 }
 
 
@@ -217,12 +231,12 @@ body {
       }
       .form_feild_wrap{
         position: relative;
-        margin-bottom: 10px!important;
+        margin-bottom: 15px!important;
         @media (min-width: 768px) {
-          margin-bottom: 15px!important;
+          margin-bottom: 20px!important;
         }
         @media (min-width: 1600px) {
-          margin-bottom: 20px!important;
+          margin-bottom: 23px!important;
         }
         @media (min-width: 1867px) {
           margin-bottom: 20px!important;
@@ -230,16 +244,16 @@ body {
       }
       input{
         border-radius: 4px;
-        height:35px;
+        height:40px;
         border: 1px solid rgba(213, 216, 222, 1);
         @media (min-width: 576px) {
-          height:40px;
+          height: 45px;
         }
         @media (min-width: 768px) {
           height: 45px;
         }
         @media (min-width: 992px) {
-          height:40px;
+          height:43px;
         }
         @media (min-width: 1600px) {
           height:55px;
@@ -253,7 +267,7 @@ body {
         width: 100%;
         font-size: 18px;
         background: rgba(141, 198, 63, 1);
-        margin-top: 20px;
+        margin-top: 30px;
         border-radius: 4px;
         display: flex;
         align-items: center;
@@ -292,9 +306,9 @@ body {
           }
         }
         @media (min-width: 992px) {
-          height:55px;
+          height:60px;
           font-size: 18px;
-          margin-top: 20px;
+          margin-top: 30px;
           i{
             margin-left: 2px;
             svg{
@@ -305,7 +319,7 @@ body {
         @media (min-width: 1600px) {
           height:80px;
           font-size: 24px;
-          margin-top: 30px;
+          margin-top: 32px;
           i{
             margin-left: 2px;
             svg{
@@ -331,6 +345,18 @@ body {
   .banner_image{
     .banner_svg_wrapper{
       width: 100%; 
+      @media (min-width: 992px) {
+        max-width: 100%;
+      }
+      @media (min-width: 1200px) {
+        max-width: 80%;
+      }
+      // @media (min-width: 1600px) {
+      //   max-width: 80%;
+      // }
+      @media (min-width: 1867px) {
+        max-width: 95%;
+      }
       svg{
         width: 100%;
         max-width: 100%;
@@ -349,7 +375,7 @@ body {
     @media (min-width: 992px) {
       display: block!important;
       .tw_logo {
-        margin-bottom: 40px;
+        margin-bottom: 25px;
         width: 35%;
       }
       .banner_img {
@@ -361,8 +387,8 @@ body {
     }
     @media (min-width: 1200px) {
       .tw_logo {
-        margin-bottom: 36px;
-        width: 31%;
+        margin-bottom: 30px;
+        width: 30%;
       }
       .banner_img {
         max-width: 72%;
@@ -370,7 +396,7 @@ body {
     }
     @media (min-width: 1600px) {
       .tw_logo {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         width: 28%;
       }
       .banner_img {
@@ -380,7 +406,7 @@ body {
     @media (min-width: 1867px) {
       height: 100vh;
       .tw_logo {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         width: 27%;
       }
       .banner_img {
@@ -528,6 +554,21 @@ body {
         height: 30px;
       }
     }
+    @media (max-width: 991px) {
+      font-size: 14px;
+      &:last-child{
+        border-radius: 3px;
+        height: 33px;
+        padding: 4px 13px;
+        .btn_svg{
+          margin-left: 6px;
+        }
+      }
+      &.backbtn{
+        border-radius: 3px;
+        height: 33px;
+      }
+    }
   }
   span.btn_svg {
     margin-left: 10px;
@@ -568,7 +609,7 @@ textarea{
     font-size: 1.6rem;
   }
   @media (max-width: 1199px) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   @media (max-width: 991px) {
     font-size: 1.5rem;
@@ -660,7 +701,7 @@ textarea{
     height: 115px;
   }
   @media (max-width: 767px) {
-    width: 47%!important;
+    width: 46%!important;
     height: 115px;
   }
 }
@@ -837,6 +878,10 @@ textarea{
   font-size: 15px;
   margin-left: 5px;
   margin-top: 15px;
+  @media (max-width: 1199px) {
+    font-size: 13px;
+    margin-top: 5px;
+  }
 }
 .step5_form{
   .item-container {
@@ -921,6 +966,10 @@ textarea{
     }
     @media (max-width: 991px) {
       height: 65px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      width: 100vw;
     }
     .wrap_d-flex{
       display: flex;
@@ -993,6 +1042,22 @@ textarea{
               z-index: 1;
               top: 4px;
             }
+          }
+          &.no_icon{
+            position: relative;
+            &::before{
+              content: '';
+              position: absolute;
+              width: 28px;
+              height: 28px;
+              background: rgba(5, 45, 112, 1)!important;
+              border:2px solid var(--green);
+              border-radius: 50px;
+              top: -18%;
+            }
+            svg{
+              display: none;
+            } 
           }  
           svg{
             display: none;
@@ -1053,11 +1118,9 @@ textarea{
     }
   }
   .step_content{
-    height: 89vh;
     display: flex;
     align-items: center;
     justify-self: center;
-    overflow: auto;
     .left_wrap{
       color: #333;
       @media (max-width: 1599px) {
@@ -1123,6 +1186,7 @@ textarea{
     }
     @media (min-width: 992px) {
       overflow: hidden;
+      height: 89vh;
       #step_right_svg {
        height: 300px;
       }
@@ -1152,20 +1216,17 @@ textarea{
 .svg_wrapper.mobile{
   display: block!important;
   display: flex!important;
-  margin-top: 90%;
+  margin-top: 60px;
   margin-bottom: 30px;
   svg{
     height: 330px;
   }
   
   @media (min-width: 568px) {
+    margin-top: 90px;
     svg{
       height: 460px;
     }
-  }
-  @media (min-width: 768px) {
-    margin-top: 65%;
-   
   }
   @media (min-width: 992px) {
     display: none!important;
@@ -1270,6 +1331,9 @@ textarea{
 }
 
 // common style //
+.red {
+  color: red;
+}
 .form-label{
   @media (max-width: 1599px) {
     font-size: 14px;
@@ -1299,7 +1363,7 @@ textarea{
     height: 80px!important;
   }
   @media (max-width: 1199px) {
-    height: 60px!important;
+    height: 70px!important;
   }
   @media (max-width: 991px) {
     height: 85px!important;
@@ -1323,10 +1387,13 @@ textarea{
 .mrg_b{
   margin-bottom: 30px;
   @media (max-width: 1856px) {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   @media (max-width: 1199px) {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 991px) {
+    margin-bottom: 25px;
   }
 }
 .form-select{
@@ -1376,8 +1443,10 @@ textarea{
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 0;
-      right: 0;
+      bottom: -24px;
+      left: 0px;
+      right: auto;
+      top: auto;
       &:after{
       content: "";
       width: 0;
@@ -1387,9 +1456,23 @@ textarea{
       border-top: 7px solid #fc7085;
       position: absolute;
       left: 5px;
-      bottom: -6px;
+      top: -6px;
+      transform: rotate(180deg);
+    }
+    @media (max-width: 1856px) {
+      font-size: 0.7rem;
+      bottom: -20px;
     }
   }
+}
+.color-picker.error{
+  border: transparent!important;
+}
+.logo_category_wrap.error{
+  border: transparent!important;
+}
+.step5_form.error{
+  border: transparent!important;
 }
 .form_field{
   position: relative;
@@ -1409,6 +1492,7 @@ textarea{
   }
   @media (max-width: 991px) {
     min-height: auto;
+    margin-bottom: 25px;
   }
 }
 .button_wrap{
@@ -1431,10 +1515,13 @@ textarea{
     min-width: 434px;
   }
   @media (max-width: 1199px) {
-   min-width: 407px;
+    min-width: 479px;
   }
   @media (max-width: 991px) {
     min-width: 690px;
+   }
+   @media (max-width: 767px) {
+    min-width: 507px;
    }
   @media (max-width: 567px) {
     min-width: 345px;

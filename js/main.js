@@ -54,19 +54,16 @@ $(document).ready(function() {
         console.log('Step 1 form is valid. Proceed with your code.');
 
         $( ".progress-bar span" ).animate({width: "0%"}, 1000 );
-        $("#step-button-2").removeClass('active'); 
-        $("#step-button-3").removeClass('active'); 
-        $("#step-button-4").removeClass('active'); 
-        $("#step-button-5").removeClass('active');
-        $("#step-button-1").removeClass('active');
+        // $("#step-button-2").removeClass('active'); 
+        // $("#step-button-3").removeClass('active'); 
+        // $("#step-button-4").removeClass('active'); 
+        // $("#step-button-5").removeClass('active');
+        // $("#step-button-1").removeClass('active');
         $('.form_wrap_5').hide();
         $('.form_wrap_4').hide();
         $('.form_wrap_3').hide();
         $('.form_wrap_2').hide();
         $('.form_wrap_1').show();
-
-        $('.form_wrap_2').show();
-        $('.form_wrap_1').hide();
         $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
         $("#step-button-1").addClass('active');
 
@@ -95,19 +92,14 @@ $(document).ready(function() {
 
       $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
       $("#step-button-1").addClass('active'); 
-      $("#step-button-3").removeClass('active'); 
-      $("#step-button-4").removeClass('active'); 
-      $("#step-button-2").removeClass('active')
+      // $("#step-button-3").removeClass('active'); 
+      // $("#step-button-4").removeClass('active'); 
+      // $("#step-button-2").removeClass('active')
       $('.form_wrap_5').hide();
       $('.form_wrap_4').hide();
       $('.form_wrap_3').hide();
       $('.form_wrap_1').hide();
       $('.form_wrap_2').show();
-
-
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').show();
       $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
       $("#step-button-1").addClass('active'); 
       $("#step-button-2").addClass('active'); 
@@ -129,20 +121,14 @@ $(document).ready(function() {
 
       $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
       $("#step-button-1").addClass('active'); 
-      $("#step-button-4").removeClass('active');
-      $("#step-button-3").removeClass('active'); 
+      // $("#step-button-4").removeClass('active');
+      // $("#step-button-3").removeClass('active'); 
       $("#step-button-2").addClass('active'); 
       $('.form_wrap_5').hide();
       $('.form_wrap_4').hide();
       $('.form_wrap_2').hide();
       $('.form_wrap_1').hide();
       $('.form_wrap_3').show();
-
-
-      $('.form_wrap_2').hide();
-      $('.form_wrap_1').hide();
-      $('.form_wrap_3').hide();
-      $('.form_wrap_4').show();
       $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
       $("#step-button-3").addClass('active'); 
       $("#step-button-1").addClass('active'); 
@@ -174,8 +160,8 @@ $(document).ready(function() {
         $('.form_wrap_2').hide();
         $('.form_wrap_1').hide();
         $('.form_wrap_3').hide();
-        $('.form_wrap_4').hide();
-        $('.form_wrap_5').show();
+        $('.form_wrap_5').hide();
+        $('.form_wrap_4').show();
         $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
         $("#step-button-4").addClass('active'); 
         $("#step-button-3").addClass('active'); 
@@ -227,7 +213,7 @@ $(document).ready(function() {
 
         // Proceed to the next step or perform any other action
         $("#step-button-5").addClass('active');
-        $('.slider').slick('slickNext');
+        // $('.slider').slick('slickNext');
       }
 
       }
@@ -261,6 +247,13 @@ $(document).ready(function() {
         $('.form_wrap_1').hide();
         $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
         $("#step-button-1").addClass('active');
+        // $("#step-button-2").addClass('no_icon');
+        // if ($("#step-button-1").hasClass('active')) {
+        //   $("#step-button-1").removeClass('no_icon');
+        // } else {
+        //   $("#step-button-1").addClass('no_icon');
+        // }
+        // $("#step-button-1").removeClass('no_icon');
       }
     } else {
       console.log('Previous forms are not valid. Please check the validation messages.');
@@ -280,6 +273,14 @@ $(document).ready(function() {
       $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
       $("#step-button-1").addClass('active'); 
       $("#step-button-2").addClass('active'); 
+      // $("#step-button-3").addClass('no_icon');
+      // if ($("#step-button-2").hasClass('active')) {
+      //   $("#step-button-2").removeClass('no_icon');
+      // } else {
+      //   $("#step-button-2").addClass('no_icon');
+      // }
+      // $("#step-button-1").removeClass('no_icon');
+      // $("#step-button-2").removeClass('no_icon');
     }
 
 
@@ -292,7 +293,7 @@ $(document).ready(function() {
         return;
     }
     else{
-      $('.color-picker').addClass('error');
+      // $('.color-picker').addClass('error');
       $('.form_wrap_2').hide();
       $('.form_wrap_1').hide();
       $('.form_wrap_3').hide();
@@ -301,6 +302,15 @@ $(document).ready(function() {
       $("#step-button-3").addClass('active'); 
       $("#step-button-1").addClass('active'); 
       $("#step-button-2").addClass('active'); 
+      // $("#step-button-4").addClass('no_icon');
+      // if ($("#step-button-3").hasClass('active')) {
+      //   $("#step-button-3").removeClass('no_icon');
+      // } else {
+      //   $("#step-button-3").addClass('no_icon');
+      // }
+      // $("#step-button-1").removeClass('no_icon');
+      // $("#step-button-2").removeClass('no_icon');
+      // $("#step-button-3").removeClass('no_icon');
     }
   });
 
@@ -311,8 +321,10 @@ $(document).ready(function() {
     $('.form_wrap_4').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
-    $("#step-button-5").removeClass('active'); 
-    $("#step-button-4").removeClass('active');
+    // $("#step-button-5").removeClass('active'); 
+    // $("#step-button-4").removeClass('active');
+    $("#step-button-5").removeClass('no_icon');
+    // $("#step-button-4").addClass('no_icon');
   });
   $( "#prev_btn_4" ).click(function() {
     $('.form_wrap_2').hide();
@@ -321,7 +333,9 @@ $(document).ready(function() {
     $('.form_wrap_3').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
-    $("#step-button-3").removeClass('active'); 
+    // $("#step-button-3").removeClass('active'); 
+    $("#step-button-4").removeClass('no_icon');
+    // $("#step-button-3").addClass('no_icon');
   });
   $( "#prev_btn_3" ).click(function() {
     $('.form_wrap_3').hide();
@@ -330,7 +344,9 @@ $(document).ready(function() {
     $('.form_wrap_2').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "28%"}, 1000 );
-    $("#step-button-2").removeClass('active');
+    // $("#step-button-2").removeClass('active');
+    $("#step-button-3").removeClass('no_icon');
+    // $("#step-button-2").addClass('no_icon');
   });
   $( "#prev_btn_2" ).click(function() {
     $('.form_wrap_3').hide();
@@ -339,7 +355,9 @@ $(document).ready(function() {
     $('.form_wrap_1').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "0%"}, 1000 );
-    $("#step-button-1").removeClass('active');
+    // $("#step-button-1").removeClass('active');
+    $("#step-button-2").removeClass('no_icon');
+    // $("#step-button-1").addClass('no_icon');
   });
 
 
@@ -464,6 +482,17 @@ $(document).ready(function() {
       $("#step-button-3").addClass('active'); 
       $("#step-button-2").addClass('active'); 
       $("#step-button-1").addClass('active'); 
+      // $("#step-button-5").addClass('no_icon');
+
+      // if ($("#step-button-").hasClass('active')) {
+      //   $("#step-button-4").removeClass('no_icon');
+      // } else {
+      //   $("#step-button-4").addClass('no_icon');
+      // }
+      // $("#step-button-1").removeClass('no_icon');
+      // $("#step-button-2").removeClass('no_icon');
+      // $("#step-button-3").removeClass('no_icon');
+      // $("#step-button-4").removeClass('no_icon');
     }
   });
   // ===========================================================
@@ -507,7 +536,7 @@ $(document).ready(function() {
         $('.form_wrap_5 .validation_message').text('');
         selectedItems.push({ index, altText });
       } else {
-        $('#itemSelectionForm').addClass('error');
+        // $('#itemSelectionForm').addClass('error');
         const selectedIndex = selectedItems.findIndex(item => item.index === index);
         if (selectedIndex !== -1) {
           selectedItems.splice(selectedIndex, 1);
@@ -535,6 +564,7 @@ $(document).ready(function() {
     const itemValidationMessage = $('.form_wrap_5 .validation_message');
 
     if (selectedItems.length === 0) {
+      $('#itemSelectionForm').addClass('error');
       // No item selected, display validation message
       itemValidationMessage.text('Please select at least one font style.');
     } else {
@@ -550,6 +580,7 @@ $(document).ready(function() {
 
       // Proceed to the next step or perform any other action
       $("#step-button-5").addClass('active');
+      // $("#step-button-5").removeClass('no_icon');
       $('.slider').slick('slickNext');
     }
     
