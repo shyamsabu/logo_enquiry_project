@@ -1,6 +1,6 @@
 $(document).ready(function() {
-
-  loadFormData();
+  $(".lrf_loader").show();
+  // loadFormData();
 
 
   $('.slider').slick({
@@ -11,7 +11,14 @@ $(document).ready(function() {
     adaptiveHeight: false,
     arrows: false,
     draggable: false
-  });  
+});
+
+  // Check if slider is initialized, then hide the loader
+  if ($('.slider').hasClass('slick-initialized')) {
+      setTimeout(function() {
+          $('.lrf_loader').fadeOut(1000); // Fade out over 1000 milliseconds (1 second)
+      }, 100); // Wait for 3000 milliseconds (3 seconds) before executing the fadeOut
+  }
   $('.lets_get_started_btn').on('click', function(event) {
     event.preventDefault(); // Prevent the default behavior (page reload)
     // $('.slider').slick('slickNext');
@@ -54,9 +61,9 @@ $(document).ready(function() {
         console.log('Step 1 form is valid. Proceed with your code.');
 
         $( ".progress-bar span" ).animate({width: "0%"}, 1000 );
-        // $("#step-button-2").removeClass('active'); 
-        // $("#step-button-3").removeClass('active'); 
-        // $("#step-button-4").removeClass('active'); 
+        // $("#step-button-2").removeClass('active');
+        // $("#step-button-3").removeClass('active');
+        // $("#step-button-4").removeClass('active');
         // $("#step-button-5").removeClass('active');
         // $("#step-button-1").removeClass('active');
         $('.form_wrap_5').hide();
@@ -78,8 +85,8 @@ $(document).ready(function() {
       console.log('Previous forms are not valid. Please check the validation messages.');
     }
 
-    
-      
+
+
   });
   $( "#step-button-2" ).click(function() {
     // Call the validateForm function for the current step
@@ -91,9 +98,9 @@ $(document).ready(function() {
       console.log('Step 2 form is valid. Proceed with your code.');
 
       $( ".progress-bar span" ).animate({width: "29%"}, 1000 );
-      $("#step-button-1").addClass('active'); 
-      // $("#step-button-3").removeClass('active'); 
-      // $("#step-button-4").removeClass('active'); 
+      $("#step-button-1").addClass('active');
+      // $("#step-button-3").removeClass('active');
+      // $("#step-button-4").removeClass('active');
       // $("#step-button-2").removeClass('active')
       $('.form_wrap_5').hide();
       $('.form_wrap_4').hide();
@@ -101,9 +108,9 @@ $(document).ready(function() {
       $('.form_wrap_1').hide();
       $('.form_wrap_2').show();
       $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
-      $("#step-button-1").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
-      
+      $("#step-button-1").addClass('active');
+      $("#step-button-2").addClass('active');
+
     }
     else{
       console.log("form 2 is invalid!")
@@ -115,24 +122,24 @@ $(document).ready(function() {
     // Check if the form is valid
     if (isValid) {
       $('.color-picker').removeClass('error');
-      storeFormData('step3_form');
+      // storeFormData('step3_form');
       // Your code here if the form is valid
       console.log('Step 3 form is valid. Proceed with your code.');
 
       $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
-      $("#step-button-1").addClass('active'); 
+      $("#step-button-1").addClass('active');
       // $("#step-button-4").removeClass('active');
-      // $("#step-button-3").removeClass('active'); 
-      $("#step-button-2").addClass('active'); 
+      // $("#step-button-3").removeClass('active');
+      $("#step-button-2").addClass('active');
       $('.form_wrap_5').hide();
       $('.form_wrap_4').hide();
       $('.form_wrap_2').hide();
       $('.form_wrap_1').hide();
       $('.form_wrap_3').show();
       $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
-      $("#step-button-3").addClass('active'); 
-      $("#step-button-1").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
+      $("#step-button-3").addClass('active');
+      $("#step-button-1").addClass('active');
+      $("#step-button-2").addClass('active');
 
     }
     else{
@@ -140,18 +147,18 @@ $(document).ready(function() {
       console.log("form 3 is invalid!")
     }
   });
-  $( "#step-button-4" ).click(function() {    
+  $( "#step-button-4" ).click(function() {
       let logoValidationMessage = $('#logoValidationMessage');
       if (selectedLogos.length === 0) {
         $('.logo_category_wrap').addClass('error');
         // No logo selected, display validation message
         logoValidationMessage.text('Please select at least one logo.');
-      } 
-      else {        
+      }
+      else {
 
         $('.logo_category_wrap').removeClass('error');
         // Clear validation message if at least one logo is selected
-        logoValidationMessage.text('');      
+        logoValidationMessage.text('');
 
         // Log the entire selectedLogos array to the console
         console.log('Selected Logos Array:', selectedLogos);
@@ -163,10 +170,10 @@ $(document).ready(function() {
         $('.form_wrap_5').hide();
         $('.form_wrap_4').show();
         $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
-        $("#step-button-4").addClass('active'); 
-        $("#step-button-3").addClass('active'); 
-        $("#step-button-2").addClass('active'); 
-        $("#step-button-1").addClass('active'); 
+        $("#step-button-4").addClass('active');
+        $("#step-button-3").addClass('active');
+        $("#step-button-2").addClass('active');
+        $("#step-button-1").addClass('active');
       }
   });
   $( "#step-button-5" ).click(function() {
@@ -182,10 +189,10 @@ $(document).ready(function() {
       console.log('Step 5 form is valid. Proceed with your code.');
 
       $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
-      $("#step-button-1").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
-      $("#step-button-3").addClass('active'); 
-      $("#step-button-4").addClass('active'); 
+      $("#step-button-1").addClass('active');
+      $("#step-button-2").addClass('active');
+      $("#step-button-3").addClass('active');
+      $("#step-button-4").addClass('active');
       $('.form_wrap_2').hide();
       $('.form_wrap_4').hide();
       $('.form_wrap_3').hide();
@@ -193,7 +200,7 @@ $(document).ready(function() {
       $('.form_wrap_5').show();
 
 
-      
+
 
       if (selectedItems.length === 0) {
         $('#itemSelectionForm').addClass('error');
@@ -206,10 +213,10 @@ $(document).ready(function() {
 
         // Log alt text of item-image inside the selected item-box
         const selectedAltText = [];
-        selectedItems.forEach(index => {        
-          selectedAltText.push(index.altText);       
+        selectedItems.forEach(index => {
+          selectedAltText.push(index.altText);
         });
-        console.log('Selected Item Alt Text:', selectedAltText); 
+        console.log('Selected Item Alt Text:', selectedAltText);
 
         // Proceed to the next step or perform any other action
         $("#step-button-5").addClass('active');
@@ -220,7 +227,7 @@ $(document).ready(function() {
       else{
         console.log("form 5 is invalid!")
       }
-    
+
   });
 // ============================================
 // ============================================
@@ -232,7 +239,7 @@ $(document).ready(function() {
   $('.form_wrap_4').hide();
   $('.form_wrap_5').hide();
 
-  $( "#next_btn_form_1" ).click(function() {    
+  $( "#next_btn_form_1" ).click(function() {
 
     // Check if all previous forms are valid
     if (arePreviousFormsValid(2)) {
@@ -258,7 +265,7 @@ $(document).ready(function() {
     } else {
       console.log('Previous forms are not valid. Please check the validation messages.');
     }
-    
+
   });
   $( "#next_btn_form_2" ).click(function() {
     let isValid = validateForm('form_wrap_2');
@@ -271,8 +278,8 @@ $(document).ready(function() {
       $('.form_wrap_1').hide();
       $('.form_wrap_3').show();
       $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
-      $("#step-button-1").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
+      $("#step-button-1").addClass('active');
+      $("#step-button-2").addClass('active');
       // $("#step-button-3").addClass('no_icon');
       // if ($("#step-button-2").hasClass('active')) {
       //   $("#step-button-2").removeClass('no_icon');
@@ -299,9 +306,9 @@ $(document).ready(function() {
       $('.form_wrap_3').hide();
       $('.form_wrap_4').show();
       $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
-      $("#step-button-3").addClass('active'); 
-      $("#step-button-1").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
+      $("#step-button-3").addClass('active');
+      $("#step-button-1").addClass('active');
+      $("#step-button-2").addClass('active');
       // $("#step-button-4").addClass('no_icon');
       // if ($("#step-button-3").hasClass('active')) {
       //   $("#step-button-3").removeClass('no_icon');
@@ -321,7 +328,7 @@ $(document).ready(function() {
     $('.form_wrap_4').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "75%"}, 1000 );
-    // $("#step-button-5").removeClass('active'); 
+    // $("#step-button-5").removeClass('active');
     // $("#step-button-4").removeClass('active');
     $("#step-button-5").removeClass('no_icon');
     // $("#step-button-4").addClass('no_icon');
@@ -333,7 +340,7 @@ $(document).ready(function() {
     $('.form_wrap_3').show();
     $('.form_wrap_5').hide();
     $( ".progress-bar span" ).animate({width: "50%"}, 1000 );
-    // $("#step-button-3").removeClass('active'); 
+    // $("#step-button-3").removeClass('active');
     $("#step-button-4").removeClass('no_icon');
     // $("#step-button-3").addClass('no_icon');
   });
@@ -397,9 +404,9 @@ $(document).ready(function() {
       tickIcon.toggle();
 
       var isSelected = $(this).hasClass('selected');
-      if(isSelected) { 
+      if(isSelected) {
         $('.validation_message').text('');
-        $('.color-picker').removeClass('error'); 
+        $('.color-picker').removeClass('error');
       };
     });
 
@@ -427,7 +434,7 @@ $(document).ready(function() {
     const logoId = $(this).find('.logo').data('logo-id');
     const logoAlt = $(this).find('.logo').attr('alt');
     const isSelected = $(this).hasClass('selected');
-  
+
     if (isSelected) {
       $('.logo_category_wrap').removeClass('error');
       $('#logoSelectionForm .validation_message').text('');
@@ -442,10 +449,10 @@ $(document).ready(function() {
       // Logo is not selected, add it to the array
       selectedLogos.push({ logoId, logoCategory: $(this).closest('.logo_category').attr('id'), logoAlt });
     }
-  
+
     // Toggle the 'selected' class for visual feedback
     $(this).toggleClass('selected');
-  
+
     // Log the selected logos array to the console
     console.log('Selected Logos:', selectedLogos);
   });
@@ -466,7 +473,7 @@ $(document).ready(function() {
     } else {
       $('.logo_category_wrap').removeClass('error');
       // Clear validation message if at least one logo is selected
-      logoValidationMessage.text('');      
+      logoValidationMessage.text('');
 
       // Log the entire selectedLogos array to the console
       console.log('Selected Logos Array:', selectedLogos);
@@ -478,10 +485,10 @@ $(document).ready(function() {
       $('.form_wrap_4').hide();
       $('.form_wrap_5').show();
       $( ".progress-bar span" ).animate({width: "99%"}, 1000 );
-      $("#step-button-4").addClass('active'); 
-      $("#step-button-3").addClass('active'); 
-      $("#step-button-2").addClass('active'); 
-      $("#step-button-1").addClass('active'); 
+      $("#step-button-4").addClass('active');
+      $("#step-button-3").addClass('active');
+      $("#step-button-2").addClass('active');
+      $("#step-button-1").addClass('active');
       // $("#step-button-5").addClass('no_icon');
 
       // if ($("#step-button-").hasClass('active')) {
@@ -497,7 +504,7 @@ $(document).ready(function() {
   });
   // ===========================================================
 
-  // Font section form 
+  // Font section form
   const items = [
     { imagePath: "./images/font_preview/modern.png", description: "modern", subText: "Crisp with an urban flair" },
     { imagePath: "./images/font_preview/handwritten.png", description: "handwritten", subText: "Add a human touch" },
@@ -558,8 +565,8 @@ $(document).ready(function() {
   // ==============================
   // ==============================
 
-  $('#next_btn_form_5').on('click', function(event){    
-    event.preventDefault(); 
+  $('#next_btn_form_5').on('click', function(event){
+    event.preventDefault();
     // =============
     const itemValidationMessage = $('.form_wrap_5 .validation_message');
 
@@ -573,21 +580,21 @@ $(document).ready(function() {
 
       // Log alt text of item-image inside the selected item-box
       const selectedAltText = [];
-      selectedItems.forEach(index => {        
-        selectedAltText.push(index.altText);       
+      selectedItems.forEach(index => {
+        selectedAltText.push(index.altText);
       });
-      console.log('Selected Item Alt Text:', selectedAltText); 
+      console.log('Selected Item Alt Text:', selectedAltText);
 
       // Proceed to the next step or perform any other action
       $("#step-button-5").addClass('active');
       // $("#step-button-5").removeClass('no_icon');
       $('.slider').slick('slickNext');
     }
-    
+
   });
   // ========================================
 
-  
+
 
   //  tagify //
 
@@ -595,7 +602,7 @@ $(document).ready(function() {
     whitelist: [
         {"id": 1, "value": "some string"}
     ],
-    placeholder: 'Lines ,shapes, hope, intelligence, etc.' 
+    placeholder: 'Lines ,shapes, hope, intelligence, etc.'
   })
     .on('add', function(e, tagName) {
         console.log('JQEURY EVENT: ', 'added', tagName);
@@ -621,6 +628,10 @@ $(document).ready(function() {
     minimumResultsForSearch: Infinity,
     templateResult: formatState,
     templateSelection: formatState
+  });
+  
+  $(".form-select").select2({
+    minimumResultsForSearch: Infinity
   });
 
 });
@@ -706,7 +717,7 @@ function validateForm(formWrapClass) {
 // ===============================
 
 
-  
+
 
 // Function to serialize form data
 function serializeFormData(formWrapClass) {
@@ -725,11 +736,11 @@ function serializeFormData(formWrapClass) {
 }
 
 // Function to store form data in local storage
-function storeFormData(formWrapClass) {
-  var formData = serializeFormData(formWrapClass);
-  console.log("formData --> ",formData)
-  localStorage.setItem('formData', JSON.stringify(formData));
-}
+// function storeFormData(formWrapClass) {
+//   var formData = serializeFormData(formWrapClass);
+//   console.log("formData --> ",formData)
+//   localStorage.setItem('formData', JSON.stringify(formData));
+// }
 
 // Validation function to check if all previous forms are valid
 function arePreviousFormsValid(currentFormIndex) {
@@ -745,18 +756,18 @@ function arePreviousFormsValid(currentFormIndex) {
 
 
 // Function to load form data from local storage
-function loadFormData() {
-  var storedData = localStorage.getItem('formData');
-  if (storedData) {
-    var formData = JSON.parse(storedData);
+// function loadFormData() {
+//   var storedData = localStorage.getItem('formData');
+//   if (storedData) {
+//     var formData = JSON.parse(storedData);
 
-    // Populate forms with stored data
-    $('.' + formData.activeForm + ' :input').each(function () {
-      var field = $(this);
-      var fieldName = field.attr('name');
-      if (formData[fieldName] !== undefined) {
-        field.val(formData[fieldName]);
-      }
-    });
-  }
-}
+//     // Populate forms with stored data
+//     $('.' + formData.activeForm + ' :input').each(function () {
+//       var field = $(this);
+//       var fieldName = field.attr('name');
+//       if (formData[fieldName] !== undefined) {
+//         field.val(formData[fieldName]);
+//       }
+//     });
+//   }
+// }
